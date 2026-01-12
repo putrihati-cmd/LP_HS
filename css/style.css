@@ -1178,3 +1178,105 @@ a {
     display: none !important;
   }
 }
+
+/* ========================================
+   PRICE LIST SECTION
+   ======================================== */
+.price-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.price-card-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-3);
+  border-bottom: 2px solid var(--color-bg-muted);
+}
+
+.price-icon {
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.price-card h3 {
+  margin: 0;
+  font-size: var(--text-xl);
+  font-weight: 600;
+}
+
+.price-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.price-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: var(--text-sm);
+}
+
+.price-list li:last-child {
+  border-bottom: none;
+}
+
+.price-list li span {
+  color: var(--color-text-secondary);
+}
+
+.price-list li strong {
+  color: var(--color-primary);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.price-card-note {
+  margin-top: var(--space-4);
+  padding: var(--space-2) var(--space-3);
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-xs);
+  color: #2e7d32;
+  text-align: center;
+  font-weight: 500;
+}
+
+.price-footer {
+  text-align: center;
+  margin-top: var(--space-12);
+  padding-top: var(--space-8);
+  border-top: 1px solid var(--color-border);
+}
+
+.price-note {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
+
+.price-note strong {
+  color: var(--color-primary);
+  font-style: normal;
+}
+
+@media (max-width: 768px) {
+  .price-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+  }
+
+  .price-list li {
+    font-size: var(--text-xs);
+  }
+
+  .price-list li strong {
+    font-size: var(--text-sm);
+  }
+}
