@@ -1902,3 +1902,32 @@ a {
     font-size: var(--text-xs);
   }
 }
+
+/* Review Placeholder - Honest */
+.review-placeholder {
+  text-align: center;
+  padding: var(--space-12) var(--space-8);
+  background: var(--color-bg-soft);
+  border: 2px dashed var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.review-placeholder-icon {
+  font-size: 3rem;
+  margin-bottom: var(--space-4);
+}
+
+.review-placeholder h3 {
+  font-size: var(--text-xl);
+  font-weight: 600;
+  margin-bottom: var(--space-3);
+  color: var(--color-text);
+}
+
+.review-placeholder p {
+  color: var(--color-text-secondary);
+  max-width: 500px;
+  margin: 0 auto var(--space-6);
+  font-size: var(--text-base);
+  line-height: 1.7;
+}
