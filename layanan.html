@@ -19,7 +19,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/style.min.css?v=2" />
+    <link rel="stylesheet" href="css/style.min.css?v=3" />
   </head>
   <body>
     <header class="header">
@@ -45,12 +45,55 @@
     </header>
 
     <main>
-      <section class="page-header">
+      <section class="page-header layanan-hero">
         <div class="container">
-          <h1>Layanan Kami</h1>
-          <p>Solusi lengkap untuk kebutuhan cetak dan fotocopy</p>
           <div class="breadcrumb">
             <a href="index.html">Beranda</a><span>/</span><span>Layanan</span>
+          </div>
+          <h1>Cetak & Fotocopy Cepat – <br />Siap Ambil Dalam 30 Menit!</h1>
+          <p class="hero-subtitle">
+            Harga transparan, hasil tajam, tanpa antre. Kirim file via WhatsApp,
+            tinggal ambil!
+          </p>
+
+          <div class="hero-badges">
+            <span class="hero-badge">⚡ Proses Cepat</span>
+            <span class="hero-badge">💰 Harga Bersaing</span>
+            <span class="hero-badge">✨ Hasil Berkualitas</span>
+          </div>
+
+          <div class="hero-cta">
+            <a
+              href="https://wa.me/6285659055374?text=Halo%20HS%20Copy%20Center%2C%20saya%20mau%20pesan%20layanan"
+              class="btn btn-whatsapp btn-lg"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+                />
+              </svg>
+              Order via WhatsApp
+            </a>
+            <a href="#harga" class="btn btn-lg">Lihat Daftar Harga</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Quick Navigation -->
+      <section class="quick-nav">
+        <div class="container">
+          <div class="quick-nav-grid">
+            <a href="#fotocopy" class="quick-nav-item">📄 Fotocopy</a>
+            <a href="#print" class="quick-nav-item">🖨️ Print</a>
+            <a href="#jilid" class="quick-nav-item">📚 Jilid</a>
+            <a href="#foto" class="quick-nav-item">📷 Foto</a>
+            <a href="#banner" class="quick-nav-item">🎨 Banner</a>
+            <a href="#atk" class="quick-nav-item">✏️ ATK</a>
           </div>
         </div>
       </section>
@@ -58,12 +101,12 @@
       <section class="section">
         <div class="container">
           <!-- Fotocopy -->
-          <div class="service-detail">
-            <h3>
-              <span class="service-detail-icon"
-                ><svg
-                  width="24"
-                  height="24"
+          <div class="service-detail" id="fotocopy">
+            <div class="service-header">
+              <span class="service-detail-icon">
+                <svg
+                  width="32"
+                  height="32"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -72,40 +115,60 @@
                   <rect x="5" y="2" width="14" height="20" rx="2" />
                   <line x1="9" y1="6" x2="15" y2="6" />
                   <line x1="9" y1="10" x2="15" y2="10" />
-                  <line x1="9" y1="14" x2="12" y2="14" /></svg
-              ></span>
-              Fotocopy
-            </h3>
-            <p>
-              Layanan fotocopy dokumen dengan hasil jernih dan cepat. Tersedia
-              dalam mode hitam putih maupun berwarna dengan berbagai pilihan
-              ukuran kertas mulai dari A5, A4, F4 (Folio), hingga A3. Cocok
-              untuk menggandakan dokumen penting, tugas sekolah, materi kuliah,
-              atau dokumen kantor.
-            </p>
-            <div class="service-info">
-              <div class="service-info-item">
-                <h4>Fungsi</h4>
-                <p>Menggandakan dokumen cetak dengan cepat dan efisien</p>
+                  <line x1="9" y1="14" x2="12" y2="14" />
+                </svg>
+              </span>
+              <div>
+                <h3>📄 Fotocopy Cepat & Jernih</h3>
+                <p class="service-tagline">
+                  Gandakan dokumen dalam hitungan menit – hasil jelas, tidak
+                  buram!
+                </p>
               </div>
-              <div class="service-info-item">
-                <h4>Target Pengguna</h4>
-                <p>Pelajar, mahasiswa, karyawan, dan masyarakat umum</p>
+            </div>
+
+            <div class="service-benefits">
+              <div class="benefit-item">
+                <span class="benefit-icon">⚡</span>
+                <div>
+                  <strong>Siap dalam 5-10 menit</strong>
+                  <p>Tanpa antre panjang, langsung proses</p>
+                </div>
               </div>
-              <div class="service-info-item">
-                <h4>Kualitas</h4>
-                <p>Hasil jernih dengan mesin fotocopy modern</p>
+              <div class="benefit-item">
+                <span class="benefit-icon">💰</span>
+                <div>
+                  <strong>Mulai Rp 150/lembar</strong>
+                  <p>Diskon 10% untuk order >100 lembar</p>
+                </div>
               </div>
+              <div class="benefit-item">
+                <span class="benefit-icon">📏</span>
+                <div>
+                  <strong>Semua ukuran tersedia</strong>
+                  <p>A5, A4, F4 (Folio), A3 – hitam putih & warna</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="service-cta">
+              <a
+                href="https://wa.me/6285659055374?text=Halo%2C%20saya%20mau%20fotocopy%20dokumen"
+                class="btn btn-whatsapp btn-sm"
+              >
+                Order Fotocopy via WA
+              </a>
+              <a href="#harga" class="btn-link">Lihat harga lengkap →</a>
             </div>
           </div>
 
           <!-- Print Dokumen -->
-          <div class="service-detail">
-            <h3>
-              <span class="service-detail-icon"
-                ><svg
-                  width="24"
-                  height="24"
+          <div class="service-detail" id="print">
+            <div class="service-header">
+              <span class="service-detail-icon">
+                <svg
+                  width="32"
+                  height="32"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -115,40 +178,60 @@
                   <path
                     d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"
                   />
-                  <rect x="6" y="14" width="12" height="8" /></svg
-              ></span>
-              Print Dokumen
-            </h3>
-            <p>
-              Mencetak file digital dari flashdisk, email, atau media
-              penyimpanan lainnya. Mendukung berbagai format file seperti PDF,
-              Word, Excel, dan PowerPoint. Hasil cetak tajam dengan warna
-              akurat, cocok untuk laporan, proposal, presentasi, atau dokumen
-              resmi.
-            </p>
-            <div class="service-info">
-              <div class="service-info-item">
-                <h4>Fungsi</h4>
-                <p>Mencetak file digital menjadi dokumen fisik</p>
+                  <rect x="6" y="14" width="12" height="8" />
+                </svg>
+              </span>
+              <div>
+                <h3>🖨️ Print Dokumen – Warna Tajam, Hasil Profesional</h3>
+                <p class="service-tagline">
+                  Dari file digital ke cetakan berkualitas – PDF, Word, Excel
+                  semua bisa!
+                </p>
               </div>
-              <div class="service-info-item">
-                <h4>Target Pengguna</h4>
-                <p>Mahasiswa, profesional, dan pelaku bisnis</p>
+            </div>
+
+            <div class="service-benefits">
+              <div class="benefit-item">
+                <span class="benefit-icon">📁</span>
+                <div>
+                  <strong>Terima semua format</strong>
+                  <p>PDF, Word, Excel, PowerPoint, JPG, PNG</p>
+                </div>
               </div>
-              <div class="service-info-item">
-                <h4>Kualitas</h4>
-                <p>Cetak resolusi tinggi dengan warna akurat</p>
+              <div class="benefit-item">
+                <span class="benefit-icon">💰</span>
+                <div>
+                  <strong>Mulai Rp 500/lembar</strong>
+                  <p>Print warna mulai Rp 1.500/lembar</p>
+                </div>
               </div>
+              <div class="benefit-item">
+                <span class="benefit-icon">✨</span>
+                <div>
+                  <strong>Hasil resolusi tinggi</strong>
+                  <p>Warna akurat untuk laporan & presentasi</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="service-cta">
+              <a
+                href="https://wa.me/6285659055374?text=Halo%2C%20saya%20mau%20print%20dokumen"
+                class="btn btn-whatsapp btn-sm"
+              >
+                Order Print via WA
+              </a>
+              <a href="#harga" class="btn-link">Lihat harga lengkap →</a>
             </div>
           </div>
 
           <!-- Jilid & Laminating -->
-          <div class="service-detail">
-            <h3>
-              <span class="service-detail-icon"
-                ><svg
-                  width="24"
-                  height="24"
+          <div class="service-detail" id="jilid">
+            <div class="service-header">
+              <span class="service-detail-icon">
+                <svg
+                  width="32"
+                  height="32"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -157,39 +240,59 @@
                   <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
                   <path
                     d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"
-                  /></svg
-              ></span>
-              Jilid & Laminating
-            </h3>
-            <p>
-              Layanan finishing dokumen untuk tampilan lebih profesional dan
-              tahan lama. Tersedia jilid spiral, jilid lakban, dan hardcover
-              untuk skripsi atau laporan. Laminating tersedia dalam berbagai
-              ukuran untuk melindungi dokumen penting dari air dan kerusakan.
-            </p>
-            <div class="service-info">
-              <div class="service-info-item">
-                <h4>Fungsi</h4>
-                <p>Merapikan dan melindungi dokumen</p>
+                  />
+                </svg>
+              </span>
+              <div>
+                <h3>📚 Jilid Skripsi & Laminating – Tampilan Profesional!</h3>
+                <p class="service-tagline">
+                  Bikin dokumenmu terlihat rapi dan tahan lama – siap sidang!
+                </p>
               </div>
-              <div class="service-info-item">
-                <h4>Target Pengguna</h4>
-                <p>Mahasiswa (skripsi), kantor, dan arsip penting</p>
+            </div>
+
+            <div class="service-benefits">
+              <div class="benefit-item">
+                <span class="benefit-icon">🎓</span>
+                <div>
+                  <strong>Spesialis Skripsi & Tugas Akhir</strong>
+                  <p>Hard cover, soft cover, spiral, lakban</p>
+                </div>
               </div>
-              <div class="service-info-item">
-                <h4>Kualitas</h4>
-                <p>Rapi, kuat, dan tahan lama</p>
+              <div class="benefit-item">
+                <span class="benefit-icon">💰</span>
+                <div>
+                  <strong>Hard Cover mulai Rp 35.000</strong>
+                  <p>Spiral plastik mulai Rp 5.000</p>
+                </div>
               </div>
+              <div class="benefit-item">
+                <span class="benefit-icon">🛡️</span>
+                <div>
+                  <strong>Laminating anti air & sobek</strong>
+                  <p>Lindungi dokumen penting selamanya</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="service-cta">
+              <a
+                href="https://wa.me/6285659055374?text=Halo%2C%20saya%20mau%20jilid%20skripsi"
+                class="btn btn-whatsapp btn-sm"
+              >
+                Order Jilid via WA
+              </a>
+              <a href="#harga" class="btn-link">Lihat harga lengkap →</a>
             </div>
           </div>
 
           <!-- Cetak Foto -->
-          <div class="service-detail">
-            <h3>
-              <span class="service-detail-icon"
-                ><svg
-                  width="24"
-                  height="24"
+          <div class="service-detail" id="foto">
+            <div class="service-header">
+              <span class="service-detail-icon">
+                <svg
+                  width="32"
+                  height="32"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -197,79 +300,120 @@
                 >
                   <rect x="3" y="3" width="18" height="18" rx="2" />
                   <circle cx="8.5" cy="8.5" r="1.5" />
-                  <polyline points="21 15 16 10 5 21" /></svg
-              ></span>
-              Cetak Foto
-            </h3>
-            <p>
-              Mencetak foto digital dengan kertas foto glossy berkualitas
-              tinggi. Tersedia berbagai ukuran mulai dari 2x3, 3x4, 4x6 untuk
-              pas foto hingga ukuran besar 10R dan A4. Warna tajam dan tahan
-              lama, cocok untuk dokumentasi pribadi, keluarga, atau keperluan
-              administrasi.
-            </p>
-            <div class="service-info">
-              <div class="service-info-item">
-                <h4>Fungsi</h4>
-                <p>Mencetak foto digital menjadi cetakan fisik</p>
+                  <polyline points="21 15 16 10 5 21" />
+                </svg>
+              </span>
+              <div>
+                <h3>📷 Cetak Foto – Kenangan Abadi, Warna Tajam!</h3>
+                <p class="service-tagline">
+                  Pas foto untuk keperluan administrasi atau foto kenangan
+                  keluarga
+                </p>
               </div>
-              <div class="service-info-item">
-                <h4>Target Pengguna</h4>
-                <p>Pribadi, keluarga, dan keperluan administrasi</p>
+            </div>
+
+            <div class="service-benefits">
+              <div class="benefit-item">
+                <span class="benefit-icon">🎴</span>
+                <div>
+                  <strong>Semua ukuran pas foto</strong>
+                  <p>2x3, 3x4, 4x6 – background bisa request</p>
+                </div>
               </div>
-              <div class="service-info-item">
-                <h4>Kualitas</h4>
-                <p>Warna tajam dengan kertas foto premium</p>
+              <div class="benefit-item">
+                <span class="benefit-icon">💰</span>
+                <div>
+                  <strong>Mulai Rp 8.000/lembar</strong>
+                  <p>Kertas foto glossy premium</p>
+                </div>
               </div>
+              <div class="benefit-item">
+                <span class="benefit-icon">🖼️</span>
+                <div>
+                  <strong>Foto besar hingga A4</strong>
+                  <p>Cocok untuk pigura & dokumentasi</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="service-cta">
+              <a
+                href="https://wa.me/6285659055374?text=Halo%2C%20saya%20mau%20cetak%20foto"
+                class="btn btn-whatsapp btn-sm"
+              >
+                Order Cetak Foto via WA
+              </a>
+              <a href="#harga" class="btn-link">Lihat harga lengkap →</a>
             </div>
           </div>
 
           <!-- Banner & Spanduk -->
-          <div class="service-detail">
-            <h3>
-              <span class="service-detail-icon"
-                ><svg
-                  width="24"
-                  height="24"
+          <div class="service-detail" id="banner">
+            <div class="service-header">
+              <span class="service-detail-icon">
+                <svg
+                  width="32"
+                  height="32"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
                   stroke-width="2"
                 >
                   <rect x="2" y="7" width="20" height="14" rx="2" />
-                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" /></svg
-              ></span>
-              Banner & Spanduk
-            </h3>
-            <p>
-              Cetak banner dan spanduk ukuran besar untuk keperluan promosi,
-              acara, atau dekorasi. Tersedia dalam berbagai bahan seperti flexi,
-              vinyl, dan albatros dengan kualitas cetak outdoor yang tahan
-              cuaca. Cocok untuk toko, event, atau kampanye promosi.
-            </p>
-            <div class="service-info">
-              <div class="service-info-item">
-                <h4>Fungsi</h4>
-                <p>Media promosi dan informasi ukuran besar</p>
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                </svg>
+              </span>
+              <div>
+                <h3>🎨 Banner & Spanduk – Promosi Mencolok!</h3>
+                <p class="service-tagline">
+                  Cetak outdoor tahan hujan & panas untuk toko, event, atau
+                  kampanye
+                </p>
               </div>
-              <div class="service-info-item">
-                <h4>Target Pengguna</h4>
-                <p>UMKM, event organizer, dan instansi</p>
+            </div>
+
+            <div class="service-benefits">
+              <div class="benefit-item">
+                <span class="benefit-icon">🌧️</span>
+                <div>
+                  <strong>Anti air & tahan cuaca</strong>
+                  <p>Material flexi, vinyl, albatros</p>
+                </div>
               </div>
-              <div class="service-info-item">
-                <h4>Kualitas</h4>
-                <p>Cetak full color tahan outdoor</p>
+              <div class="benefit-item">
+                <span class="benefit-icon">💰</span>
+                <div>
+                  <strong>Mulai Rp 25.000/m²</strong>
+                  <p>X-Banner & Roll Banner tersedia</p>
+                </div>
               </div>
+              <div class="benefit-item">
+                <span class="benefit-icon">📐</span>
+                <div>
+                  <strong>Ukuran custom bebas</strong>
+                  <p>Sesuai kebutuhan promosimu</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="service-cta">
+              <a
+                href="https://wa.me/6285659055374?text=Halo%2C%20saya%20mau%20cetak%20banner"
+                class="btn btn-whatsapp btn-sm"
+              >
+                Order Banner via WA
+              </a>
+              <a href="#harga" class="btn-link">Lihat harga lengkap →</a>
             </div>
           </div>
 
           <!-- ATK -->
-          <div class="service-detail">
-            <h3>
-              <span class="service-detail-icon"
-                ><svg
-                  width="24"
-                  height="24"
+          <div class="service-detail" id="atk">
+            <div class="service-header">
+              <span class="service-detail-icon">
+                <svg
+                  width="32"
+                  height="32"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -277,29 +421,49 @@
                 >
                   <path d="M12 19l7-7 3 3-7 7-3-3z" />
                   <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
-                  <circle cx="11" cy="11" r="2" /></svg
-              ></span>
-              ATK & Alat Kantor
-            </h3>
-            <p>
-              Menyediakan berbagai perlengkapan alat tulis kantor untuk
-              kebutuhan sehari-hari. Tersedia pulpen, pensil, penghapus,
-              penggaris, map, binder, amplop, kertas HVS, dan berbagai kebutuhan
-              kantor lainnya dengan harga terjangkau.
-            </p>
-            <div class="service-info">
-              <div class="service-info-item">
-                <h4>Fungsi</h4>
-                <p>Perlengkapan tulis dan kebutuhan kantor</p>
+                  <circle cx="11" cy="11" r="2" />
+                </svg>
+              </span>
+              <div>
+                <h3>✏️ ATK & Alat Kantor – Lengkap & Murah!</h3>
+                <p class="service-tagline">
+                  Kebutuhan tulis kantor tersedia tanpa harus ke supermarket
+                </p>
               </div>
-              <div class="service-info-item">
-                <h4>Target Pengguna</h4>
-                <p>Pelajar, mahasiswa, kantor, dan umum</p>
+            </div>
+
+            <div class="service-benefits">
+              <div class="benefit-item">
+                <span class="benefit-icon">📦</span>
+                <div>
+                  <strong>Stok lengkap</strong>
+                  <p>Pulpen, pensil, penghapus, map, binder</p>
+                </div>
               </div>
-              <div class="service-info-item">
-                <h4>Kualitas</h4>
-                <p>Produk berkualitas dengan harga bersaing</p>
+              <div class="benefit-item">
+                <span class="benefit-icon">💰</span>
+                <div>
+                  <strong>Harga terjangkau</strong>
+                  <p>Kertas HVS rim mulai Rp 55.000</p>
+                </div>
               </div>
+              <div class="benefit-item">
+                <span class="benefit-icon">🏪</span>
+                <div>
+                  <strong>Langsung beli di toko</strong>
+                  <p>Tidak perlu antre kasir panjang</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="service-cta">
+              <a
+                href="https://wa.me/6285659055374?text=Halo%2C%20saya%20mau%20tanya%20stok%20ATK"
+                class="btn btn-whatsapp btn-sm"
+              >
+                Tanya Stok ATK via WA
+              </a>
+              <a href="#harga" class="btn-link">Lihat harga lengkap →</a>
             </div>
           </div>
         </div>
