@@ -2,7 +2,7 @@
 
 **Tanggal Audit:** 11 Januari 2026
 **Auditor:** Antigravity AI
-**URL Website:** https://diameter-flush-else-owners.trycloudflare.com
+**URL Website:** https://hscopycenter.site
 
 ---
 
@@ -163,7 +163,7 @@ Website HS Copy Center telah mengalami **transformasi signifikan** dari website 
 - **Platform:** VPS Ubuntu 22.04 LTS
 - **Web Server:** Nginx (Port 8081)
 - **SSL:** Cloudflare Tunnel (HTTPS otomatis)
-- **Domain:** Temporary (trycloudflare.com)
+- **Domain:** hscopycenter.site (Permanent)
 
 ### Rekomendasi Performa
 
@@ -262,4 +262,4 @@ c:\projek\LP\
 
 # 🌐 WEBSITE LIVE
 
-## https://diameter-flush-else-owners.trycloudflare.com
+## https://hscopycenter.site

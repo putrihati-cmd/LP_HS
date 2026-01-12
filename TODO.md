@@ -1,7 +1,7 @@
 # 📋 TODO LIST - Penyempurnaan Website HS Copy Center
 
 **Tanggal dibuat:** 11 Januari 2026
-**URL Live:** https://diameter-flush-else-owners.trycloudflare.com
+**URL Live:** https://hscopycenter.site
 
 ---
 
