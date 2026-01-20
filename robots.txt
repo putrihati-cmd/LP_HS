@@ -1,0 +1,9 @@
+# HS Copy Center - robots.txt
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://hscopycenter.site/sitemap.xml
+
+# Crawl delay (optional, be gentle)
+Crawl-delay: 1
