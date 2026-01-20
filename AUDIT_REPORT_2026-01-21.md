@@ -64,14 +64,23 @@ c:\projek\LP\
 
 ## 🎨 KONSISTENSI DESAIN
 
-| File                          | CSS Version | Status       |
-| ----------------------------- | ----------- | ------------ |
-| index.html                    | v=6         | ✅ Konsisten |
-| layanan.html                  | v=6         | ✅ Konsisten |
-| galeri.html                   | v=6         | ✅ Konsisten |
-| kontak.html                   | v=6         | ✅ Konsisten |
-| tentang-kami.html             | v=6         | ✅ Konsisten |
-| cetak-skripsi-purwokerto.html | v=6         | ✅ Konsisten |
+| File                          | CSS Version | Header CTA       | Menu            | Status       |
+| ----------------------------- | ----------- | ---------------- | --------------- | ------------ |
+| index.html                    | v=6         | ✅ Chat Sekarang | ✅ Tentang Kami | ✅ Konsisten |
+| layanan.html                  | v=6         | ✅ Chat Sekarang | ✅ Tentang Kami | ✅ Konsisten |
+| galeri.html                   | v=6         | ✅ Chat Sekarang | ✅ Tentang Kami | ✅ Konsisten |
+| kontak.html                   | v=6         | ✅ Chat Sekarang | ✅ Tentang Kami | ✅ Konsisten |
+| tentang-kami.html             | v=6         | ✅ Chat Sekarang | ✅ Tentang Kami | ✅ Konsisten |
+| cetak-skripsi-purwokerto.html | v=6         | ✅ Chat Sekarang | ✅ Tentang Kami | ✅ Konsisten |
+
+### ⚠️ Catatan Hero Section
+
+| Halaman           | Theme                   | Alasan                                                       |
+| ----------------- | ----------------------- | ------------------------------------------------------------ |
+| Halaman utama (5) | Light (Putih/Biru muda) | Tema standar website                                         |
+| Landing SEO (1)   | **Dark (Navy blue)**    | **Desain sengaja berbeda** untuk target mahasiswa UNSOED/UMP |
+
+> **Keputusan Desain**: Landing page `cetak-skripsi-purwokerto.html` menggunakan dark theme secara sengaja untuk membedakan halaman konversi dari halaman utama website.
 
 ---
 
