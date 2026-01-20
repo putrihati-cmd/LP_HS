@@ -168,6 +168,13 @@ a {
   font-size: var(--text-sm);
 }
 
+.logo-img {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  object-fit: contain;
+}
+
 .nav-list {
   display: flex;
   align-items: center;
