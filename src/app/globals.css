@@ -1,113 +1,140 @@
 @import 'tailwindcss';
 
-:root {
-  /* Brand Colors from BACA.md */
-  --color-primary: #2563eb;
-  --color-secondary: #f59e0b;
-  --color-accent: #10b981;
-  --color-text: #1f2937;
-  --color-bg: #ffffff;
-  --color-light-gray: #f8f9fa;
-
-  /* Typography */
+@theme {
   --font-poppins: 'Poppins', sans-serif;
   --font-inter: 'Inter', sans-serif;
 
-  /* Spacing */
-  --section-padding: 80px;
-  --element-spacing: 40px;
-  --card-gutter: 24px;
+  --color-primary: #2563eb;
+  --color-secondary: #f59e0b;
+  --color-accent: #10b981;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@layer base {
+  :root {
+    --color-text: #1f2937;
+    --color-bg: #ffffff;
+    --color-light-gray: #f8f9fa;
 
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 80px;
-}
+    --section-padding: 80px;
+    --element-spacing: 40px;
+    --card-gutter: 24px;
+  }
 
-body {
-  font-family: var(--font-inter);
-  background-color: var(--color-bg);
-  color: var(--color-text);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  line-height: 1.5;
-}
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
 
-/* Typography Hierarchy */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-poppins);
-  font-weight: 700;
-}
+  body {
+    font-family: var(--font-inter);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.5;
+  }
 
-h1 {
-  font-size: 48px;
-  line-height: 1.2;
-}
-h2 {
-  font-size: 36px;
-  line-height: 1.3;
-}
-h3 {
-  font-size: 24px;
-  line-height: 1.4;
-}
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-poppins);
+    font-weight: 700;
+  }
 
-@media (max-width: 768px) {
   h1 {
-    font-size: 32px;
+    font-size: 48px;
+    line-height: 1.2;
   }
   h2 {
-    font-size: 28px;
+    font-size: 36px;
+    line-height: 1.3;
   }
   h3 {
-    font-size: 20px;
+    font-size: 24px;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 32px;
+    }
+    h2 {
+      font-size: 28px;
+    }
+    h3 {
+      font-size: 20px;
+    }
+  }
+
+  /* Focus visible for accessibility */
+  *:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  /* Selection color */
+  ::selection {
+    background-color: var(--color-primary);
+    color: white;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f1f5f9;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #94a3b8;
+    border-radius: 5px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #64748b;
   }
 }
 
-/* Glassmorphism Utility */
-.glass {
-  background: rgba(255, 255, 255, 0.85);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+@layer utilities {
+  .glass {
+    @apply border-b border-white/30 bg-white/85 backdrop-blur-md;
+  }
+
+  .section-padding {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+  }
+
+  /* Animation Utilities */
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .animate-count-up {
+    animation: countUp 0.5s ease-out forwards;
+  }
+
+  .animate-pulse-soft {
+    animation: pulse-soft 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  /* Hover Effects */
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-xl;
+  }
+
+  .btn-hover {
+    @apply transition-all duration-200 hover:scale-[1.02] hover:brightness-90;
+  }
 }
 
-/* Section Padding */
-.section-padding {
-  padding-top: var(--section-padding);
-  padding-bottom: var(--section-padding);
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f5f9;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #94a3b8;
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #64748b;
-}
-
-/* Animations */
+/* Keyframes - kept global as Tailwind theme keyframes are slightly different */
 @keyframes float {
   0%,
   100% {
@@ -140,57 +167,12 @@ h3 {
   }
 }
 
-@keyframes pulse-ring {
-  0% {
-    transform: scale(0.8);
+@keyframes pulse-soft {
+  0%,
+  100% {
     opacity: 1;
   }
-  100% {
-    transform: scale(2);
-    opacity: 0;
+  50% {
+    opacity: 0.7;
   }
-}
-
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-}
-
-.animate-fade-in-up {
-  animation: fadeInUp 0.6s ease-out forwards;
-}
-
-.animate-count-up {
-  animation: countUp 0.5s ease-out forwards;
-}
-
-/* Card Hover Effects */
-.card-hover {
-  transition: all 0.3s ease;
-}
-
-.card-hover:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-}
-
-/* Button Hover */
-.btn-hover {
-  transition: all 0.2s ease;
-}
-
-.btn-hover:hover {
-  transform: scale(1.02);
-  filter: brightness(0.9);
-}
-
-/* Focus visible for accessibility */
-*:focus-visible {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 2px;
-}
-
-/* Selection color */
-::selection {
-  background-color: var(--color-primary);
-  color: white;
 }
