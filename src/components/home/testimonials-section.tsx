@@ -183,6 +183,19 @@ export function TestimonialsSection() {
               <ChevronRight className="h-5 w-5" />
             </button>
           </div>
+
+          {/* CTA after testimonials */}
+          <div className="mt-10 text-center">
+            <p className="mb-4 text-gray-600">Mau hasil seperti ini?</p>
+            <a
+              href="https://wa.me/6285659055374?text=Halo%2C%20saya%20mau%20cetak%20dokumen"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-green-500 px-6 py-3 font-bold text-white shadow-lg transition-all hover:scale-105 hover:bg-green-600"
+            >
+              🚀 Cetak Sekarang - Jadi 5 Menit!
+            </a>
+          </div>
         </div>
       </div>
     </section>

@@ -99,9 +99,9 @@ export function ServicesSection() {
                   <Button
                     variant="outline"
                     size="sm"
-                    className="w-full transition-all group-hover:border-gray-900 group-hover:bg-gray-900 group-hover:text-white"
+                    className="w-full transition-all group-hover:border-green-500 group-hover:bg-green-500 group-hover:text-white"
                   >
-                    Order
+                    Pesan Sekarang
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
