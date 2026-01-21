@@ -11,8 +11,8 @@ const navigation = [
   { name: 'Beranda', href: '#' },
   { name: 'Layanan', href: '#services' },
   { name: 'Harga', href: '#calculator' },
-  { name: 'Testimoni', href: '#why-us' },
-  { name: 'Kontak', href: '#footer' },
+  { name: 'FAQ', href: '#faq' },
+  { name: 'Lokasi', href: '#location' },
 ];
 
 export function Header() {
@@ -24,9 +24,13 @@ export function Header() {
   ) => {
     if (href.startsWith('#')) {
       e.preventDefault();
-      const element = document.querySelector(href);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+      if (href === '#') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        const element = document.querySelector(href);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
       }
       setMobileMenuOpen(false);
     }
@@ -38,7 +42,7 @@ export function Header() {
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="group flex items-center gap-3">
-            <div className="relative h-12 w-12 transition-transform group-hover:scale-110">
+            <div className="relative h-10 w-10 transition-transform group-hover:scale-110">
               <Image
                 src="/images/logo.png"
                 alt="HS Copy Center"
@@ -48,23 +52,23 @@ export function Header() {
               />
             </div>
             <div className="flex flex-col">
-              <span className="text-xl leading-none font-bold text-gray-900">
+              <span className="text-lg leading-none font-bold text-gray-900">
                 HS Copy
               </span>
-              <span className="text-sm font-semibold tracking-wider text-blue-600">
+              <span className="text-xs font-semibold tracking-wider text-gray-500">
                 CENTER
               </span>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden items-center gap-8 lg:flex">
+          <div className="hidden items-center gap-6 lg:flex">
             {navigation.map(item => (
               <Link
                 key={item.name}
                 href={item.href}
                 onClick={e => handleNavClick(e, item.href)}
-                className="text-sm font-semibold tracking-wide text-gray-600 uppercase transition-colors hover:text-blue-600"
+                className="text-sm font-medium text-gray-600 transition-colors hover:text-gray-900"
               >
                 {item.name}
               </Link>
@@ -74,16 +78,15 @@ export function Header() {
           {/* CTA Button */}
           <div className="hidden items-center gap-4 lg:flex">
             <Link
-              href={getWhatsAppLink('Halo, saya ingin order')}
+              href={getWhatsAppLink('Halo, saya mau kirim file untuk dicetak')}
               target="_blank"
             >
               <Button
-                variant="primary"
                 size="lg"
-                className="rounded-full px-8 shadow-lg transition-all hover:scale-105 hover:shadow-blue-500/30"
+                className="rounded-full bg-green-500 px-6 font-bold text-white shadow-lg transition-all hover:scale-105 hover:bg-green-600"
               >
-                <Phone className="mr-2 h-5 w-5" />
-                Order Sekarang
+                <Phone className="mr-2 h-4 w-4" />
+                Kirim File
               </Button>
             </Link>
           </div>
@@ -96,7 +99,7 @@ export function Header() {
               onClick={() => setMobileMenuOpen(true)}
             >
               <span className="sr-only">Open main menu</span>
-              <Menu className="h-7 w-7" aria-hidden="true" />
+              <Menu className="h-6 w-6" aria-hidden="true" />
             </button>
           </div>
         </div>
@@ -111,11 +114,11 @@ export function Header() {
             onClick={() => setMobileMenuOpen(false)}
           />
 
-          {/* Menu Panel - Slide from right */}
+          {/* Menu Panel */}
           <div className="fixed inset-y-0 right-0 z-50 w-full max-w-sm overflow-y-auto bg-white px-6 py-6 shadow-2xl">
             <div className="flex items-center justify-between">
               <Link href="/" className="flex items-center gap-2">
-                <div className="relative h-10 w-10">
+                <div className="relative h-8 w-8">
                   <Image
                     src="/images/logo.png"
                     alt="HS Copy Center"
@@ -133,43 +136,44 @@ export function Header() {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <span className="sr-only">Close menu</span>
-                <X className="h-7 w-7" aria-hidden="true" />
+                <X className="h-6 w-6" aria-hidden="true" />
               </button>
             </div>
 
             <div className="mt-8">
-              <div className="space-y-2">
+              <div className="space-y-1">
                 {navigation.map(item => (
                   <Link
                     key={item.name}
                     href={item.href}
                     onClick={e => handleNavClick(e, item.href)}
-                    className="block rounded-xl px-4 py-4 text-lg font-semibold text-gray-900 transition-colors hover:bg-blue-50 hover:text-blue-600"
+                    className="block rounded-lg px-4 py-3 text-base font-medium text-gray-900 transition-colors hover:bg-gray-50"
                   >
                     {item.name}
                   </Link>
                 ))}
               </div>
 
-              <div className="mt-8 border-t border-gray-200 pt-8">
+              <div className="mt-6 border-t border-gray-200 pt-6">
                 <Link
-                  href={getWhatsAppLink('Halo, saya ingin order')}
+                  href={getWhatsAppLink(
+                    'Halo, saya mau kirim file untuk dicetak'
+                  )}
                   target="_blank"
                   className="block"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   <Button
-                    variant="primary"
                     size="lg"
-                    className="w-full rounded-full"
+                    className="w-full rounded-full bg-green-500 font-bold text-white"
                   >
-                    <Phone className="mr-2 h-5 w-5" />
-                    Order Sekarang
+                    <Phone className="mr-2 h-4 w-4" />
+                    Kirim File via WA
                   </Button>
                 </Link>
 
-                <p className="mt-6 text-center text-sm text-gray-500">
-                  Buka Setiap Hari 06:30 - 21:30 WIB
+                <p className="mt-4 text-center text-sm text-gray-500">
+                  Buka 06:30 - 21:00 WIB
                 </p>
               </div>
             </div>

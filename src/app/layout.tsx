@@ -19,35 +19,35 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default:
-      'HS Copy Center | Fotocopy & Print Purwokerto ⚡ Dekat UMP & UNSOED',
+    default: 'HS Copy Center Purwokerto - Fotocopy & Print Murah Dekat UNSOED',
     template: '%s | HS Copy Center',
   },
   description:
-    'Layanan fotocopy, print, jilid, dan laminating profesional di Purwokerto. Harga mulai Rp 150/lembar. Buka 06:30-21:30. Dekat kampus UMP dan UNSOED.',
+    'Jasa fotocopy & print terdekat dari kampus UNSOED. Harga mulai Rp 300/lembar. Proses cepat 5 menit. Buka 06:30-21:00 setiap hari. Kirim file via WhatsApp!',
   keywords: [
     'fotocopy purwokerto',
     'print murah purwokerto',
-    'jilid skripsi purwokerto',
     'cetak dokumen purwokerto',
-    'fotocopy dekat ump',
-    'print dekat unsoed',
+    'fotocopy dekat unsoed',
+    'print dekat ump',
+    'cetak skripsi purwokerto',
+    'fotocopy dukuhwaluh',
   ],
   authors: [{ name: 'HS Copy Center' }],
   openGraph: {
     type: 'website',
     locale: 'id_ID',
     url: 'https://hscopycenter.site',
-    title: 'HS Copy Center | Fotocopy & Print Purwokerto',
+    title: 'HS Copy Center Purwokerto - Fotocopy & Print Murah',
     description:
-      'Layanan fotocopy, print, jilid, dan laminating profesional di Purwokerto. Harga mulai Rp 150/lembar.',
+      'Jasa fotocopy & print cepat 5 menit. Harga mulai Rp 300/lembar. Dekat kampus UNSOED.',
     siteName: 'HS Copy Center',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'HS Copy Center | Fotocopy & Print Purwokerto',
+    title: 'HS Copy Center Purwokerto - Fotocopy & Print Murah',
     description:
-      'Layanan fotocopy, print, jilid, dan laminating profesional di Purwokerto.',
+      'Jasa fotocopy & print cepat 5 menit. Harga mulai Rp 300/lembar.',
   },
   robots: {
     index: true,
@@ -64,7 +64,7 @@ export default function RootLayout({
     <html lang="id" className={`${poppins.variable} ${inter.variable}`}>
       <body className="font-sans antialiased">
         <Header />
-        <main className="min-h-screen pt-16">{children}</main>
+        <main className="min-h-screen">{children}</main>
         <Footer />
         <WhatsAppFloat />
       </body>

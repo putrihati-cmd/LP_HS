@@ -3,6 +3,8 @@ import {
   ServicesSection,
   PriceCalculator,
   WhyChooseUs,
+  LocationSection,
+  FAQSection,
 } from '@/components/home';
 
 export default function HomePage() {
@@ -12,6 +14,8 @@ export default function HomePage() {
       <ServicesSection />
       <WhyChooseUs />
       <PriceCalculator />
+      <FAQSection />
+      <LocationSection />
     </>
   );
 }

@@ -17,16 +17,16 @@ export function Footer() {
           <div>
             <h3 className="mb-4 text-xl font-bold">HS Copy Center</h3>
             <p className="text-sm leading-relaxed text-gray-400">
-              Melayani fotokopi, cetak dokumen, dan kebutuhan akademik. Kirim
-              file via WhatsApp, cetak rapi, tinggal ambil.
+              Jasa fotocopy & print cepat di Purwokerto. Kirim file via
+              WhatsApp, siap 5 menit!
             </p>
             <Link
-              href={getWhatsAppLink('Halo, saya mau tanya info')}
+              href={getWhatsAppLink('Halo, saya mau kirim file untuk dicetak')}
               target="_blank"
               className="mt-4 inline-flex items-center gap-2 rounded-full bg-green-600 px-4 py-2 text-sm font-medium text-white transition-all hover:bg-green-700"
             >
               <MessageCircle className="h-4 w-4" />
-              Chat WhatsApp
+              Kirim File via WA
             </Link>
           </div>
 
@@ -46,7 +46,7 @@ export function Footer() {
               </div>
               <div className="flex items-center gap-3">
                 <Clock className="h-4 w-4" />
-                <span>07:00 - 21:00 WIB</span>
+                <span>06:30 - 21:00 WIB (Setiap Hari)</span>
               </div>
             </div>
           </div>
@@ -73,10 +73,18 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="#why-us"
+                  href="#faq"
                   className="transition-colors hover:text-white"
                 >
-                  Keunggulan
+                  FAQ
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#location"
+                  className="transition-colors hover:text-white"
+                >
+                  Lokasi
                 </Link>
               </li>
             </ul>
