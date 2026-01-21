@@ -7,6 +7,7 @@
     "christian-kohler.path-intellisense",
     "naumovs.color-highlight",
     "usernamehw.errorlens",
-    "ritwickdey.liveserver"
+    "prisma.prisma",
+    "nrwl.angular-console"
   ]
 }

@@ -4,11 +4,7 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
   },
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "html"
-  ],
+  "eslint.validate": ["javascript", "javascriptreact", "html"],
   "files.autoSave": "onFocusChange",
   "editor.tabSize": 2,
   "editor.insertSpaces": true,
