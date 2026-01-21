@@ -40,7 +40,7 @@ Mohon konfirmasi ketersediaan. Terima kasih!`;
 
   return (
     <section id="calculator" className="bg-white py-20">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto flex flex-col items-center px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-12 text-center">
           <span className="text-sm font-semibold tracking-wider text-blue-600 uppercase">

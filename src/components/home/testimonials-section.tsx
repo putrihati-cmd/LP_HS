@@ -60,7 +60,7 @@ export function TestimonialsSection() {
 
   return (
     <section className="bg-white py-20">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto flex flex-col items-center px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-12 text-center">
           <span className="text-sm font-semibold tracking-wider text-blue-600 uppercase">
@@ -76,11 +76,11 @@ export function TestimonialsSection() {
         </div>
 
         {/* Carousel */}
-        <div className="relative mx-auto max-w-4xl">
+        <div className="relative mx-auto w-full max-w-4xl">
           <Card className="shadow-lg">
             <CardContent className="p-8 sm:p-12">
               {/* Quote Icon */}
-              <Quote className="mb-6 h-12 w-12 text-blue-100" />
+              <Quote className="mb-8 h-12 w-12 text-blue-100" />
 
               {/* Content */}
               <p className="mb-8 text-xl leading-relaxed text-gray-700">
