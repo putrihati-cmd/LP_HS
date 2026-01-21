@@ -1,5 +1,6 @@
 import {
   HeroSection,
+  PromoSection,
   ServicesSection,
   PriceCalculator,
   WhyChooseUs,
@@ -12,6 +13,7 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
+      <PromoSection />
       <ServicesSection />
       <WhyChooseUs />
       <PriceCalculator />

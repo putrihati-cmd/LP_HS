@@ -1,4 +1,5 @@
 export { HeroSection } from './hero-section';
+export { PromoSection } from './promo-section';
 export { ServicesSection } from './services-section';
 export { PriceCalculator } from './price-calculator';
 export { WhyChooseUs } from './why-choose-us';

@@ -1,0 +1,28 @@
+{
+  "promos": [
+    {
+      "id": "promo-1",
+      "title": "🎉 PROMO AWAL TAHUN",
+      "description": "Cetak 100 lembar GRATIS 10 lembar! Berlaku untuk semua jenis cetak.",
+      "badge": "HEMAT 10%",
+      "validUntil": "2026-02-28",
+      "active": true
+    },
+    {
+      "id": "promo-2",
+      "title": "📚 PAKET SKRIPSI",
+      "description": "Cetak + Jilid Hard Cover 100 halaman hanya Rp 85.000 (hemat Rp 15.000)!",
+      "badge": "BEST SELLER",
+      "validUntil": "2026-12-31",
+      "active": true
+    },
+    {
+      "id": "promo-3",
+      "title": "🆕 MEMBER BARU",
+      "description": "Daftar member hari ini, langsung dapat 50 poin gratis!",
+      "badge": "NEW",
+      "validUntil": "2026-03-31",
+      "active": true
+    }
+  ]
+}
