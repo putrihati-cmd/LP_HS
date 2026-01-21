@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Send, Calculator, CheckCircle } from 'lucide-react';
+import { Send, Calculator, CheckCircle, Zap } from 'lucide-react';
 import { Button } from '@/components/ui';
 import { getWhatsAppLink } from '@/lib/utils';
 
@@ -22,43 +22,42 @@ export function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center sm:px-6 lg:px-8">
-        {/* Badge */}
-        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-gray-700 bg-gray-800 px-4 py-2">
+        {/* Status Badge - URGENT feel */}
+        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-green-500/30 bg-green-500/10 px-4 py-2">
           <span className="relative flex h-2 w-2">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
             <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
           </span>
-          <span className="text-sm text-gray-300">
-            Buka 06:30 - 21:00 WIB Setiap Hari
+          <span className="text-sm font-medium text-green-400">
+            🟢 Buka Sekarang • 06:30 - 21:00 WIB
           </span>
         </div>
 
-        {/* Headline */}
+        {/* Headline - CRISIS ORIENTED */}
         <h1 className="mb-4 text-4xl leading-tight font-bold text-white sm:text-5xl lg:text-6xl">
-          Fotocopy & Cetak
-          <br />
-          <span className="text-gray-400">Cepat, Rapi, Berkualitas</span>
+          <span className="text-yellow-400">DEADLINE MENGHIMPIT?</span>
+          <br />5 Menit Langsung Jadi! ⚡
         </h1>
 
-        {/* Subheadline - More compelling */}
-        <p className="mx-auto mb-8 max-w-xl text-lg text-gray-400">
-          Kirim file via WhatsApp,{' '}
-          <strong className="text-white">siap 5 menit!</strong> Melayani
-          mahasiswa & umum di Purwokerto.
+        {/* Subheadline - Action focused */}
+        <p className="mx-auto mb-8 max-w-xl text-lg text-gray-300">
+          Kirim file via WhatsApp dari kosan,{' '}
+          <strong className="text-white">langsung kami cetak</strong>. Tidak
+          perlu antre, tidak perlu keluar rumah.
         </p>
 
-        {/* CTA Buttons - More compelling */}
+        {/* CTA Buttons - URGENT colors */}
         <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Link
-            href={getWhatsAppLink('Halo, saya mau kirim file untuk dicetak')}
+            href={getWhatsAppLink('URGENT: Saya butuh cetak sekarang!')}
             target="_blank"
           >
             <Button
               size="lg"
-              className="h-14 min-w-[220px] rounded-full bg-green-500 px-8 text-lg font-bold text-white shadow-lg shadow-green-500/30 transition-all hover:scale-105 hover:bg-green-600"
+              className="h-16 min-w-[260px] rounded-full bg-green-500 px-8 text-lg font-bold text-white shadow-lg shadow-green-500/30 transition-all hover:scale-105 hover:bg-green-600"
             >
-              <Send className="mr-2 h-5 w-5" />
-              Kirim File Sekarang 📄
+              <Zap className="mr-2 h-6 w-6" />
+              CETAK SEKARANG! 🚀
             </Button>
           </Link>
 
@@ -73,8 +72,13 @@ export function HeroSection() {
           </Link>
         </div>
 
-        {/* Trust Badges */}
+        {/* Trust Badges - Price first! */}
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4 text-sm text-gray-400">
+          <div className="flex items-center gap-2 rounded-full border border-yellow-500/30 bg-yellow-500/20 px-4 py-2">
+            <span className="font-bold text-yellow-400">
+              💰 Mulai Rp 300/lembar
+            </span>
+          </div>
           <div className="flex items-center gap-2 rounded-full bg-gray-800/50 px-4 py-2">
             <CheckCircle className="h-4 w-4 text-green-500" />
             <span>Garansi Cetak Ulang</span>
@@ -82,10 +86,6 @@ export function HeroSection() {
           <div className="flex items-center gap-2 rounded-full bg-gray-800/50 px-4 py-2">
             <CheckCircle className="h-4 w-4 text-green-500" />
             <span>Harga Transparan</span>
-          </div>
-          <div className="flex items-center gap-2 rounded-full bg-gray-800/50 px-4 py-2">
-            <CheckCircle className="h-4 w-4 text-green-500" />
-            <span>Mulai Rp 300</span>
           </div>
         </div>
       </div>
