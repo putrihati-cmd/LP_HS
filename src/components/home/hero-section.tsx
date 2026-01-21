@@ -27,8 +27,11 @@ export function HeroSection() {
 
         {/* Headline */}
         <h1 className="mb-6 text-4xl leading-tight font-extrabold text-white sm:text-5xl md:text-6xl lg:text-7xl">
-          CETAK TANPA
-          <span className="block text-orange-400">ANTRE</span>
+          CETAK
+          <br />
+          <span className="bg-gradient-to-r from-orange-400 to-yellow-400 bg-clip-text text-transparent">
+            TANPA ANTRE.
+          </span>
         </h1>
 
         {/* Subtitle */}

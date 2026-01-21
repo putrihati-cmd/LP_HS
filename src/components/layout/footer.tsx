@@ -4,7 +4,7 @@ import { MapPin, Phone, Mail, Clock, Instagram, Facebook } from 'lucide-react';
 
 export function Footer() {
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer id="footer" className="bg-gray-900 text-white">
       <div className="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
@@ -40,7 +40,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/layanan"
+                  href="#services"
                   className="text-gray-400 transition-colors hover:text-white"
                 >
                   Layanan
@@ -48,18 +48,18 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/galeri"
+                  href="#calculator"
                   className="text-gray-400 transition-colors hover:text-white"
                 >
-                  Galeri
+                  Cek Harga
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/kontak"
+                  href="#why-us"
                   className="text-gray-400 transition-colors hover:text-white"
                 >
-                  Kontak
+                  Keunggulan
                 </Link>
               </li>
             </ul>
