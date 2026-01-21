@@ -1,10 +1,10 @@
 import {
   HeroSection,
   PromoSection,
+  MemberSection,
   ServicesSection,
   PriceCalculator,
   WhyChooseUs,
-  MemberSection,
   LocationSection,
   FAQSection,
 } from '@/components/home';
@@ -14,10 +14,10 @@ export default function HomePage() {
     <>
       <HeroSection />
       <PromoSection />
+      <MemberSection />
       <ServicesSection />
       <WhyChooseUs />
       <PriceCalculator />
-      <MemberSection />
       <FAQSection />
       <LocationSection />
     </>
