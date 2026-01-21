@@ -6,7 +6,9 @@ import { Button } from '@/components/ui';
 
 export function LocationSection() {
   const googleMapsUrl =
-    'https://www.google.com/maps/search/?api=1&query=Jl.+Riyanto+Dukuhwaluh+Purwokerto';
+    'https://www.google.com/maps/place/HS+COPY+CENTER/@-7.4146012,109.2741218,17z';
+  const googleMapsEmbed =
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.5!2d109.2741218!3d-7.4146012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e655f049b91c75d%3A0x5e8d9cd11f3df730!2sHS%20COPY%20CENTER!5e0!3m2!1sid!2sid!4v1705852858000!5m2!1sid!2sid';
 
   return (
     <section id="location" className="bg-white py-16 lg:py-20">
@@ -20,7 +22,7 @@ export function LocationSection() {
             Temukan Kami
           </h2>
           <p className="mx-auto max-w-xl text-gray-600">
-            Hanya 5 menit dari kampus UNSOED. Mudah dijangkau!
+            Dekat kampus UMP & UNSOED. Mudah dijangkau!
           </p>
         </div>
 
@@ -28,7 +30,7 @@ export function LocationSection() {
           {/* Map Embed */}
           <div className="h-[300px] overflow-hidden rounded-2xl border border-gray-200 bg-gray-100 lg:h-[400px]">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.2!2d109.24!3d-7.42!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwMjUnMTIuMCJTIDEwOcKwMTQnMjQuMCJF!5e0!3m2!1sen!2sid!4v1234567890"
+              src={googleMapsEmbed}
               width="100%"
               height="100%"
               style={{ border: 0 }}
@@ -50,12 +52,14 @@ export function LocationSection() {
                 <div>
                   <h3 className="font-bold text-gray-900">Alamat</h3>
                   <p className="text-gray-600">
-                    Jl. Riyanto, Dukuhwaluh, Kec. Kembaran
+                    Jl. Riyanto No.RT 05, Dukuhwaluh
                     <br />
-                    Kabupaten Banyumas, Jawa Tengah
+                    Kec. Kembaran, Kab. Banyumas
+                    <br />
+                    Jawa Tengah 53182
                   </p>
                   <p className="mt-1 text-sm text-gray-500">
-                    📍 Dekat kampus UMP & UNSOED
+                    📍 Dekat kampus UMP (5 menit jalan kaki)
                   </p>
                 </div>
               </div>
