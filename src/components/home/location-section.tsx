@@ -52,7 +52,7 @@ export function LocationSection() {
                 <div>
                   <h3 className="font-bold text-gray-900">Alamat</h3>
                   <p className="text-gray-600">
-                    Jl. Riyanto No.RT 05, Dukuhwaluh
+                    Gg. 2 No.7, Tegalmulya, Ledug
                     <br />
                     Kec. Kembaran, Kab. Banyumas
                     <br />
