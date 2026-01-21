@@ -36,7 +36,7 @@ export function PromoSection() {
   return (
     <section
       id="promo"
-      className="bg-gradient-to-r from-orange-500 to-red-500 py-12 lg:py-16"
+      className="bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 py-12 lg:py-16"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
@@ -58,7 +58,7 @@ export function PromoSection() {
               className="rounded-xl bg-white p-5 shadow-lg transition-all hover:-translate-y-1 hover:shadow-xl"
             >
               <div className="mb-3 flex items-center justify-between">
-                <span className="rounded-full bg-red-100 px-3 py-1 text-xs font-bold text-red-600">
+                <span className="rounded-full bg-blue-100 px-3 py-1 text-xs font-bold text-blue-700">
                   {promo.badge}
                 </span>
                 <span className="flex items-center gap-1 text-xs text-gray-500">
@@ -82,7 +82,7 @@ export function PromoSection() {
               >
                 <Button
                   size="sm"
-                  className="w-full rounded-lg bg-gray-900 text-white hover:bg-gray-800"
+                  className="w-full rounded-lg bg-blue-600 text-white hover:bg-blue-700"
                 >
                   Klaim Promo
                   <ArrowRight className="ml-2 h-4 w-4" />

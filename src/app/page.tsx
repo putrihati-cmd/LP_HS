@@ -3,10 +3,11 @@ import {
   PromoSection,
   MemberSection,
   ServicesSection,
-  PriceCalculator,
+  GallerySection,
   WhyChooseUs,
-  LocationSection,
+  PriceCalculator,
   FAQSection,
+  LocationSection,
 } from '@/components/home';
 
 export default function HomePage() {
@@ -16,6 +17,7 @@ export default function HomePage() {
       <PromoSection />
       <MemberSection />
       <ServicesSection />
+      <GallerySection />
       <WhyChooseUs />
       <PriceCalculator />
       <FAQSection />
