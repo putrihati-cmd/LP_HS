@@ -1,7 +1,15 @@
 'use client';
 
 import Link from 'next/link';
-import { MapPin, Phone, Clock, MessageCircle, ArrowUp } from 'lucide-react';
+import {
+  MapPin,
+  Phone,
+  Clock,
+  MessageCircle,
+  ArrowUp,
+  Instagram,
+  Facebook,
+} from 'lucide-react';
 import { getWhatsAppLink } from '@/lib/utils';
 
 export function Footer() {
@@ -12,7 +20,7 @@ export function Footer() {
   return (
     <footer id="footer" className="bg-gray-900 text-white">
       <div className="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           {/* Brand */}
           <div>
             <h3 className="mb-4 text-xl font-bold">HS Copy Center</h3>
@@ -35,7 +43,7 @@ export function Footer() {
             <h4 className="mb-4 font-semibold">Kontak</h4>
             <div className="space-y-3 text-sm text-gray-400">
               <div className="flex items-start gap-3">
-                <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0" />
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0" />
                 <span>Gg. 2 No.7, Tegalmulya, Ledug, Kembaran</span>
               </div>
               <div className="flex items-center gap-3">
@@ -73,6 +81,14 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  href="#member"
+                  className="transition-colors hover:text-white"
+                >
+                  Member
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="#faq"
                   className="transition-colors hover:text-white"
                 >
@@ -88,6 +104,32 @@ export function Footer() {
                 </Link>
               </li>
             </ul>
+          </div>
+
+          {/* Social Media */}
+          <div>
+            <h4 className="mb-4 font-semibold">Ikuti Kami</h4>
+            <div className="flex gap-3">
+              <Link
+                href="https://www.instagram.com/hscopycenter"
+                target="_blank"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500 text-white transition-all hover:scale-110"
+                aria-label="Instagram HS Copy Center"
+              >
+                <Instagram className="h-5 w-5" />
+              </Link>
+              <Link
+                href="https://www.facebook.com/hscopycenterr"
+                target="_blank"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-600 text-white transition-all hover:scale-110"
+                aria-label="Facebook HS Copy Center"
+              >
+                <Facebook className="h-5 w-5" />
+              </Link>
+            </div>
+            <p className="mt-4 text-sm text-gray-400">
+              Follow untuk info promo & tips!
+            </p>
           </div>
         </div>
 
