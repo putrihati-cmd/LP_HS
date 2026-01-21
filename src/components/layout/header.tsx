@@ -8,11 +8,10 @@ import { Button } from '@/components/ui';
 import { getWhatsAppLink } from '@/lib/utils';
 
 const navigation = [
-  { name: 'Beranda', href: '/' },
-  { name: 'Layanan', href: '/layanan' },
-  { name: 'Galeri', href: '/galeri' },
-  { name: 'Tentang Kami', href: '/tentang' },
-  { name: 'Kontak', href: '/kontak' },
+  { name: 'Beranda', href: '#' },
+  { name: 'Layanan', href: '#services' },
+  { name: 'Harga', href: '#calculator' },
+  { name: 'Keunggulan', href: '#why-us' },
 ];
 
 export function Header() {

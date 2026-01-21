@@ -50,7 +50,7 @@ const services = [
 
 export function ServicesSection() {
   return (
-    <section className="bg-gray-50 py-20">
+    <section id="services" className="bg-gray-50 py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-12 text-center">
