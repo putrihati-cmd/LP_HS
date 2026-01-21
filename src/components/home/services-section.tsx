@@ -14,37 +14,25 @@ const services = [
     icon: FileText,
     title: 'Fotocopy & Print',
     description:
-      'Fotocopy dan print B/W untuk dokumen, tugas, dan keperluan sehari-hari.',
-    price: 'Rp 150',
-    rating: 5,
-    href: '/layanan#fotocopy',
-  },
-  {
-    icon: Palette,
-    title: 'Print Color',
-    description:
-      'Cetak full color untuk poster, foto, presentasi, dan dokumen berwarna.',
-    price: 'Rp 2.000',
-    rating: 5,
-    href: '/layanan#print-color',
+      'High quality B/W & Color printing. Support A4, F4, A3. Kertas 70-80gsm premium.',
+    price: 'Start Rp 150',
+    href: '#calculator',
   },
   {
     icon: BookOpen,
-    title: 'Jilid Buku',
+    title: 'Book Binding',
     description:
-      'Jilid soft cover dan hard cover untuk skripsi, tesis, laporan, dan buku.',
-    price: 'Rp 5.000',
-    rating: 5,
-    href: '/layanan#jilid',
+      'Soft cover, Hard cover, Spiral, dan Skripsi binding. Pengerjaan cepat & rapi.',
+    price: 'Start Rp 5k',
+    href: '#calculator',
   },
   {
     icon: Shield,
-    title: 'Laminating',
+    title: 'Laminating & Scan',
     description:
-      'Laminating dokumen penting, sertifikat, ijazah, dan kartu identitas.',
-    price: 'Rp 5.000',
-    rating: 5,
-    href: '/layanan#laminating',
+      'Lindungi dokumen penting atau digitalkan file fisik Anda dengan resolusi tinggi.',
+    price: 'Start Rp 3k',
+    href: '#calculator',
   },
 ];
 
@@ -67,68 +55,46 @@ export function ServicesSection() {
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           {services.map(service => (
             <Card
               key={service.title}
-              className="group transition-all hover:shadow-lg"
+              className="group relative overflow-hidden border-0 bg-white shadow-xl shadow-gray-200/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/10"
             >
-              <CardContent className="p-6">
+              <div className="absolute top-0 left-0 h-1 w-full bg-gradient-to-r from-blue-500 to-indigo-500 opacity-0 transition-opacity group-hover:opacity-100" />
+              <CardContent className="flex h-full flex-col p-8">
                 {/* Icon */}
-                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-blue-100 transition-colors group-hover:bg-blue-600">
-                  <service.icon className="h-7 w-7 text-blue-600 transition-colors group-hover:text-white" />
+                <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-50 text-blue-600 transition-colors group-hover:bg-blue-600 group-hover:text-white group-hover:shadow-lg group-hover:shadow-blue-500/30">
+                  <service.icon className="h-8 w-8" />
                 </div>
 
                 {/* Title & Description */}
-                <h3 className="mb-2 text-xl font-semibold text-gray-900">
+                <h3 className="mb-3 text-2xl font-bold text-gray-900 transition-colors group-hover:text-blue-600">
                   {service.title}
                 </h3>
-                <p className="mb-4 text-sm text-gray-600">
+                <p className="mb-6 flex-grow leading-relaxed text-gray-600">
                   {service.description}
                 </p>
 
-                {/* Price & Rating */}
-                <div className="mb-4 flex items-center justify-between">
+                {/* Price & CTA */}
+                <div className="mt-auto flex items-end justify-between border-t border-gray-100 pt-6">
                   <div>
-                    <span className="text-2xl font-bold text-orange-500">
+                    <p className="text-xs font-medium tracking-wider text-gray-400 uppercase">
+                      Starts From
+                    </p>
+                    <p className="text-xl font-bold text-gray-900">
                       {service.price}
-                    </span>
-                    <span className="text-sm text-gray-400">/lembar</span>
+                    </p>
                   </div>
-                  <div className="flex items-center gap-1">
-                    {[...Array(service.rating)].map((_, i) => (
-                      <Star
-                        key={i}
-                        className="h-4 w-4 fill-yellow-400 text-yellow-400"
-                      />
-                    ))}
-                  </div>
+                  <Link href={service.href}>
+                    <div className="rounded-full bg-gray-50 p-2 text-gray-400 transition-all group-hover:bg-blue-100 group-hover:text-blue-600">
+                      <ArrowRight className="h-5 w-5" />
+                    </div>
+                  </Link>
                 </div>
-
-                {/* CTA */}
-                <Link href={service.href}>
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="w-full group-hover:border-blue-600 group-hover:bg-blue-600 group-hover:text-white"
-                  >
-                    Selengkapnya
-                    <ArrowRight className="h-4 w-4" />
-                  </Button>
-                </Link>
               </CardContent>
             </Card>
           ))}
-        </div>
-
-        {/* View All CTA */}
-        <div className="mt-10 text-center">
-          <Link href="/layanan">
-            <Button variant="primary" size="lg">
-              Lihat Semua Layanan
-              <ArrowRight className="h-5 w-5" />
-            </Button>
-          </Link>
         </div>
       </div>
     </section>
