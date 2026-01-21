@@ -1,148 +1,197 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
+import Image from 'next/image';
 import { Star, ChevronLeft, ChevronRight, Quote } from 'lucide-react';
-import { Card, CardContent } from '@/components/ui';
 
 const testimonials = [
   {
-    name: 'Rina Permata',
-    role: 'Mahasiswa UNSOED',
-    content:
-      'Print skripsi di sini cepat banget! Pagi order, siang sudah ready. Kualitas bagus dan harganya terjangkau untuk mahasiswa.',
-    rating: 5,
-    avatar: 'RP',
-  },
-  {
+    id: 1,
     name: 'Budi Santoso',
-    role: 'Pemilik Toko',
-    content:
-      'Langganan print nota dan brosur di HS Copy Center. Pelayanan ramah, hasil memuaskan, dan bisa COD ke toko saya.',
+    occupation: 'Mahasiswa UMP',
+    avatar: '/images/avatar-1.jpg',
     rating: 5,
-    avatar: 'BS',
+    text: 'Pelayanan super cepat! Skripsi saya selesai dijilid dalam 1 jam. Harga juga bersahabat untuk kantong mahasiswa.',
   },
   {
-    name: 'Dewi Anggita',
-    role: 'Event Organizer',
-    content:
-      'Untuk event besar selalu pesan di sini. Banner, poster, undangan semua bisa. Tim-nya profesional dan on-time.',
+    id: 2,
+    name: 'Siti Rahayu',
+    occupation: 'Guru SD',
+    avatar: '/images/avatar-2.jpg',
     rating: 5,
-    avatar: 'DA',
+    text: 'Kualitas print warna sangat bagus untuk bahan ajar. Sudah jadi langganan tetap lebih dari 2 tahun.',
   },
   {
-    name: 'Dr. Hendra Wijaya',
-    role: 'Dosen UMP',
-    content:
-      'Jilid hardcover untuk jurnal dan buku ajar selalu di sini. Hasil rapi, binding kuat, dan harga kompetitif.',
+    id: 3,
+    name: 'Ahmad Fauzi',
+    occupation: 'Karyawan Swasta',
+    avatar: '/images/avatar-3.jpg',
     rating: 5,
-    avatar: 'HW',
+    text: 'Upload file via WhatsApp, tinggal ambil. Praktis banget untuk yang sibuk kerja. Recommended!',
   },
   {
-    name: 'Sari Mulyani',
-    role: 'Wedding Planner',
-    content:
-      'Cetak undangan pernikahan clients saya di sini. Pilihan kertas lengkap, bisa custom design, hasilnya premium.',
+    id: 4,
+    name: 'Dewi Lestari',
+    occupation: 'Mahasiswa UNSOED',
+    avatar: '/images/avatar-4.jpg',
     rating: 5,
-    avatar: 'SM',
+    text: 'Jilid hard cover skripsi hasilnya keren banget. Dosen pembimbing juga memuji kualitasnya.',
+  },
+  {
+    id: 5,
+    name: 'Rudi Hermawan',
+    occupation: 'Pengusaha UMKM',
+    avatar: '/images/avatar-5.jpg',
+    rating: 5,
+    text: 'Cetak brosur dan kartu nama untuk usaha saya di sini. Hasilnya profesional, harga kompetitif.',
   },
 ];
 
-export function TestimonialsSection() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const prev = () => {
-    setCurrentIndex(i => (i === 0 ? testimonials.length - 1 : i - 1));
-  };
-
-  const next = () => {
-    setCurrentIndex(i => (i === testimonials.length - 1 ? 0 : i + 1));
-  };
+function AvatarPlaceholder({ name }: { name: string }) {
+  const initials = name
+    .split(' ')
+    .map(n => n[0])
+    .join('')
+    .toUpperCase()
+    .slice(0, 2);
+  const colors = [
+    'bg-blue-500',
+    'bg-orange-500',
+    'bg-green-500',
+    'bg-purple-500',
+    'bg-pink-500',
+  ];
+  const colorIndex = name.length % colors.length;
 
   return (
-    <section className="bg-white py-20">
-      <div className="container mx-auto flex flex-col items-center px-4 sm:px-6 lg:px-8">
+    <div
+      className={`flex h-16 w-16 items-center justify-center rounded-full ${colors[colorIndex]} text-xl font-bold text-white`}
+    >
+      {initials}
+    </div>
+  );
+}
+
+export function TestimonialsSection() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+
+  const nextSlide = useCallback(() => {
+    setCurrentIndex(prev => (prev + 1) % testimonials.length);
+  }, []);
+
+  const prevSlide = () => {
+    setCurrentIndex(
+      prev => (prev - 1 + testimonials.length) % testimonials.length
+    );
+  };
+
+  const goToSlide = (index: number) => {
+    setCurrentIndex(index);
+    setIsAutoPlaying(false);
+    // Resume auto-play after 10 seconds
+    setTimeout(() => setIsAutoPlaying(true), 10000);
+  };
+
+  // Auto-rotate every 5 seconds
+  useEffect(() => {
+    if (!isAutoPlaying) return;
+
+    const timer = setInterval(() => {
+      nextSlide();
+    }, 5000);
+
+    return () => clearInterval(timer);
+  }, [isAutoPlaying, nextSlide]);
+
+  const currentTestimonial = testimonials[currentIndex];
+
+  return (
+    <section className="bg-white py-20 lg:py-24">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="mb-12 text-center">
-          <span className="text-sm font-semibold tracking-wider text-blue-600 uppercase">
+        <div className="mb-16 text-center">
+          <span className="mb-4 inline-block rounded-full bg-blue-50 px-4 py-2 text-sm font-bold tracking-wider text-blue-600 uppercase">
             Testimoni
           </span>
-          <h2 className="mt-2 mb-4 text-3xl font-bold text-gray-900 sm:text-4xl">
+          <h2 className="mb-6 text-4xl font-bold text-gray-900 sm:text-5xl">
             Apa Kata Pelanggan Kami
           </h2>
-          <p className="mx-auto max-w-2xl text-gray-600">
-            Ribuan pelanggan puas dengan layanan kami. Ini adalah beberapa
-            cerita mereka.
+          <p className="mx-auto max-w-2xl text-lg text-gray-600">
+            Ratusan pelanggan puas dengan layanan kami. Berikut beberapa
+            testimoni dari mereka.
           </p>
         </div>
 
-        {/* Carousel */}
-        <div className="relative mx-auto w-full max-w-4xl">
-          <Card className="shadow-lg">
-            <CardContent className="p-8 sm:p-12">
-              {/* Quote Icon */}
-              <Quote className="mb-8 h-12 w-12 text-blue-100" />
+        {/* Testimonial Carousel */}
+        <div className="relative mx-auto max-w-4xl">
+          {/* Quote Icon */}
+          <div className="absolute -top-8 left-1/2 z-10 -translate-x-1/2">
+            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-blue-600 text-white shadow-lg">
+              <Quote className="h-8 w-8" />
+            </div>
+          </div>
 
-              {/* Content */}
-              <p className="mb-8 text-xl leading-relaxed text-gray-700">
-                &ldquo;{testimonials[currentIndex].content}&rdquo;
-              </p>
+          {/* Main Card */}
+          <div className="rounded-3xl bg-gray-50 p-8 pt-16 text-center shadow-lg sm:p-12 sm:pt-16">
+            {/* Avatar */}
+            <div className="mb-6 flex justify-center">
+              <AvatarPlaceholder name={currentTestimonial.name} />
+            </div>
 
-              {/* Author */}
-              <div className="flex items-center gap-4">
-                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-blue-600 text-lg font-bold text-white">
-                  {testimonials[currentIndex].avatar}
-                </div>
-                <div>
-                  <p className="font-semibold text-gray-900">
-                    {testimonials[currentIndex].name}
-                  </p>
-                  <p className="text-sm text-gray-500">
-                    {testimonials[currentIndex].role}
-                  </p>
-                </div>
-                <div className="ml-auto flex gap-1">
-                  {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className="h-5 w-5 fill-yellow-400 text-yellow-400"
-                    />
-                  ))}
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Navigation */}
-          <div className="mt-8 flex justify-center gap-4">
-            <button
-              onClick={prev}
-              className="rounded-full bg-gray-100 p-3 transition-colors hover:bg-gray-200"
-              aria-label="Previous testimonial"
-            >
-              <ChevronLeft className="h-6 w-6 text-gray-600" />
-            </button>
-
-            {/* Dots */}
-            <div className="flex items-center gap-2">
-              {testimonials.map((_, i) => (
-                <button
+            {/* Stars */}
+            <div className="mb-6 flex justify-center gap-1">
+              {[...Array(currentTestimonial.rating)].map((_, i) => (
+                <Star
                   key={i}
-                  onClick={() => setCurrentIndex(i)}
-                  className={`h-2 w-2 rounded-full transition-all ${
-                    i === currentIndex ? 'w-6 bg-blue-600' : 'bg-gray-300'
-                  }`}
-                  aria-label={`Go to testimonial ${i + 1}`}
+                  className="h-6 w-6 fill-yellow-400 text-yellow-400"
                 />
               ))}
             </div>
 
-            <button
-              onClick={next}
-              className="rounded-full bg-gray-100 p-3 transition-colors hover:bg-gray-200"
-              aria-label="Next testimonial"
-            >
-              <ChevronRight className="h-6 w-6 text-gray-600" />
-            </button>
+            {/* Quote */}
+            <blockquote className="mb-6 text-xl leading-relaxed text-gray-700 sm:text-2xl">
+              "{currentTestimonial.text}"
+            </blockquote>
+
+            {/* Name & Occupation */}
+            <div>
+              <p className="text-lg font-bold text-gray-900">
+                {currentTestimonial.name}
+              </p>
+              <p className="text-sm text-gray-500">
+                {currentTestimonial.occupation}
+              </p>
+            </div>
+          </div>
+
+          {/* Navigation Arrows */}
+          <button
+            onClick={prevSlide}
+            className="absolute top-1/2 left-0 flex h-12 w-12 -translate-x-4 -translate-y-1/2 items-center justify-center rounded-full bg-white text-gray-600 shadow-lg transition-all hover:bg-blue-600 hover:text-white sm:-translate-x-6"
+          >
+            <ChevronLeft className="h-6 w-6" />
+          </button>
+          <button
+            onClick={nextSlide}
+            className="absolute top-1/2 right-0 flex h-12 w-12 translate-x-4 -translate-y-1/2 items-center justify-center rounded-full bg-white text-gray-600 shadow-lg transition-all hover:bg-blue-600 hover:text-white sm:translate-x-6"
+          >
+            <ChevronRight className="h-6 w-6" />
+          </button>
+
+          {/* Navigation Dots */}
+          <div className="mt-8 flex justify-center gap-2">
+            {testimonials.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`h-3 rounded-full transition-all ${
+                  index === currentIndex
+                    ? 'w-8 bg-blue-600'
+                    : 'w-3 bg-gray-300 hover:bg-gray-400'
+                }`}
+              />
+            ))}
           </div>
         </div>
       </div>

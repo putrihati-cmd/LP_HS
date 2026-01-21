@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Poppins, Open_Sans } from 'next/font/google';
+import { Poppins, Inter } from 'next/font/google';
 import './globals.css';
 import { Header, Footer, WhatsAppFloat } from '@/components/layout';
 
@@ -10,10 +10,10 @@ const poppins = Poppins({
   display: 'swap',
 });
 
-const openSans = Open_Sans({
+const inter = Inter({
   subsets: ['latin'],
-  weight: ['400', '600', '700'],
-  variable: '--font-opensans',
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-inter',
   display: 'swap',
 });
 
@@ -61,7 +61,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id" className={`${poppins.variable} ${openSans.variable}`}>
+    <html lang="id" className={`${poppins.variable} ${inter.variable}`}>
       <body className="font-sans antialiased">
         <Header />
         <main className="min-h-screen pt-16">{children}</main>
