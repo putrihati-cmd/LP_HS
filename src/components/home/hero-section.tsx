@@ -1,148 +1,89 @@
 'use client';
 
 import Link from 'next/link';
-import { Upload, Calculator, FileText } from 'lucide-react';
+import { Send, Calculator, FileText } from 'lucide-react';
 import { Button } from '@/components/ui';
 import { getWhatsAppLink } from '@/lib/utils';
 
 export function HeroSection() {
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden pt-20">
-      {/* Background Gradient - Blue to Soft Orange */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-blue-700 to-orange-500/30" />
-
-      {/* Background Pattern - Dots */}
-      <div className="absolute inset-0 opacity-10">
+    <section className="relative flex min-h-[80vh] items-center justify-center overflow-hidden bg-gray-900 pt-20">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-5">
         <div
           className="absolute inset-0"
           style={{
             backgroundImage:
               'radial-gradient(circle, white 1px, transparent 1px)',
-            backgroundSize: '30px 30px',
+            backgroundSize: '24px 24px',
           }}
-        />
-      </div>
-
-      {/* Animated Blobs */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="animate-float absolute top-20 left-10 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
-        <div
-          className="animate-float absolute right-10 bottom-20 h-96 w-96 rounded-full bg-orange-400/20 blur-3xl"
-          style={{ animationDelay: '1.5s' }}
         />
       </div>
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center sm:px-6 lg:px-8">
-        {/* Operating Hours Badge */}
-        <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/10 px-6 py-3 backdrop-blur-md">
-          <span className="relative flex h-3 w-3">
+        {/* Badge */}
+        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-gray-700 bg-gray-800 px-4 py-2">
+          <span className="relative flex h-2 w-2">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
-            <span className="relative inline-flex h-3 w-3 rounded-full bg-green-500"></span>
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
           </span>
-          <span className="text-sm font-medium tracking-wide text-white">
-            Buka Setiap Hari 06:30 - 21:30 WIB
-          </span>
+          <span className="text-sm text-gray-300">Buka 07:00 - 21:00 WIB</span>
         </div>
 
-        {/* Main Headline */}
-        <h1 className="mb-6 text-5xl leading-tight font-extrabold tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl">
-          CETAK TANPA
+        {/* Headline */}
+        <h1 className="mb-4 text-4xl leading-tight font-bold text-white sm:text-5xl lg:text-6xl">
+          Fotocopy & Cetak
           <br />
-          <span className="bg-gradient-to-r from-orange-400 via-yellow-400 to-orange-300 bg-clip-text text-transparent">
-            ANTRI
-          </span>
+          <span className="text-gray-400">Cepat, Rapi, Berkualitas</span>
         </h1>
 
-        {/* Sub-headline */}
-        <p className="mx-auto mb-12 max-w-3xl text-xl leading-relaxed font-light text-blue-100 sm:text-2xl">
-          Layanan fotocopy, print, dan jilid profesional di Purwokerto.
-          <br className="hidden sm:block" />
-          Kirim file dari kasur, ambil di toko saat sudah siap.
+        {/* Subheadline */}
+        <p className="mx-auto mb-8 max-w-xl text-lg text-gray-400">
+          Kirim file via WhatsApp, tinggal ambil. Melayani mahasiswa, pelajar,
+          dan umum di Purwokerto.
         </p>
 
-        {/* 3 CTA Buttons */}
-        <div className="flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
-          {/* Upload File Button */}
+        {/* CTA Buttons */}
+        <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Link
-            href={getWhatsAppLink('Halo, saya mau upload file untuk diprint')}
+            href={getWhatsAppLink('Halo, saya mau kirim file untuk dicetak')}
             target="_blank"
           >
             <Button
               size="lg"
-              className="h-14 min-w-[200px] rounded-full bg-orange-500 px-8 text-lg font-bold text-white shadow-lg shadow-orange-500/30 transition-all hover:scale-105 hover:bg-orange-600 hover:shadow-orange-500/50"
+              className="h-12 min-w-[180px] rounded-full bg-white px-6 font-bold text-gray-900 transition-all hover:bg-gray-100"
             >
-              <Upload className="mr-2 h-6 w-6" />
-              Upload File
+              <Send className="mr-2 h-5 w-5" />
+              Kirim File
             </Button>
           </Link>
 
-          {/* Get Quote Button */}
-          <Link
-            href="#calculator"
-            onClick={e => {
-              e.preventDefault();
-              document
-                .querySelector('#calculator')
-                ?.scrollIntoView({ behavior: 'smooth' });
-            }}
-          >
+          <Link href="#calculator">
             <Button
               size="lg"
-              className="h-14 min-w-[200px] rounded-full bg-white px-8 text-lg font-bold text-blue-600 shadow-lg transition-all hover:scale-105 hover:bg-gray-100"
+              className="h-12 min-w-[180px] rounded-full border border-gray-600 bg-transparent px-6 font-bold text-white transition-all hover:bg-gray-800"
             >
-              <Calculator className="mr-2 h-6 w-6" />
+              <Calculator className="mr-2 h-5 w-5" />
               Hitung Harga
             </Button>
           </Link>
-
-          {/* View Pricing Button */}
-          <Link
-            href="#services"
-            onClick={e => {
-              e.preventDefault();
-              document
-                .querySelector('#services')
-                ?.scrollIntoView({ behavior: 'smooth' });
-            }}
-          >
-            <Button
-              size="lg"
-              className="h-14 min-w-[200px] rounded-full border-2 border-white/30 bg-white/10 px-8 text-lg font-bold text-white backdrop-blur-sm transition-all hover:scale-105 hover:bg-white/20"
-            >
-              <FileText className="mr-2 h-6 w-6" />
-              Lihat Layanan
-            </Button>
-          </Link>
         </div>
 
-        {/* Stats Section */}
-        <div className="mt-20 grid grid-cols-2 gap-6 border-t border-white/10 pt-10 sm:grid-cols-4">
-          {[
-            { label: 'Pelanggan Puas', value: '10.000+' },
-            { label: 'Halaman Tercetak', value: '1 Juta+' },
-            { label: 'Tahun Pengalaman', value: '5+' },
-            { label: 'Rating', value: '4.9/5' },
-          ].map((stat, i) => (
-            <div key={i} className="group text-center">
-              <div
-                className="animate-count-up text-3xl font-bold text-white transition-colors group-hover:text-orange-400 sm:text-4xl"
-                style={{ animationDelay: `${i * 0.1}s` }}
-              >
-                {stat.value}
-              </div>
-              <div className="mt-1 text-sm font-medium tracking-wider text-blue-200 uppercase">
-                {stat.label}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="flex h-12 w-7 justify-center rounded-full border-2 border-white/50 pt-2">
-          <div className="h-3 w-1 animate-pulse rounded-full bg-white/70" />
+        {/* Quick Info */}
+        <div className="mt-12 flex flex-wrap items-center justify-center gap-6 text-sm text-gray-500">
+          <div className="flex items-center gap-2">
+            <FileText className="h-4 w-4" />
+            <span>Print dari WA / Flashdisk</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <span>•</span>
+            <span>A4, F4, A3</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <span>•</span>
+            <span>Mulai Rp 300/lembar</span>
+          </div>
         </div>
       </div>
     </section>

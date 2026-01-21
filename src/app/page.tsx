@@ -3,8 +3,6 @@ import {
   ServicesSection,
   PriceCalculator,
   WhyChooseUs,
-  TestimonialsSection,
-  CTASection,
 } from '@/components/home';
 
 export default function HomePage() {
@@ -12,10 +10,8 @@ export default function HomePage() {
     <>
       <HeroSection />
       <ServicesSection />
-      <PriceCalculator />
       <WhyChooseUs />
-      <TestimonialsSection />
-      <CTASection />
+      <PriceCalculator />
     </>
   );
 }
