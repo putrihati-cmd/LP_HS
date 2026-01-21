@@ -4,6 +4,7 @@ import {
   MemberSection,
   ServicesSection,
   GallerySection,
+  TestimonialsSection,
   WhyChooseUs,
   PriceCalculator,
   FAQSection,
@@ -18,6 +19,7 @@ export default function HomePage() {
       <MemberSection />
       <ServicesSection />
       <GallerySection />
+      <TestimonialsSection />
       <WhyChooseUs />
       <PriceCalculator />
       <FAQSection />

@@ -3,6 +3,7 @@ export { PromoSection } from './promo-section';
 export { MemberSection } from './member-section';
 export { ServicesSection } from './services-section';
 export { GallerySection } from './gallery-section';
+export { TestimonialsSection } from './testimonials-section';
 export { PriceCalculator } from './price-calculator';
 export { WhyChooseUs } from './why-choose-us';
 export { LocationSection } from './location-section';
