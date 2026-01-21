@@ -1,5 +1,6 @@
 import {
   HeroSection,
+  PanicButton,
   PromoSection,
   ServicesSection,
   PriceCalculator,
@@ -16,28 +17,31 @@ export default function HomePage() {
       {/* 1. HERO - Solusi instan */}
       <HeroSection />
 
-      {/* 2. PROMO - Trigger impulse */}
+      {/* 2. PANIC BUTTON - Untuk deadline darurat */}
+      <PanicButton />
+
+      {/* 3. PROMO - Trigger impulse */}
       <PromoSection />
 
-      {/* 3. SERVICES - Apa yang bisa dikerjakan */}
+      {/* 4. SERVICES - Apa yang bisa dikerjakan */}
       <ServicesSection />
 
-      {/* 4. CALCULATOR - Transparansi harga = Kepercayaan */}
+      {/* 5. CALCULATOR - Transparansi harga = Kepercayaan */}
       <PriceCalculator />
 
-      {/* 5. TESTIMONIALS - Social proof */}
+      {/* 6. TESTIMONIALS - Social proof */}
       <TestimonialsSection />
 
-      {/* 6. WHY US - Keunggulan */}
+      {/* 7. WHY US - Keunggulan */}
       <WhyChooseUs />
 
-      {/* 7. FAQ - Jawab keraguan */}
+      {/* 8. FAQ - Jawab keraguan */}
       <FAQSection />
 
-      {/* 8. LOCATION - Di mana? */}
+      {/* 9. LOCATION - Di mana? */}
       <LocationSection />
 
-      {/* 9. MEMBER - Retention (BUKAN acquisition) */}
+      {/* 10. MEMBER - Retention (BUKAN acquisition) */}
       <MemberSection />
     </>
   );
