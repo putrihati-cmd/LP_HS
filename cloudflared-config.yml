@@ -1,0 +1,26 @@
+tunnel: 54ccd966-5b4c-4c0c-85ae-805e1fb20cfb
+credentials-file: /etc/cloudflared/54ccd966-5b4c-4c0c-85ae-805e1fb20cfb.json
+
+ingress:
+  - hostname: hscopycenter.site
+    service: http://localhost:8081
+
+  - hostname: www.hscopycenter.site
+    service: http://localhost:8081
+
+  - hostname: kasir.hscopycenter.site
+    service: http://localhost:8080
+
+  - hostname: n8n.hscopycenter.site
+    service: http://localhost:5678
+
+  - hostname: waha.hscopycenter.site
+    service: http://localhost:3000
+
+  - hostname: docker.hscopycenter.site
+    service: http://localhost:9000
+
+  - hostname: produk.hscopycenter.site
+    service: http://localhost:80
+
+  - service: http_status:404
