@@ -2,6 +2,7 @@ export { HeroSection } from './hero-section';
 export { PanicButton } from './panic-button';
 export { PromoSection } from './promo-section';
 export { ServicesSection } from './services-section';
+export { UploadSection } from './upload-section';
 export { PriceCalculator } from './price-calculator';
 export { TestimonialsSection } from './testimonials-section';
 export { WhyChooseUs } from './why-choose-us';

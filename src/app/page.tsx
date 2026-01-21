@@ -3,6 +3,7 @@ import {
   PanicButton,
   PromoSection,
   ServicesSection,
+  UploadSection,
   PriceCalculator,
   TestimonialsSection,
   WhyChooseUs,
@@ -26,22 +27,25 @@ export default function HomePage() {
       {/* 4. SERVICES - Apa yang bisa dikerjakan */}
       <ServicesSection />
 
-      {/* 5. CALCULATOR - Transparansi harga = Kepercayaan */}
+      {/* 5. UPLOAD - Kirim file langsung */}
+      <UploadSection />
+
+      {/* 6. CALCULATOR - Transparansi harga = Kepercayaan */}
       <PriceCalculator />
 
-      {/* 6. TESTIMONIALS - Social proof */}
+      {/* 7. TESTIMONIALS - Social proof */}
       <TestimonialsSection />
 
-      {/* 7. WHY US - Keunggulan */}
+      {/* 8. WHY US - Keunggulan */}
       <WhyChooseUs />
 
-      {/* 8. FAQ - Jawab keraguan */}
+      {/* 9. FAQ - Jawab keraguan */}
       <FAQSection />
 
-      {/* 9. LOCATION - Di mana? */}
+      {/* 10. LOCATION - Di mana? */}
       <LocationSection />
 
-      {/* 10. MEMBER - Retention (BUKAN acquisition) */}
+      {/* 11. MEMBER - Retention (BUKAN acquisition) */}
       <MemberSection />
     </>
   );
