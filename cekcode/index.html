@@ -1,0 +1,1432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KK Printing - Professional Printing Services in Kota Kinabalu</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #334155 50%, #475569 75%, #64748b 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-gradient::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(59, 130, 246, 0.1) 0%, rgba(147, 51, 234, 0.1) 100%);
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        
+        .floating-element {
+            position: absolute;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .floating-element:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .floating-element:nth-child(2) {
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+        
+        .floating-element:nth-child(3) {
+            bottom: 30%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+        
+        .service-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid #e5e7eb;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        
+        .service-card:hover::before {
+            left: 100%;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(59, 130, 246, 0.15);
+            border-color: #3b82f6;
+        }
+        
+        .service-icon {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover .service-icon {
+            background: linear-gradient(135deg, #1d4ed8, #1e40af);
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #1d4ed8, #1e40af);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+        }
+        
+        .navbar-sticky {
+            backdrop-filter: blur(15px);
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .navbar-default {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .contact-info-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            border-left: 4px solid #3b82f6;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-info-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+        }
+        
+        .footer-gradient {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+        }
+        
+        .stats-counter {
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .testimonial-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .portfolio-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.8), rgba(29, 78, 216, 0.8));
+            opacity: 0;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            .service-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .stats-counter {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .scroll-smooth {
+            scroll-behavior: smooth;
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .typing-effect {
+            border-right: 2px solid #3b82f6;
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { border-color: #3b82f6; }
+            51%, 100% { border-color: transparent; }
+        }
+    </style>
+</head>
+<body class="scroll-smooth">
+    <!-- Header Navigation -->
+    <nav class="fixed w-full top-0 z-50 transition-all duration-300 navbar-default" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="flex items-center space-x-3">
+                        <div class="bg-gradient-to-br from-blue-600 to-blue-800 p-3 rounded-xl shadow-lg">
+                            <i class="fas fa-print text-white text-2xl"></i>
+                        </div>
+                        <div>
+                            <h1 class="text-2xl font-bold text-gray-800">KK Printing</h1>
+                            <p class="text-sm text-gray-600 font-medium">Professional Excellence</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-blue-600 font-medium transition-all duration-300 relative group">
+                        Home
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#services" class="text-gray-700 hover:text-blue-600 font-medium transition-all duration-300 relative group">
+                        Services
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#portfolio" class="text-gray-700 hover:text-blue-600 font-medium transition-all duration-300 relative group">
+                        Portfolio
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#about" class="text-gray-700 hover:text-blue-600 font-medium transition-all duration-300 relative group">
+                        About
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#contact" class="btn-primary text-white px-6 py-3 rounded-xl font-semibold relative overflow-hidden">
+                        Get Quote
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-blue-600 transition-colors">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200 rounded-b-xl shadow-lg">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <a href="#home" class="block px-3 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg font-medium transition-all">Home</a>
+                    <a href="#services" class="block px-3 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg font-medium transition-all">Services</a>
+                    <a href="#portfolio" class="block px-3 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg font-medium transition-all">Portfolio</a>
+                    <a href="#about" class="block px-3 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg font-medium transition-all">About</a>
+                    <a href="#contact" class="block px-3 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg font-medium transition-all">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient text-white py-20 pt-32 min-h-screen flex items-center relative">
+        <div class="floating-elements">
+            <div class="floating-element text-6xl">
+                <i class="fas fa-print"></i>
+            </div>
+            <div class="floating-element text-4xl">
+                <i class="fas fa-file-alt"></i>
+            </div>
+            <div class="floating-element text-5xl">
+                <i class="fas fa-palette"></i>
+            </div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 hero-content">
+            <div class="text-center">
+                <div class="mb-8">
+                    <span class="inline-block bg-blue-600 bg-opacity-20 text-blue-200 px-6 py-2 rounded-full text-sm font-semibold mb-6 border border-blue-400 border-opacity-30">
+                        <i class="fas fa-award mr-2"></i>
+                        Trusted by 1000+ Customers in Sabah
+                    </span>
+                </div>
+                
+                <h1 class="hero-title text-4xl md:text-7xl font-black mb-8 leading-tight">
+                    Professional Printing<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-purple-300 typing-effect">
+                        Excellence
+                    </span><br>
+                    <span class="text-blue-200 text-3xl md:text-5xl font-bold">in Kota Kinabalu</span>
+                </h1>
+                
+                <p class="text-xl md:text-2xl mb-12 text-blue-100 max-w-4xl mx-auto leading-relaxed">
+                    Transform your ideas into stunning prints. From premium business cards to eye-catching banners, 
+                    we deliver exceptional quality that makes your brand stand out.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-6 justify-center mb-16">
+                    <a href="#services" class="btn-primary text-white px-10 py-5 rounded-xl text-lg font-bold inline-flex items-center justify-center group">
+                        <i class="fas fa-rocket mr-3 group-hover:animate-bounce"></i>
+                        Explore Our Services
+                        <i class="fas fa-arrow-right ml-3 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                    <a href="#contact" class="bg-white bg-opacity-10 backdrop-blur-sm text-white px-10 py-5 rounded-xl text-lg font-bold hover:bg-opacity-20 transition-all duration-300 inline-flex items-center justify-center border border-white border-opacity-20">
+                        <i class="fas fa-phone mr-3"></i>
+                        Get Instant Quote
+                    </a>
+                </div>
+                
+                <!-- Stats Section -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16">
+                    <div class="text-center">
+                        <div class="stats-counter mb-2" data-count="1000">0</div>
+                        <p class="text-blue-200 font-semibold">Happy Customers</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="stats-counter mb-2" data-count="50000">0</div>
+                        <p class="text-blue-200 font-semibold">Projects Completed</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="stats-counter mb-2" data-count="15">0</div>
+                        <p class="text-blue-200 font-semibold">Years Experience</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="stats-counter mb-2" data-count="24">0</div>
+                        <p class="text-blue-200 font-semibold">Hour Support</p>
+                    </div>
+                </div>
+                
+                <div class="mt-16">
+                    <div class="bg-white bg-opacity-10 backdrop-blur-sm p-8 rounded-2xl border border-white border-opacity-20 max-w-md mx-auto pulse-animation">
+                        <p class="text-blue-100 mb-4 font-medium">
+                            <i class="fas fa-phone-alt mr-2 text-blue-300"></i>
+                            Call for immediate assistance:
+                        </p>
+                        <a href="tel:+60138507607" class="text-3xl font-black text-white hover:text-blue-200 transition-colors block">
+                            +60 13-850 7607
+                        </a>
+                        <p class="text-blue-200 text-sm mt-2">Available Mon-Fri, 9AM-6PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>    <!-- Services Section -->
+    <section id="services" class="py-24 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20 fade-in-up">
+                <span class="inline-block bg-blue-600 text-white px-6 py-2 rounded-full text-sm font-semibold mb-6">
+                    <i class="fas fa-star mr-2"></i>
+                    Premium Services
+                </span>
+                <h2 class="text-5xl font-black text-gray-800 mb-6">Our Printing Solutions</h2>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                    Discover our comprehensive range of professional printing services designed to elevate your brand 
+                    and meet all your business and personal printing needs with unmatched quality.
+                </p>
+            </div>
+            
+            <div class="service-grid grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mb-16">
+                <!-- Business Cards & Stationery -->
+                <div class="service-card bg-white p-8 rounded-2xl text-center fade-in-up">
+                    <div class="service-icon w-20 h-20 mx-auto mb-6 rounded-2xl flex items-center justify-center">
+                        <i class="fas fa-id-card text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Business Cards & Stationery</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Create a lasting first impression with our premium business cards, letterheads, and corporate stationery designed to reflect your professional image.</p>
+                    <div class="bg-blue-50 p-4 rounded-xl mb-6">
+                        <ul class="text-sm text-gray-700 space-y-2 text-left">
+                            <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i>Premium card stock options</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i>Custom design consultation</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i>Matte, glossy & textured finishes</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i>Same-day rush service</li>
+                        </ul>
+                    </div>
+                    <div class="text-blue-600 font-bold text-lg">Starting from RM 50</div>
+                </div>
+                
+                <!-- Flyers & Brochures -->
+                <div class="service-card bg-white p-8 rounded-2xl text-center fade-in-up">
+                    <div class="service-icon w-20 h-20 mx-auto mb-6 rounded-2xl flex items-center justify-center">
+                        <i class="fas fa-file-alt text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Flyers & Brochures</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Captivate your audience with vibrant, eye-catching promotional materials that effectively communicate your message and drive engagement.</p>
+                    <div class="bg-blue-50 p-4 rounded-xl mb-6">
+                        <ul class="text-sm text-gray-700 space-y-2 text-left">
+                            <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i>Full-color HD printing</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i>Multiple paper weights</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i>Bi-fold, tri-fold options</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i>Bulk order discounts</li>
+                        </ul>
+                    </div>
+                    <div class="text-blue-600 font-bold text-lg">Starting from RM 30</div>
+                </div>
+                
+                <!-- Banners & Signage -->
+                <div class="service-card bg-white p-8 rounded-2xl text-center fade-in-up">
+                    <div class="service-icon w-20 h-20 mx-auto mb-6 rounded-2xl flex items-center justify-center">
+                        <i class="fas fa-flag text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Banners & Signage</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Make a bold statement with our large format printing solutions perfect for events, promotions, and permanent business signage.</p>
+                    <div class="bg-blue-50 p-4 rounded-xl mb-6">
+                        <ul class="text-sm text-gray-700 space-y-2 text-left">
+                            <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i>Weather-resistant materials</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i>Custom sizes up to 10ft</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i>Vinyl, fabric & mesh options</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i>Installation service available</li>
+                        </ul>
+                    </div>
+                    <div class="text-blue-600 font-bold text-lg">Starting from RM 80</div>
+                </div>
+                
+                <!-- Document Printing -->
+                <div class="service-card bg-white p-8 rounded-2xl text-center fade-in-up">
+                    <div class="service-icon w-20 h-20 mx-auto mb-6 rounded-2xl flex items-center justify-center">
+                        <i class="fas fa-copy text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Document Printing</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Professional document printing services for reports, manuals, presentations, and official documents with superior quality and precision.</p>
+                    <div class="bg-blue-50 p-4 rounded-xl mb-6">
+                        <ul class="text-sm text-gray-700 space-y-2 text-left">
+                            <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i>B&W and full-color options</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i>Spiral, comb & perfect binding</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i>Volume pricing available</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i>Digital & offset printing</li>
+                        </ul>
+                    </div>
+                    <div class="text-blue-600 font-bold text-lg">Starting from RM 0.10/page</div>
+                </div>
+                
+                <!-- Marketing Materials -->
+                <div class="service-card bg-white p-8 rounded-2xl text-center fade-in-up">
+                    <div class="service-icon w-20 h-20 mx-auto mb-6 rounded-2xl flex items-center justify-center">
+                        <i class="fas fa-bullhorn text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Marketing Materials</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Complete marketing collateral solutions including posters, catalogs, newsletters, and promotional items to boost your brand visibility.</p>
+                    <div class="bg-blue-50 p-4 rounded-xl mb-6">
+                        <ul class="text-sm text-gray-700 space-y-2 text-left">
+                            <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i>Creative design support</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i>UV coating & lamination</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i>48-hour turnaround</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i>Campaign package deals</li>
+                        </ul>
+                    </div>
+                    <div class="text-blue-600 font-bold text-lg">Starting from RM 100</div>
+                </div>
+                
+                <!-- Custom Printing Solutions -->
+                <div class="service-card bg-white p-8 rounded-2xl text-center fade-in-up">
+                    <div class="service-icon w-20 h-20 mx-auto mb-6 rounded-2xl flex items-center justify-center">
+                        <i class="fas fa-cogs text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Custom Solutions</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Specialized printing services tailored to your unique requirements and specifications, no project too complex or unusual.</p>
+                    <div class="bg-blue-50 p-4 rounded-xl mb-6">
+                        <ul class="text-sm text-gray-700 space-y-2 text-left">
+                            <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i>Free consultation included</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i>Specialty substrate printing</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i>Unique format solutions</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i>Project management support</li>
+                        </ul>
+                    </div>
+                    <div class="text-blue-600 font-bold text-lg">Custom Quote</div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <div class="bg-gradient-to-r from-blue-600 to-purple-600 p-8 rounded-2xl shadow-2xl max-w-4xl mx-auto">
+                    <h3 class="text-3xl font-bold text-white mb-4">Ready to Start Your Project?</h3>
+                    <p class="text-blue-100 mb-6 text-lg">Get a personalized quote within 30 minutes. Our experts are standing by to help bring your vision to life.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="#contact" class="bg-white text-blue-600 px-8 py-4 rounded-xl text-lg font-bold inline-flex items-center justify-center hover:shadow-lg transition-all">
+                            <i class="fas fa-calculator mr-3"></i>
+                            Get Free Quote
+                        </a>
+                        <a href="tel:+60138507607" class="bg-blue-800 text-white px-8 py-4 rounded-xl text-lg font-bold inline-flex items-center justify-center hover:bg-blue-900 transition-all">
+                            <i class="fas fa-phone mr-3"></i>
+                            Call Now: +60 13-850 7607
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20 fade-in-up">
+                <span class="inline-block bg-blue-600 text-white px-6 py-2 rounded-full text-sm font-semibold mb-6">
+                    <i class="fas fa-palette mr-2"></i>
+                    Our Work
+                </span>
+                <h2 class="text-5xl font-black text-gray-800 mb-6">Portfolio Showcase</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Explore some of our finest work and see how we've helped businesses across Sabah achieve their printing goals.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <!-- Portfolio Item 1 -->
+                <div class="portfolio-item bg-gray-200 aspect-square rounded-2xl overflow-hidden fade-in-up">
+                    <div class="w-full h-full bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
+                        <div class="text-center text-blue-600">
+                            <i class="fas fa-id-card text-6xl mb-4"></i>
+                            <p class="font-bold text-lg">Premium Business Cards</p>
+                            <p class="text-sm">Luxury corporate designs</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-overlay">
+                        <div class="text-center text-white">
+                            <h4 class="text-xl font-bold mb-2">Corporate Identity Suite</h4>
+                            <p class="mb-4">Complete branding package for law firm</p>
+                            <button class="bg-white text-blue-600 px-6 py-2 rounded-lg font-semibold hover:shadow-lg transition-all">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 2 -->
+                <div class="portfolio-item bg-gray-200 aspect-square rounded-2xl overflow-hidden fade-in-up">
+                    <div class="w-full h-full bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
+                        <div class="text-center text-blue-600">
+                            <i class="fas fa-flag text-6xl mb-4"></i>
+                            <p class="font-bold text-lg">Event Banners</p>
+                            <p class="text-sm">Large format displays</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-overlay">
+                        <div class="text-center text-white">
+                            <h4 class="text-xl font-bold mb-2">Festival Signage</h4>
+                            <p class="mb-4">Sabah Cultural Festival banners & displays</p>
+                            <button class="bg-white text-blue-600 px-6 py-2 rounded-lg font-semibold hover:shadow-lg transition-all">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 3 -->
+                <div class="portfolio-item bg-gray-200 aspect-square rounded-2xl overflow-hidden fade-in-up">
+                    <div class="w-full h-full bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
+                        <div class="text-center text-blue-600">
+                            <i class="fas fa-file-alt text-6xl mb-4"></i>
+                            <p class="font-bold text-lg">Marketing Brochures</p>
+                            <p class="text-sm">Resort & hospitality</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-overlay">
+                        <div class="text-center text-white">
+                            <h4 class="text-xl font-bold mb-2">Tourism Collateral</h4>
+                            <p class="mb-4">Resort marketing materials & brochures</p>
+                            <button class="bg-white text-blue-600 px-6 py-2 rounded-lg font-semibold hover:shadow-lg transition-all">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 4 -->
+                <div class="portfolio-item bg-gray-200 aspect-square rounded-2xl overflow-hidden fade-in-up">
+                    <div class="w-full h-full bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
+                        <div class="text-center text-blue-600">
+                            <i class="fas fa-book text-6xl mb-4"></i>
+                            <p class="font-bold text-lg">Annual Reports</p>
+                            <p class="text-sm">Corporate publications</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-overlay">
+                        <div class="text-center text-white">
+                            <h4 class="text-xl font-bold mb-2">Corporate Reports</h4>
+                            <p class="mb-4">Professional binding & premium finishes</p>
+                            <button class="bg-white text-blue-600 px-6 py-2 rounded-lg font-semibold hover:shadow-lg transition-all">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 5 -->
+                <div class="portfolio-item bg-gray-200 aspect-square rounded-2xl overflow-hidden fade-in-up">
+                    <div class="w-full h-full bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
+                        <div class="text-center text-blue-600">
+                            <i class="fas fa-store text-6xl mb-4"></i>
+                            <p class="font-bold text-lg">Retail Signage</p>
+                            <p class="text-sm">Shop displays & POS</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-overlay">
+                        <div class="text-center text-white">
+                            <h4 class="text-xl font-bold mb-2">Retail Campaign</h4>
+                            <p class="mb-4">Shopping mall promotional displays</p>
+                            <button class="bg-white text-blue-600 px-6 py-2 rounded-lg font-semibold hover:shadow-lg transition-all">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 6 -->
+                <div class="portfolio-item bg-gray-200 aspect-square rounded-2xl overflow-hidden fade-in-up">
+                    <div class="w-full h-full bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
+                        <div class="text-center text-blue-600">
+                            <i class="fas fa-graduation-cap text-6xl mb-4"></i>
+                            <p class="font-bold text-lg">Educational Materials</p>
+                            <p class="text-sm">School & university prints</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-overlay">
+                        <div class="text-center text-white">
+                            <h4 class="text-xl font-bold mb-2">Academic Publications</h4>
+                            <p class="mb-4">University thesis & research materials</p>
+                            <button class="bg-white text-blue-600 px-6 py-2 rounded-lg font-semibold hover:shadow-lg transition-all">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <a href="#contact" class="btn-primary text-white px-10 py-4 rounded-xl text-lg font-bold inline-flex items-center">
+                    <i class="fas fa-plus mr-3"></i>
+                    Start Your Project
+                    <i class="fas fa-arrow-right ml-3"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-24 bg-gradient-to-br from-blue-50 to-indigo-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20 fade-in-up">
+                <span class="inline-block bg-blue-600 text-white px-6 py-2 rounded-full text-sm font-semibold mb-6">
+                    <i class="fas fa-heart mr-2"></i>
+                    Customer Love
+                </span>
+                <h2 class="text-5xl font-black text-gray-800 mb-6">What Our Clients Say</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Don't just take our word for it. Here's what businesses across Sabah say about our printing services.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card p-8 rounded-2xl fade-in-up">
+                    <div class="flex items-center mb-6">
+                        <div class="flex text-blue-400 mr-4">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-gray-500 text-sm">5.0 out of 5</span>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic leading-relaxed">
+                        "Exceptional quality and lightning-fast service! KK Printing delivered our corporate materials exactly on time for our important client presentation. Highly recommended!"
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            SM
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gray-800">Sarah Lim</p>
+                            <p class="text-gray-500 text-sm">Marketing Director, TechCorp Sabah</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card p-8 rounded-2xl fade-in-up">
+                    <div class="flex items-center mb-6">
+                        <div class="flex text-blue-400 mr-4">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-gray-500 text-sm">5.0 out of 5</span>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic leading-relaxed">
+                        "Been using KK Printing for 3 years now. Their attention to detail and customer service is unmatched. They always go above and beyond our expectations."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            RA
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gray-800">Rahman Ahmad</p>
+                            <p class="text-gray-500 text-sm">Owner, Borneo Trading Sdn Bhd</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card p-8 rounded-2xl fade-in-up">
+                    <div class="flex items-center mb-6">
+                        <div class="flex text-blue-400 mr-4">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-gray-500 text-sm">5.0 out of 5</span>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic leading-relaxed">
+                        "The best printing service in KK! Beautiful banner prints for our restaurant opening. Quality is superb and prices are very competitive. Thank you!"
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            JW
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gray-800">Jenny Wong</p>
+                            <p class="text-gray-500 text-sm">Restaurant Owner, Flavor Paradise</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>    <!-- About Section -->
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="fade-in-up">
+                    <span class="inline-block bg-blue-600 text-white px-6 py-2 rounded-full text-sm font-semibold mb-6">
+                        <i class="fas fa-building mr-2"></i>
+                        About Us
+                    </span>
+                    <h2 class="text-5xl font-black text-gray-800 mb-8">Your Trusted Printing Partner in Sabah</h2>
+                    <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                        For over 15 years, KK Printing has been the cornerstone of professional printing services in Kota Kinabalu. 
+                        We've built our reputation on delivering exceptional quality, reliability, and personalized service that 
+                        exceeds our clients' expectations.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-10 leading-relaxed">
+                        From humble beginnings as a small family business, we've grown to become Sabah's most trusted printing 
+                        partner, serving everyone from individual customers to major corporations across Malaysia. Our commitment 
+                        to innovation, quality, and customer satisfaction drives everything we do.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+                        <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl">
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-blue-600 p-3 rounded-xl">
+                                    <i class="fas fa-award text-white text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 text-lg mb-2">Premium Quality</h4>
+                                    <p class="text-gray-600 text-sm leading-relaxed">State-of-the-art equipment and rigorous quality control ensure every print meets our exacting standards.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl">
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-blue-600 p-3 rounded-xl">
+                                    <i class="fas fa-rocket text-white text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 text-lg mb-2">Fast Delivery</h4>
+                                    <p class="text-gray-600 text-sm leading-relaxed">Rush orders and same-day service available. We understand deadlines matter in business.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl">
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-blue-600 p-3 rounded-xl">
+                                    <i class="fas fa-users text-white text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 text-lg mb-2">Local Expertise</h4>
+                                    <p class="text-gray-600 text-sm leading-relaxed">Deep understanding of Sabah's market needs and cultural nuances for effective communication.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl">
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-blue-600 p-3 rounded-xl">
+                                    <i class="fas fa-headset text-white text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 text-lg mb-2">Dedicated Support</h4>
+                                    <p class="text-gray-600 text-sm leading-relaxed">Personal account managers and 24/7 customer support for all your printing needs.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#contact" class="btn-primary text-white px-8 py-4 rounded-xl text-lg font-bold inline-flex items-center justify-center">
+                            <i class="fas fa-comments mr-3"></i>
+                            Let's Discuss Your Project
+                        </a>
+                        <a href="tel:+60138507607" class="bg-gray-100 text-gray-800 px-8 py-4 rounded-xl text-lg font-bold hover:bg-gray-200 transition-all inline-flex items-center justify-center">
+                            <i class="fas fa-phone mr-3"></i>
+                            Call Us Today
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="fade-in-up">
+                    <div class="bg-gradient-to-br from-blue-600 to-purple-600 p-10 rounded-3xl shadow-2xl relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-white bg-opacity-10 rounded-full transform translate-x-16 -translate-y-16"></div>
+                        <div class="absolute bottom-0 left-0 w-24 h-24 bg-white bg-opacity-10 rounded-full transform -translate-x-12 translate-y-12"></div>
+                        
+                        <h3 class="text-3xl font-bold text-white mb-8 relative z-10">Why Choose KK Printing?</h3>
+                        <div class="space-y-6 relative z-10">
+                            <div class="flex items-start space-x-4">
+                                <i class="fas fa-check-circle text-blue-300 text-2xl mt-1"></i>
+                                <div>
+                                    <h5 class="text-white font-semibold text-lg">Latest Technology</h5>
+                                    <p class="text-blue-100">Digital and offset printing with color-accurate results</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <i class="fas fa-check-circle text-blue-300 text-2xl mt-1"></i>
+                                <div>
+                                    <h5 class="text-white font-semibold text-lg">Competitive Pricing</h5>
+                                    <p class="text-blue-100">Transparent pricing with no hidden costs or surprises</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <i class="fas fa-check-circle text-blue-300 text-2xl mt-1"></i>
+                                <div>
+                                    <h5 class="text-white font-semibold text-lg">Premium Materials</h5>
+                                    <p class="text-blue-100">Wide selection of papers, inks, and finishing options</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <i class="fas fa-check-circle text-blue-300 text-2xl mt-1"></i>
+                                <div>
+                                    <h5 class="text-white font-semibold text-lg">Design Assistance</h5>
+                                    <p class="text-blue-100">Free consultation and design support for all projects</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <i class="fas fa-check-circle text-blue-300 text-2xl mt-1"></i>
+                                <div>
+                                    <h5 class="text-white font-semibold text-lg">Eco-Friendly Options</h5>
+                                    <p class="text-blue-100">Sustainable printing solutions and recycled materials</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <i class="fas fa-check-circle text-blue-300 text-2xl mt-1"></i>
+                                <div>
+                                    <h5 class="text-white font-semibold text-lg">Convenient Location</h5>
+                                    <p class="text-blue-100">Easy access in the heart of Kota Kinabalu with parking</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-10 p-6 bg-white bg-opacity-10 rounded-2xl backdrop-blur-sm relative z-10">
+                            <div class="flex items-center justify-center mb-4">
+                                <i class="fas fa-quote-left text-3xl text-blue-200 mr-4"></i>
+                                <p class="text-white font-bold text-xl italic">
+                                    "Excellence in every print, service in every interaction"
+                                </p>
+                            </div>
+                            <p class="text-blue-100 text-center">Our commitment to you since 2009</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20 fade-in-up">
+                <span class="inline-block bg-blue-600 text-white px-6 py-2 rounded-full text-sm font-semibold mb-6">
+                    <i class="fas fa-handshake mr-2"></i>
+                    Get In Touch
+                </span>
+                <h2 class="text-5xl font-black text-gray-800 mb-6">Contact KK Printing</h2>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                    Ready to bring your printing project to life? Our team of experts is here to help you every step of the way. 
+                    Get a free consultation and personalized quote today.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <!-- Contact Information -->
+                <div class="space-y-8 fade-in-up">
+                    <div class="contact-info-card p-10 rounded-3xl shadow-lg">
+                        <h3 class="text-3xl font-bold text-gray-800 mb-8">Let's Start Your Project</h3>
+                        
+                        <div class="space-y-8">
+                            <div class="flex items-start space-x-6">
+                                <div class="bg-gradient-to-br from-blue-600 to-blue-800 p-4 rounded-2xl shadow-lg">
+                                    <i class="fas fa-phone text-white text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 text-xl mb-2">Phone Support</h4>
+                                    <a href="tel:+60138507607" class="text-blue-600 hover:text-blue-800 text-2xl font-bold block mb-2">
+                                        +60 13-850 7607
+                                    </a>
+                                    <p class="text-gray-600">Immediate assistance available</p>
+                                    <p class="text-gray-500 text-sm">Mon-Fri: 9AM-6PM | Sat: 9AM-4PM</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-6">
+                                <div class="bg-gradient-to-br from-blue-600 to-blue-800 p-4 rounded-2xl shadow-lg">
+                                    <i class="fas fa-map-marker-alt text-white text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 text-xl mb-2">Visit Our Showroom</h4>
+                                    <p class="text-gray-700 leading-relaxed">
+                                        Block G, Mile 6 1/2, 11, Jalan Tuaran Bypass,<br>
+                                        Sri Kemajuan Industrial Centre,<br>
+                                        88450 Kota Kinabalu, Sabah, Malaysia
+                                    </p>
+                                    <p class="text-gray-500 text-sm mt-2">Free parking available</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-6">
+                                <div class="bg-gradient-to-br from-blue-600 to-blue-800 p-4 rounded-2xl shadow-lg">
+                                    <i class="fas fa-clock text-white text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 text-xl mb-2">Business Hours</h4>
+                                    <div class="text-gray-700 space-y-1">
+                                        <p><span class="font-semibold">Monday - Friday:</span> 9:00 AM - 6:00 PM</p>
+                                        <p><span class="font-semibold">Saturday:</span> 9:00 AM - 4:00 PM</p>
+                                        <p><span class="font-semibold">Sunday:</span> Closed</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-6">
+                                <div class="bg-gradient-to-br from-blue-600 to-blue-800 p-4 rounded-2xl shadow-lg">
+                                    <i class="fas fa-bolt text-white text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 text-xl mb-2">Rush Orders</h4>
+                                    <p class="text-gray-700">Same-day and next-day printing available</p>
+                                    <p class="text-gray-500 text-sm">Call for urgent project assistance</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-10 p-6 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl">
+                            <div class="flex items-center text-white">
+                                <i class="fas fa-info-circle text-2xl mr-4"></i>
+                                <div>
+                                    <p class="font-bold text-lg">Visit Our Showroom</p>
+                                    <p class="text-blue-100 text-sm">See samples of our work and discuss your printing needs in person with our experts.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="fade-in-up">
+                    <div class="bg-white p-10 rounded-3xl shadow-2xl">
+                        <h3 class="text-3xl font-bold text-gray-800 mb-8">Request Your Free Quote</h3>
+                        <form class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="name" class="block text-sm font-bold text-gray-700 mb-3">Full Name *</label>
+                                    <input type="text" id="name" name="name" class="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" placeholder="Enter your full name" required>
+                                </div>
+                                <div>
+                                    <label for="phone" class="block text-sm font-bold text-gray-700 mb-3">Phone Number *</label>
+                                    <input type="tel" id="phone" name="phone" class="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" placeholder="+60 12-345 6789" required>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-sm font-bold text-gray-700 mb-3">Email Address *</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" placeholder="your.email@example.com" required>
+                            </div>
+                            
+                            <div>
+                                <label for="service" class="block text-sm font-bold text-gray-700 mb-3">Service Required *</label>
+                                <select id="service" name="service" class="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" required>
+                                    <option value="">Select a service</option>
+                                    <option value="business-cards">Business Cards & Stationery</option>
+                                    <option value="flyers-brochures">Flyers & Brochures</option>
+                                    <option value="banners-signage">Banners & Signage</option>
+                                    <option value="document-printing">Document Printing</option>
+                                    <option value="marketing-materials">Marketing Materials</option>
+                                    <option value="custom-solutions">Custom Printing Solutions</option>
+                                </select>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="quantity" class="block text-sm font-bold text-gray-700 mb-3">Quantity</label>
+                                    <input type="number" id="quantity" name="quantity" class="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" placeholder="e.g. 1000">
+                                </div>
+                                <div>
+                                    <label for="deadline" class="block text-sm font-bold text-gray-700 mb-3">Required Date</label>
+                                    <input type="date" id="deadline" name="deadline" class="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block text-sm font-bold text-gray-700 mb-3">Project Details</label>
+                                <textarea id="message" name="message" rows="5" class="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none" placeholder="Please describe your printing requirements, size specifications, color preferences, finishing options, and any special requests..."></textarea>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-xl">
+                                <div class="flex items-start space-x-3">
+                                    <input type="checkbox" id="newsletter" name="newsletter" class="mt-1">
+                                    <label for="newsletter" class="text-sm text-gray-600">
+                                        I'd like to receive updates about special offers and new services from KK Printing.
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="w-full btn-primary text-white py-5 rounded-xl text-lg font-bold flex items-center justify-center group">
+                                <i class="fas fa-paper-plane mr-3 group-hover:animate-bounce"></i>
+                                Send Quote Request
+                                <i class="fas fa-arrow-right ml-3 group-hover:translate-x-1 transition-transform"></i>
+                            </button>
+                            
+                            <p class="text-center text-sm text-gray-500">
+                                <i class="fas fa-shield-alt mr-1"></i>
+                                Your information is secure and will only be used to provide you with a quote.
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Map Section -->
+            <div class="mt-20 fade-in-up">
+                <div class="bg-white p-10 rounded-3xl shadow-2xl">
+                    <div class="text-center mb-8">
+                        <h3 class="text-3xl font-bold text-gray-800 mb-4">Find Our Location</h3>
+                        <p class="text-gray-600">Conveniently located in the Sri Kemajuan Industrial Centre with ample parking space</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-gray-100 to-gray-200 h-80 rounded-2xl flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-600 to-purple-600 opacity-10"></div>
+                        <div class="text-center relative z-10">
+                            <i class="fas fa-map-marked-alt text-6xl text-blue-600 mb-6"></i>
+                            <h4 class="text-2xl font-bold text-gray-800 mb-4">Interactive Map</h4>
+                            <p class="text-gray-600 mb-2 max-w-md">Block G, Mile 6 1/2, 11, Jalan Tuaran Bypass</p>
+                            <p class="text-gray-600 mb-4 max-w-md">Sri Kemajuan Industrial Centre, 88450 Kota Kinabalu, Sabah</p>
+                            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                                <a href="https://maps.google.com" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-all inline-flex items-center">
+                                    <i class="fas fa-directions mr-2"></i>
+                                    Get Directions
+                                </a>
+                                <a href="tel:+60138507607" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-all inline-flex items-center">
+                                    <i class="fas fa-phone mr-2"></i>
+                                    Call for Directions
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>    <!-- Footer -->
+    <footer class="footer-gradient text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <!-- Company Info -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center space-x-4 mb-8">
+                        <div class="bg-gradient-to-br from-blue-600 to-blue-800 p-3 rounded-2xl shadow-lg">
+                            <i class="fas fa-print text-white text-3xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-3xl font-black">KK Printing</h3>
+                            <p class="text-gray-300 font-semibold">Professional Excellence Since 2009</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-8 max-w-md leading-relaxed text-lg">
+                        Your premier printing partner in Kota Kinabalu, Sabah. We transform your ideas into stunning prints 
+                        with unmatched quality, reliability, and personalized service that exceeds expectations.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-blue-600 hover:bg-blue-700 p-4 rounded-xl transition-all duration-300 hover:scale-110">
+                            <i class="fab fa-facebook-f text-white text-xl"></i>
+                        </a>
+                        <a href="#" class="bg-blue-600 hover:bg-blue-700 p-4 rounded-xl transition-all duration-300 hover:scale-110">
+                            <i class="fab fa-instagram text-white text-xl"></i>
+                        </a>
+                        <a href="#" class="bg-blue-600 hover:bg-blue-700 p-4 rounded-xl transition-all duration-300 hover:scale-110">
+                            <i class="fab fa-whatsapp text-white text-xl"></i>
+                        </a>
+                        <a href="#" class="bg-blue-600 hover:bg-blue-700 p-4 rounded-xl transition-all duration-300 hover:scale-110">
+                            <i class="fab fa-telegram text-white text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-xl font-bold mb-8 text-blue-200">Quick Navigation</h4>
+                    <div class="space-y-4">
+                        <a href="#home" class="block text-gray-300 hover:text-white hover:translate-x-2 transition-all duration-300 flex items-center">
+                            <i class="fas fa-home w-5 mr-3"></i>
+                            Home
+                        </a>
+                        <a href="#services" class="block text-gray-300 hover:text-white hover:translate-x-2 transition-all duration-300 flex items-center">
+                            <i class="fas fa-cog w-5 mr-3"></i>
+                            Our Services
+                        </a>
+                        <a href="#portfolio" class="block text-gray-300 hover:text-white hover:translate-x-2 transition-all duration-300 flex items-center">
+                            <i class="fas fa-images w-5 mr-3"></i>
+                            Portfolio
+                        </a>
+                        <a href="#about" class="block text-gray-300 hover:text-white hover:translate-x-2 transition-all duration-300 flex items-center">
+                            <i class="fas fa-info-circle w-5 mr-3"></i>
+                            About Us
+                        </a>
+                        <a href="#contact" class="block text-gray-300 hover:text-white hover:translate-x-2 transition-all duration-300 flex items-center">
+                            <i class="fas fa-envelope w-5 mr-3"></i>
+                            Contact
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-xl font-bold mb-8 text-blue-200">Contact Information</h4>
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <i class="fas fa-phone text-blue-400 text-xl mt-1"></i>
+                            <div>
+                                <p class="text-white font-semibold">Call Us</p>
+                                <a href="tel:+60138507607" class="text-gray-300 hover:text-white transition-colors block text-lg">
+                                    +60 13-850 7607
+                                </a>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <i class="fas fa-map-marker-alt text-blue-400 text-xl mt-1"></i>
+                            <div>
+                                <p class="text-white font-semibold mb-2">Visit Us</p>
+                                <p class="text-gray-300 text-sm leading-relaxed">
+                                    Block G, Mile 6 1/2, 11,<br>
+                                    Jalan Tuaran Bypass,<br>
+                                    Sri Kemajuan Industrial Centre,<br>
+                                    88450 Kota Kinabalu, Sabah
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <i class="fas fa-clock text-blue-400 text-xl mt-1"></i>
+                            <div>
+                                <p class="text-white font-semibold mb-2">Hours</p>
+                                <p class="text-gray-300 text-sm">Mon-Fri: 9AM-6PM</p>
+                                <p class="text-gray-300 text-sm">Sat: 9AM-4PM</p>
+                                <p class="text-gray-300 text-sm">Sun: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+            
+            <!-- Bottom Footer -->
+            <div class="border-t border-gray-600 mt-16 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-300 text-sm mb-4 md:mb-0">
+                        © 2024 KK Printing. All rights reserved. | Proudly serving Sabah since 2009
+                    </p>
+                    <div class="flex space-x-6 text-sm">
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors">Privacy Policy</a>
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors">Terms of Service</a>
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('navbar-sticky');
+            } else {
+                navbar.classList.remove('navbar-sticky');
+            }
+        });
+        
+        // Smooth Scrolling for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+        
+        // Stats Counter Animation
+        const statsCounters = document.querySelectorAll('.stats-counter');
+        const observerOptions = {
+            threshold: 0.7,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target;
+                    const target = parseInt(counter.getAttribute('data-count'));
+                    const duration = 2000; // 2 seconds
+                    const step = target / (duration / 16); // 60fps
+                    let current = 0;
+                    
+                    const updateCounter = () => {
+                        current += step;
+                        if (current < target) {
+                            counter.textContent = Math.floor(current).toLocaleString();
+                            requestAnimationFrame(updateCounter);
+                        } else {
+                            counter.textContent = target.toLocaleString() + (target === 24 ? 'hr' : '+');
+                        }
+                    };
+                    
+                    updateCounter();
+                    statsObserver.unobserve(counter);
+                }
+            });
+        }, observerOptions);
+        
+        statsCounters.forEach(counter => {
+            statsObserver.observe(counter);
+        });
+        
+        // Fade In Up Animation
+        const fadeElements = document.querySelectorAll('.fade-in-up');
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+        
+        fadeElements.forEach(element => {
+            fadeObserver.observe(element);
+        });
+        
+        // Service Card Animation on Scroll
+        const serviceCards = document.querySelectorAll('.service-card');
+        const serviceObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }, index * 100);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+        
+        serviceCards.forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+            serviceObserver.observe(card);
+        });
+        
+        // Typing Effect for Hero Title
+        const typingElement = document.querySelector('.typing-effect');
+        if (typingElement) {
+            const text = typingElement.textContent;
+            typingElement.textContent = '';
+            let i = 0;
+            
+            setTimeout(() => {
+                const typeWriter = () => {
+                    if (i < text.length) {
+                        typingElement.textContent += text.charAt(i);
+                        i++;
+                        setTimeout(typeWriter, 100);
+                    }
+                };
+                typeWriter();
+            }, 1000);
+        }
+        
+        // Form Submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show loading state
+            const button = this.querySelector('button[type="submit"]');
+            const originalText = button.innerHTML;
+            button.innerHTML = '<i class="fas fa-spinner fa-spin mr-3"></i>Sending Request...';
+            button.disabled = true;
+            
+            // Simulate form submission
+            setTimeout(() => {
+                alert('Thank you for your inquiry! We will contact you within 2 hours to discuss your printing needs and provide a detailed quote.');
+                
+                // Reset form and button
+                this.reset();
+                button.innerHTML = originalText;
+                button.disabled = false;
+            }, 2000);
+        });
+        
+
+        
+        // Add some interactive hover effects
+        document.querySelectorAll('.btn-primary').forEach(btn => {
+            btn.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-3px) scale(1.02)';
+            });
+            
+            btn.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>

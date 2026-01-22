@@ -55,7 +55,7 @@ export function PromoSection() {
           {promos.map(promo => (
             <div
               key={promo.id}
-              className="rounded-xl bg-white p-5 shadow-lg transition-all hover:-translate-y-1 hover:shadow-xl"
+              className="flex flex-col rounded-xl bg-white p-5 shadow-lg transition-all hover:-translate-y-1 hover:shadow-xl"
             >
               <div className="mb-3 flex items-center justify-between">
                 <span className="rounded-full bg-blue-100 px-3 py-1 text-xs font-bold text-blue-700">
@@ -73,12 +73,15 @@ export function PromoSection() {
               <h3 className="mb-2 text-lg font-bold text-gray-900">
                 {promo.title}
               </h3>
-              <p className="mb-4 text-sm text-gray-600">{promo.description}</p>
+              <p className="mb-4 flex-grow text-sm text-gray-600">
+                {promo.description}
+              </p>
               <Link
                 href={getWhatsAppLink(
                   `Halo, saya mau tanya promo: ${promo.title}`
                 )}
                 target="_blank"
+                className="mt-auto"
               >
                 <Button
                   size="sm"
