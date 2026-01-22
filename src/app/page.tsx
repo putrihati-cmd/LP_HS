@@ -1,6 +1,5 @@
 import {
   HeroSection,
-  PanicButton,
   PromoSection,
   ServicesSection,
   UploadSection,
@@ -15,13 +14,10 @@ import {
 export default function HomePage() {
   return (
     <>
-      {/* 1. HERO - Solusi instan */}
+      {/* 1. HERO - Solusi Cetak Profesional + Stats */}
       <HeroSection />
 
-      {/* 2. PANIC BUTTON - Untuk deadline darurat */}
-      <PanicButton />
-
-      {/* 3. PROMO - Trigger impulse */}
+      {/* 2. PROMO - Penawaran Spesial */}
       <PromoSection />
 
       {/* 4. SERVICES - Apa yang bisa dikerjakan */}

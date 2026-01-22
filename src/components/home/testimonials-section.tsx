@@ -186,14 +186,16 @@ export function TestimonialsSection() {
 
           {/* CTA after testimonials */}
           <div className="mt-10 text-center">
-            <p className="mb-4 text-gray-600">Mau hasil seperti ini?</p>
+            <p className="mb-4 text-gray-600">
+              Bergabung dengan ratusan pelanggan puas kami
+            </p>
             <a
               href="https://wa.me/6285659055374?text=Halo%2C%20saya%20mau%20cetak%20dokumen"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-green-500 px-6 py-3 font-bold text-white shadow-lg transition-all hover:scale-105 hover:bg-green-600"
+              className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-blue-500 to-blue-600 px-6 py-3 font-bold text-white shadow-lg shadow-blue-500/30 transition-all hover:scale-105 hover:from-blue-600 hover:to-blue-700"
             >
-              🚀 Cetak Sekarang - Jadi 5 Menit!
+              Mulai Cetak Sekarang
             </a>
           </div>
         </div>

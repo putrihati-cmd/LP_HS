@@ -78,15 +78,17 @@ export function Header() {
           {/* CTA Button */}
           <div className="hidden items-center gap-4 lg:flex">
             <Link
-              href={getWhatsAppLink('Halo, saya mau kirim file untuk dicetak')}
+              href={getWhatsAppLink(
+                'Halo, saya ingin konsultasi tentang layanan cetak'
+              )}
               target="_blank"
             >
               <Button
                 size="lg"
-                className="rounded-full bg-green-500 px-6 font-bold text-white shadow-lg transition-all hover:scale-105 hover:bg-green-600"
+                className="rounded-xl bg-gradient-to-r from-blue-500 to-blue-600 px-6 font-bold text-white shadow-lg shadow-blue-500/30 transition-all hover:scale-105 hover:from-blue-600 hover:to-blue-700"
               >
                 <Phone className="mr-2 h-4 w-4" />
-                Kirim File
+                Hubungi Kami
               </Button>
             </Link>
           </div>
@@ -157,7 +159,7 @@ export function Header() {
               <div className="mt-6 border-t border-gray-200 pt-6">
                 <Link
                   href={getWhatsAppLink(
-                    'Halo, saya mau kirim file untuk dicetak'
+                    'Halo, saya ingin konsultasi tentang layanan cetak'
                   )}
                   target="_blank"
                   className="block"
@@ -165,10 +167,10 @@ export function Header() {
                 >
                   <Button
                     size="lg"
-                    className="w-full rounded-full bg-green-500 font-bold text-white"
+                    className="w-full rounded-xl bg-gradient-to-r from-blue-500 to-blue-600 font-bold text-white"
                   >
                     <Phone className="mr-2 h-4 w-4" />
-                    Kirim File via WA
+                    Hubungi Kami
                   </Button>
                 </Link>
 

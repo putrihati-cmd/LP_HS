@@ -171,10 +171,10 @@ Mohon konfirmasi. Terima kasih!`;
                   <Button
                     size="lg"
                     onClick={handleWhatsAppOrder}
-                    className="h-14 rounded-full bg-green-500 px-8 font-bold text-white shadow-lg shadow-green-500/30 transition-all hover:scale-105 hover:bg-green-600"
+                    className="h-14 rounded-xl bg-gradient-to-r from-blue-500 to-blue-600 px-8 font-bold text-white shadow-lg shadow-blue-500/30 transition-all hover:scale-105 hover:from-blue-600 hover:to-blue-700"
                   >
                     <MessageCircle className="mr-2 h-5 w-5" />
-                    ORDER SEKARANG! 🚀
+                    Order via WhatsApp
                   </Button>
                 </div>
               </div>

@@ -1,5 +1,4 @@
 export { HeroSection } from './hero-section';
-export { PanicButton } from './panic-button';
 export { PromoSection } from './promo-section';
 export { ServicesSection } from './services-section';
 export { UploadSection } from './upload-section';
