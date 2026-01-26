@@ -59,7 +59,7 @@ src/
 ├── api/             # API related code
 ├── assets/          # Static assets
 ├── components/      # Reusable components
-├── layouts/         # Layout components  
+├── layouts/         # Layout components
 ├── pages/           # Page components
 ├── styles/          # Style files
 ├── types/           # TypeScript type definitions
@@ -69,4 +69,4 @@ src/
 
 ## More Information
 
-For more detailed project structure, tech stack, configuration instructions and development guide, please refer to the [YOUWARE.md](./YOUWARE.md) file.
+For more detailed project structure, tech stack, configuration instructions and development guide, please refer to the documentation.
