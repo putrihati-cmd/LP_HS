@@ -7,10 +7,10 @@ const banners = [
     bg: "bg-gradient-to-r from-primary to-primary-dark",
     content: (
       <div className="text-center text-white">
-        <h2 className="text-3xl md:text-5xl font-bold mb-2 uppercase tracking-wider">Decal Custom</h2>
-        <p className="text-xl md:text-2xl font-light">Premium Quality UV Print</p>
+        <h2 className="text-3xl md:text-5xl font-bold mb-2 uppercase tracking-wider">Cetak Dokumen & Skripsi</h2>
+        <p className="text-xl md:text-2xl font-light">Cepat, Rapi, & Berkualitas</p>
         <button className="mt-6 bg-secondary text-primary-dark px-8 py-2 rounded font-bold hover:bg-white transition-colors uppercase text-sm">
-          Shop Now
+          Pesan Sekarang
         </button>
       </div>
     )
@@ -20,10 +20,10 @@ const banners = [
     bg: "bg-gradient-to-r from-secondary-dark to-secondary",
     content: (
       <div className="text-center text-primary-dark">
-        <h2 className="text-3xl md:text-5xl font-bold mb-2 uppercase tracking-wider">Sameday Service</h2>
-        <p className="text-xl md:text-2xl font-light">Order Now, Receive Today</p>
+        <h2 className="text-3xl md:text-5xl font-bold mb-2 uppercase tracking-wider">Cetak Banner Kilat</h2>
+        <p className="text-xl md:text-2xl font-light">Bisa Ditunggu & Hasil Tajam</p>
         <button className="mt-6 bg-primary text-white px-8 py-2 rounded font-bold hover:bg-primary-dark transition-colors uppercase text-sm">
-          Order Now
+          Order via WA
         </button>
       </div>
     )
@@ -60,13 +60,13 @@ const Hero = () => {
       </div>
 
       {/* Controls */}
-      <button 
+      <button
         onClick={prev}
         className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/20 hover:bg-black/40 text-white p-2 rounded-full transition-colors"
       >
         <ChevronLeft size={24} />
       </button>
-      <button 
+      <button
         onClick={next}
         className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/20 hover:bg-black/40 text-white p-2 rounded-full transition-colors"
       >
