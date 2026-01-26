@@ -8,7 +8,7 @@ echo "🚀 Deploying HS Copy Center..."
 
 # Variables
 APP_DIR="/var/www/hscopycenter"
-REPO_URL="git@github.com:YOUR_USERNAME/LP.git"
+REPO_URL="https://github.com/putrihati-cmd/LP_HS.git"
 BRANCH="backup-static-site"
 
 # Navigate to app directory
@@ -16,24 +16,22 @@ cd $APP_DIR
 
 # Pull latest changes
 echo "📥 Pulling latest changes..."
+git remote set-url origin $REPO_URL
 git fetch origin
 git reset --hard origin/$BRANCH
 
 # Install dependencies
 echo "📦 Installing dependencies..."
-npm ci --production=false
-
-# Generate Prisma client
-echo "🗄️ Generating Prisma client..."
-npx prisma generate
+npm install
 
 # Build the application
-echo "🔨 Building Next.js app..."
+echo "🔨 Building Vite app..."
 npm run build
 
-# Restart the application with PM2
+# Restart the application with PM2 (Serve static files)
 echo "🔄 Restarting application..."
-pm2 restart hscopycenter || pm2 start npm --name "hscopycenter" -- start -- -p 3001
+pm2 delete hscopycenter || true
+pm2 start "npx serve -s dist -l 3001" --name "hscopycenter"
 
 # Reload Nginx
 echo "🔄 Reloading Nginx..."
