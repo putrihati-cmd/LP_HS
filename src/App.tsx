@@ -18,6 +18,8 @@ import Dashboard from './pages/admin/Dashboard';
 import Products from './pages/admin/Products';
 import AddProduct from './pages/admin/AddProduct';
 import Orders from './pages/admin/Orders';
+import Categories from './pages/admin/Categories';
+import Banners from './pages/admin/Banners';
 
 function App() {
   return (
@@ -42,6 +44,8 @@ function App() {
           <Route path="products" element={<Products />} />
           <Route path="products/new" element={<AddProduct />} />
           <Route path="orders" element={<Orders />} />
+          <Route path="categories" element={<Categories />} />
+          <Route path="banners" element={<Banners />} />
           <Route path="settings" element={<PlaceholderPage title="Admin Settings" description="Konfigurasi sistem admin." />} />
         </Route>
 
@@ -53,3 +57,4 @@ function App() {
 }
 
 export default App;
+

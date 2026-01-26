@@ -69,3 +69,26 @@ export const orderItems = sqliteTable("order_items", {
 	index("idx_order_items_order_id").on(table.orderId),
 ]);
 
+
+export const banners = sqliteTable("banners", {
+	id: integer().primaryKey({ autoIncrement: true }),
+	title: text().notNull(),
+	subtitle: text(),
+	imageUrl: text("image_url"), // For background
+  active: integer().default(1),
+  link: text(),
+  buttonText: text("button_text").default("Order Now"),
+	createdAt: integer("created_at").default(sql`(unixepoch())`),
+});
+
+export const categories = sqliteTable("categories", {
+	id: integer().primaryKey({ autoIncrement: true }),
+	name: text().notNull(),
+	slug: text().notNull(),
+	icon: text(), // Optional icon name
+  active: integer().default(1),
+  order: integer().default(0),
+	createdAt: integer("created_at").default(sql`(unixepoch())`),
+}, (table) => [
+  uniqueIndex("idx_categories_slug").on(table.slug)
+]);

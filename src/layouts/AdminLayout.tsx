@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
-import { LayoutDashboard, Package, ShoppingCart, Settings, LogOut, User } from 'lucide-react';
+import { LayoutDashboard, Package, ShoppingCart, Settings, LogOut, User, Folder, Image } from 'lucide-react';
 import { client } from '../api/client';
 
 const AdminLayout = () => {
@@ -8,7 +8,7 @@ const AdminLayout = () => {
   const [user, setUser] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const authContainerRef = useRef<HTMLDivElement>(null);
-  
+
   const isActive = (path: string) => location.pathname === path;
 
   useEffect(() => {
@@ -60,29 +60,43 @@ const AdminLayout = () => {
         </div>
 
         <nav className="flex-1 py-6 px-3 space-y-1">
-          <Link 
-            to="/admin" 
+          <Link
+            to="/admin"
             className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${isActive('/admin') ? 'bg-primary text-white' : 'text-gray-400 hover:bg-gray-800 hover:text-white'}`}
           >
             <LayoutDashboard size={20} />
             <span>Dashboard</span>
           </Link>
-          <Link 
-            to="/admin/products" 
+          <Link
+            to="/admin/products"
             className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${isActive('/admin/products') ? 'bg-primary text-white' : 'text-gray-400 hover:bg-gray-800 hover:text-white'}`}
           >
             <Package size={20} />
             <span>Products</span>
           </Link>
-          <Link 
-            to="/admin/orders" 
+          <Link
+            to="/admin/orders"
             className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${isActive('/admin/orders') ? 'bg-primary text-white' : 'text-gray-400 hover:bg-gray-800 hover:text-white'}`}
           >
             <ShoppingCart size={20} />
             <span>Orders</span>
           </Link>
-          <Link 
-            to="/admin/settings" 
+          <Link
+            to="/admin/categories"
+            className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${isActive('/admin/categories') ? 'bg-primary text-white' : 'text-gray-400 hover:bg-gray-800 hover:text-white'}`}
+          >
+            <Folder size={20} />
+            <span>Categories</span>
+          </Link>
+          <Link
+            to="/admin/banners"
+            className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${isActive('/admin/banners') ? 'bg-primary text-white' : 'text-gray-400 hover:bg-gray-800 hover:text-white'}`}
+          >
+            <Image size={20} />
+            <span>Banners</span>
+          </Link>
+          <Link
+            to="/admin/settings"
             className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${isActive('/admin/settings') ? 'bg-primary text-white' : 'text-gray-400 hover:bg-gray-800 hover:text-white'}`}
           >
             <Settings size={20} />
@@ -91,7 +105,7 @@ const AdminLayout = () => {
         </nav>
 
         <div className="p-4 border-t border-gray-800">
-          <button 
+          <button
             onClick={handleLogout}
             className="flex items-center gap-3 px-4 py-3 w-full text-left text-red-400 hover:bg-gray-800 rounded-lg transition-colors"
           >

@@ -20,22 +20,52 @@ git remote set-url origin $REPO_URL
 git fetch origin
 git reset --hard origin/$BRANCH
 
-# Install dependencies
-echo "📦 Installing dependencies..."
+# ==========================================
+# FRONTEND DEPLOYMENT
+# ==========================================
+echo "📦 Installing frontend dependencies..."
 npm install
 
-# Build the application
-echo "🔨 Building Vite app..."
+echo "🔨 Building Vite frontend..."
 npm run build
 
-# Restart the application with PM2 (Serve static files)
-echo "🔄 Restarting application..."
-pm2 delete hscopycenter || true
-pm2 start "npx serve -s dist -l 3001" --name "hscopycenter"
+# Restart frontend with PM2 (Serve static files)
+echo "🔄 Restarting frontend..."
+pm2 delete hscopycenter-frontend || true
+pm2 start "npx serve -s dist -l 3001" --name "hscopycenter-frontend"
 
-# Reload Nginx
+# ==========================================
+# BACKEND DEPLOYMENT
+# ==========================================
+echo "📦 Installing backend dependencies..."
+cd $APP_DIR/backend
+npm install
+
+# Initialize database if not exists
+echo "🗄️ Initializing database..."
+if [ ! -f "local.db" ]; then
+    node --import tsx/esm init-db.ts
+    node --import tsx/esm seed.ts
+    echo "Database initialized and seeded!"
+else
+    echo "Database already exists, skipping init."
+fi
+
+# Restart backend with PM2
+echo "🔄 Restarting backend server..."
+pm2 delete hscopycenter-backend || true
+pm2 start "node --import tsx/esm server.ts" --name "hscopycenter-backend"
+
+# Save PM2 process list
+pm2 save
+
+# ==========================================
+# NGINX RELOAD
+# ==========================================
+cd $APP_DIR
 echo "🔄 Reloading Nginx..."
 sudo nginx -t && sudo systemctl reload nginx
 
 echo "✅ Deployment complete!"
-echo "🌐 Site: https://hscopycenter.site"
+echo "🌐 Frontend: https://hscopycenter.site"
+echo "🔧 Backend API: http://localhost:3000"

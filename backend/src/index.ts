@@ -73,7 +73,7 @@ export async function createApp(
   app.post('/api/orders', async (c) => {
     const body = await c.req.json();
     // body: { userId, items: [{ productId, quantity, price }] }
-    
+
     // Calculate total
     let total = 0;
     for (const item of body.items) {
@@ -99,6 +99,84 @@ export async function createApp(
     }
 
     return c.json({ data: order[0] });
+  });
+
+  // --- Categories ---
+
+  app.get('/api/categories', async (c) => {
+    const categories = await edgespark.db.select().from(tables.categories).orderBy(tables.categories.order);
+    return c.json({ data: categories });
+  });
+
+  app.post('/api/categories', async (c) => {
+    const body = await c.req.json();
+    const result = await edgespark.db.insert(tables.categories).values({
+      name: body.name,
+      slug: body.slug,
+      icon: body.icon,
+      active: body.active ?? 1,
+      order: body.order ?? 0
+    }).returning();
+    return c.json({ data: result[0] });
+  });
+
+  app.put('/api/categories/:id', async (c) => {
+    const id = Number(c.req.param('id'));
+    const body = await c.req.json();
+    const result = await edgespark.db.update(tables.categories).set({
+      name: body.name,
+      slug: body.slug,
+      icon: body.icon,
+      active: body.active,
+      order: body.order
+    }).where(eq(tables.categories.id, id)).returning();
+    return c.json({ data: result[0] });
+  });
+
+  app.delete('/api/categories/:id', async (c) => {
+    const id = Number(c.req.param('id'));
+    await edgespark.db.delete(tables.categories).where(eq(tables.categories.id, id));
+    return c.json({ success: true });
+  });
+
+  // --- Banners ---
+
+  app.get('/api/banners', async (c) => {
+    const banners = await edgespark.db.select().from(tables.banners);
+    return c.json({ data: banners });
+  });
+
+  app.post('/api/banners', async (c) => {
+    const body = await c.req.json();
+    const result = await edgespark.db.insert(tables.banners).values({
+      title: body.title,
+      subtitle: body.subtitle,
+      imageUrl: body.imageUrl,
+      link: body.link,
+      buttonText: body.buttonText,
+      active: body.active ?? 1
+    }).returning();
+    return c.json({ data: result[0] });
+  });
+
+  app.put('/api/banners/:id', async (c) => {
+    const id = Number(c.req.param('id'));
+    const body = await c.req.json();
+    const result = await edgespark.db.update(tables.banners).set({
+      title: body.title,
+      subtitle: body.subtitle,
+      imageUrl: body.imageUrl,
+      link: body.link,
+      buttonText: body.buttonText,
+      active: body.active
+    }).where(eq(tables.banners.id, id)).returning();
+    return c.json({ data: result[0] });
+  });
+
+  app.delete('/api/banners/:id', async (c) => {
+    const id = Number(c.req.param('id'));
+    await edgespark.db.delete(tables.banners).where(eq(tables.banners.id, id));
+    return c.json({ success: true });
   });
 
   return app;
