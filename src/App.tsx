@@ -11,6 +11,7 @@ import Branch from './pages/Branch';
 import Article from './pages/Article';
 import Promo from './pages/Promo';
 import GoPrint from './pages/GoPrint';
+import SkripsiPage from './pages/SkripsiPage';
 import PlaceholderPage from './pages/PlaceholderPage';
 
 // Admin Imports
@@ -41,6 +42,7 @@ function App() {
         <Route path="/artikel" element={<Article />} />
         <Route path="/promo" element={<Promo />} />
         <Route path="/goprint" element={<GoPrint />} />
+        <Route path="/skripsi" element={<SkripsiPage />} />
 
         {/* Placeholders for Snapy menu items */}
         <Route path="/photobook" element={<PlaceholderPage title="Photobook" />} />

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 // Using Hardcoded Image from copas for now (matching the clone request)
 const BANNER_IMG = 'https://public.youware.com/users-website-assets/prod/9807b15c-f88c-4ee9-a2d5-04d7d8001cdf/d2f00ca2278b478f8972ec741afa5327.jpg';
@@ -19,9 +20,9 @@ export default function Hero() {
             <p className="text-white/90 mb-6 max-w-md mx-auto md:mx-0 text-lg">
               Cepat, Rapi, dan Bisa Ditunggu. Melayani kebutuhan mahasiswa dan umum dengan hasil terbaik.
             </p>
-            <button className="px-8 py-3 bg-secondary-500 hover:bg-secondary-600 text-white font-bold rounded-lg transition-colors shadow-lg transform hover:-translate-y-1">
+            <Link to="/skripsi" className="inline-block px-8 py-3 bg-secondary-500 hover:bg-secondary-600 text-white font-bold rounded-lg transition-colors shadow-lg transform hover:-translate-y-1">
               KONSULTASI SEKARANG
-            </button>
+            </Link>
           </div>
           <div className="flex-1 relative">
             <div className="relative z-10">

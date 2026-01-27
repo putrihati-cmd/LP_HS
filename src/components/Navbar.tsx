@@ -71,6 +71,7 @@ export default function Navbar() {
             <li><Link to="/artikel" className="block px-3 py-2 text-gray-600 hover:text-primary-500 hover:bg-primary-50 rounded">Artikel</Link></li>
              <li><Link to="/contact" className="block px-3 py-2 text-gray-600 hover:text-primary-500 hover:bg-primary-50 rounded">Tentang Kami</Link></li>
              <li><Link to="/snapy-kain" className="block px-3 py-2 text-gray-600 hover:text-primary-500 hover:bg-primary-50 rounded">HS Kain</Link></li>
+             <li><Link to="/skripsi" className="block px-3 py-2 bg-secondary-500 text-white font-bold hover:bg-secondary-600 rounded shadow-sm">Paket Skripsi</Link></li>
           </ul>
         </nav>
       </div>

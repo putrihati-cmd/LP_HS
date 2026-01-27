@@ -5,7 +5,6 @@ import FeatureBar from '../components/FeatureBar';
 import Sidebar from '../components/Sidebar';
 import Footer from '../components/Footer';
 import ProductCard from '../components/ProductCard';
-import PricingPackages from '../components/PricingPackages';
 
 // Using the same hardcoded images for now as per copas source
 const IMAGES = {
@@ -96,8 +95,7 @@ export default function Home() {
             </div>
         </section>
 
-        {/* Pricing Packages Section */}
-        <PricingPackages />
+        {/* Pricing Packages Moved to /skripsi */}
 
         {/* New Products */}
         <section className="mb-12">
