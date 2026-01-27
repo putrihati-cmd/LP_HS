@@ -3,9 +3,9 @@ import "@edgespark/client/styles.css";
 
 // Use relative URL in production (same origin), localhost in development
 const getBaseUrl = () => {
-  // In production, use relative URL so Nginx proxies to backend
+  // In production, use Cloudflare Workers URL
   if (typeof window !== 'undefined' && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
-    return ''; // Empty means same origin
+    return 'https://hscopycenter-backend.tholibadilmaruf-campus.workers.dev';
   }
   // In development, use localhost:3000
   return "http://localhost:3000";

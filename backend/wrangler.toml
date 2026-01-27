@@ -1,0 +1,16 @@
+name = "hscopycenter-backend"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "hscopycenter-db"
+database_id = "8ade8464-c044-4311-b96f-69f7b6a9acf6"
+
+[[r2_buckets]]
+binding = "STORAGE"
+bucket_name = "hscopycenter-uploads"
+
+[vars]
+ENVIRONMENT = "production"
+CORS_ORIGIN = "https://hscopycenter.site"
