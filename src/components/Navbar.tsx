@@ -10,21 +10,6 @@ const Navbar = () => {
 
   return (
     <header className="w-full bg-white shadow-sm sticky top-0 z-50 font-sans">
-      {/* Top Info Bar (Snapy Style) */}
-      <div className="bg-primary text-white text-xs py-1">
-        <div className="container mx-auto px-4 flex justify-between items-center">
-          <div className="flex items-center gap-4">
-            <span>Buka Setiap Hari 06:30 - 21:00 WIB</span>
-            <span className="hidden md:inline">|</span>
-            <span className="hidden md:inline">0856-5905-5374</span>
-          </div>
-          <div className="flex items-center gap-4">
-            <Link to="/how-to-order" className="hover:underline">Cara Order</Link>
-            <Link to="/login" className="hover:underline">Login / Register</Link>
-          </div>
-        </div>
-      </div>
-
       {/* Main Header */}
       <div className="container mx-auto px-4 py-4 md:py-6">
         <div className="flex items-center justify-between gap-4 md:gap-8">
@@ -69,8 +54,8 @@ const Navbar = () => {
                 </div>
               </div>
             </Link>
-
-            <button
+            
+            <button 
               className="md:hidden p-2 hover:bg-gray-100 rounded-md"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
@@ -78,7 +63,7 @@ const Navbar = () => {
             </button>
           </div>
         </div>
-
+        
         {/* Mobile Search */}
         <div className="md:hidden mt-4 relative">
            <input
@@ -92,15 +77,17 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Navigation Bar - Snapy Style (Black/Dark Background or Simple Border) */}
-      <nav className="bg-gray-50 border-t border-b border-gray-200 hidden md:block">
+      {/* Navigation Bar - Simple Text Links like Snapy */}
+      <nav className="bg-white border-t border-gray-100 hidden md:block">
         <div className="container mx-auto px-4">
-          <ul className="flex items-center space-x-8 py-3 text-sm font-bold text-gray-700 uppercase tracking-wide">
-            <li><Link to="/" className="text-primary hover:text-secondary transition-colors">Home</Link></li>
-            <li><Link to="/services" className="hover:text-primary transition-colors">Print Shop</Link></li>
-            <li><Link to="/products" className="hover:text-primary transition-colors">Produk</Link></li>
-            <li><Link to="/promo" className="hover:text-primary transition-colors text-red-500">Promo</Link></li>
-            <li><Link to="/contact" className="hover:text-primary transition-colors">Hubungi Kami</Link></li>
+          <ul className="flex items-center space-x-8 py-3 text-sm font-medium text-gray-600">
+            <li><Link to="/" className="text-primary hover:text-primary-dark">Home</Link></li>
+            <li><Link to="/category" className="hover:text-primary flex items-center gap-1">Category <ChevronDown size={14}/></Link></li>
+            <li><Link to="/branch" className="hover:text-primary">Branch</Link></li>
+            <li><Link to="/photobook" className="hover:text-primary">Photobook</Link></li>
+            <li><Link to="/artikel" className="hover:text-primary">Artikel</Link></li>
+            <li><Link to="/franchise" className="hover:text-primary">Franchise</Link></li>
+            <li><Link to="/snapy-kain" className="hover:text-primary">Snapy Kain</Link></li>
           </ul>
         </div>
       </nav>
