@@ -35,16 +35,9 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Icons */}
+           {/* Icons - Hidden as requested */}
           <div className="hidden md:flex items-center gap-6">
-             <Link to="/cart" className="relative group text-gray-600 hover:text-primary-500">
-                <ShoppingCart size={24} />
-                <span className="absolute -top-2 -right-2 bg-secondary-500 text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
-             </Link>
-             <Link to="/login" className="flex items-center gap-2 text-gray-600 hover:text-primary-500 font-medium text-sm">
-                <User size={24} />
-                <span>Masuk</span>
-             </Link>
+             {/* Cart and Login hidden for now */}
           </div>
 
           {/* Mobile Menu Button */}
@@ -67,7 +60,7 @@ export default function Navbar() {
               </Link>
             </li>
             <li><Link to="/promo" className="block px-3 py-2 text-gray-600 hover:text-primary-500 hover:bg-primary-50 rounded">Promo</Link></li>
-            <li><Link to="/login" className="block px-3 py-2 text-gray-600 hover:text-primary-500 hover:bg-primary-50 rounded">Akun</Link></li>
+
             <li><Link to="/member" className="block px-3 py-2 text-gray-600 hover:text-primary-500 hover:bg-primary-50 rounded">Member Info</Link></li>
             <li><Link to="/artikel" className="block px-3 py-2 text-gray-600 hover:text-primary-500 hover:bg-primary-50 rounded">Artikel</Link></li>
              <li><Link to="/contact" className="block px-3 py-2 text-gray-600 hover:text-primary-500 hover:bg-primary-50 rounded">Tentang Kami</Link></li>

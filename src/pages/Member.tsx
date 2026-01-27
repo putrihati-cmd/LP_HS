@@ -29,12 +29,14 @@ export default function Member() {
                 Nikmati harga spesial khusus mahasiswa, prioritas antrian, dan promo eksklusif setiap bulannya hanya dengan menjadi member. Gratis pendaftaran!
               </p>
               <div className="flex flex-col md:flex-row gap-4">
-                <Link
-                  to="/register"
+                <a
+                  href="https://wa.me/6285659055374?text=Halo%20HS%20Copy%20Center,%20saya%20mau%20daftar%20member"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-secondary-500 hover:bg-secondary-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-transform hover:scale-105 inline-flex items-center justify-center gap-2"
                 >
-                  Daftar Member Sekarang <ChevronRight size={20} />
-                </Link>
+                  Daftar Member via WA <ChevronRight size={20} />
+                </a>
                 <Link
                   to="/contact"
                   className="bg-white/10 hover:bg-white/20 text-white font-semibold py-3 px-8 rounded-full backdrop-blur-sm transition-colors inline-flex items-center justify-center"
@@ -107,12 +109,14 @@ export default function Member() {
                   Pendaftaran gratis hanya butuh waktu 1 menit!
                 </p>
               </div>
-              <Link
-                to="/register"
+              <a
+                href="https://wa.me/6285659055374?text=Halo%20HS%20Copy%20Center,%20saya%20mau%20daftar%20member"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-white text-gray-900 hover:bg-gray-100 font-bold py-4 px-8 rounded-xl shadow-lg transition-transform hover:scale-105 inline-block"
               >
-                Daftar Sekarang
-              </Link>
+                Chat Admin Sekarang
+              </a>
             </div>
           </div>
         </section>
