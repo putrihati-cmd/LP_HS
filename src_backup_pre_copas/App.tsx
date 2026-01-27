@@ -1,16 +1,15 @@
-
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
-import Login from './pages/Login';
-import Register from './pages/Register';
-import Category from './pages/Category';
-import ProductDetail from './pages/ProductDetail';
-import Cart from './pages/Cart';
-import Branch from './pages/Branch';
-import Article from './pages/Article';
 import Promo from './pages/Promo';
 import GoPrint from './pages/GoPrint';
+import Branch from './pages/Branch';
+import Article from './pages/Article';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import Cart from './pages/Cart';
+import Category from './pages/Category';
+import ProductDetail from './pages/ProductDetail';
 import PlaceholderPage from './pages/PlaceholderPage';
 
 // Admin Imports
@@ -18,10 +17,10 @@ import AdminLayout from './layouts/AdminLayout';
 import Dashboard from './pages/admin/Dashboard';
 import Products from './pages/admin/Products';
 import AddProduct from './pages/admin/AddProduct';
+import Orders from './pages/admin/Orders';
 import Categories from './pages/admin/Categories';
 import Banners from './pages/admin/Banners';
 import Promos from './pages/admin/Promos';
-import Orders from './pages/admin/Orders';
 
 function App() {
   return (
@@ -29,42 +28,35 @@ function App() {
       <Routes>
         {/* Public Routes */}
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-
-        <Route path="/category" element={<Category />} />
-        <Route path="/category/:slug" element={<Category />} />
-        <Route path="/product/:id" element={<ProductDetail />} />
-        <Route path="/cart" element={<Cart />} />
-
-        <Route path="/branch" element={<Branch />} />
-        <Route path="/artikel" element={<Article />} />
         <Route path="/promo" element={<Promo />} />
         <Route path="/goprint" element={<GoPrint />} />
-
-        {/* Placeholders for Snapy menu items */}
-        <Route path="/photobook" element={<PlaceholderPage title="Photobook" />} />
-        <Route path="/franchise" element={<PlaceholderPage title="Franchise" />} />
-        <Route path="/snapy-kain" element={<PlaceholderPage title="Snapy Kain" />} />
-        <Route path="/print-shop" element={<PlaceholderPage title="Print Shop" />} />
-        <Route path="/contact" element={<PlaceholderPage title="Hubungi Kami" />} />
+        <Route path="/branch" element={<Branch />} />
+        <Route path="/artikel" element={<Article />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/category" element={<Category />} />
+        <Route path="/category/:slug" element={<Category />} />
+        <Route path="/product/:slug" element={<ProductDetail />} />
 
         {/* Admin Routes */}
         <Route path="/admin" element={<AdminLayout />}>
           <Route index element={<Dashboard />} />
           <Route path="products" element={<Products />} />
-          <Route path="products/add" element={<AddProduct />} />
+          <Route path="products/new" element={<AddProduct />} />
+          <Route path="orders" element={<Orders />} />
           <Route path="categories" element={<Categories />} />
           <Route path="banners" element={<Banners />} />
           <Route path="promos" element={<Promos />} />
-          <Route path="orders" element={<Orders />} />
+          <Route path="settings" element={<PlaceholderPage title="Admin Settings" description="Konfigurasi sistem admin." />} />
         </Route>
 
         {/* Fallback */}
-        <Route path="*" element={<Navigate to="/" replace />} />
+        <Route path="*" element={<Home />} />
       </Routes>
     </Router>
   );
 }
 
 export default App;
+

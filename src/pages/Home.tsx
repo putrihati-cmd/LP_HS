@@ -1,161 +1,178 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
+import FeatureBar from '../components/FeatureBar';
 import Sidebar from '../components/Sidebar';
-import ProductCard from '../components/ProductCard';
 import Footer from '../components/Footer';
-import { Star, Truck, ThumbsUp, Clock } from 'lucide-react';
-import { client } from '../api/client';
+import ProductCard from '../components/ProductCard';
 
-import { PromoSection } from '../components/PromoSection';
-import { MemberSection } from '../components/MemberSection';
+// Using the same hardcoded images for now as per copas source
+const IMAGES = {
+  printing: 'https://public.youware.com/users-website-assets/prod/9807b15c-f88c-4ee9-a2d5-04d7d8001cdf/d2f00ca2278b478f8972ec741afa5327.jpg',
+  banner: 'https://public.youware.com/users-website-assets/prod/9807b15c-f88c-4ee9-a2d5-04d7d8001cdf/1eb92f1117f842e4b115ebd3e3725716.jpg',
+  largeFormat: 'https://public.youware.com/users-website-assets/prod/9807b15c-f88c-4ee9-a2d5-04d7d8001cdf/c9bef1a7ffb548459120a2b52c925ba9.jpg',
+  idCard: 'https://public.youware.com/users-website-assets/prod/9807b15c-f88c-4ee9-a2d5-04d7d8001cdf/9b7b584e72e446d59f722b77996d2fdd.jpg',
+  photocopy: 'https://public.youware.com/users-website-assets/prod/9807b15c-f88c-4ee9-a2d5-04d7d8001cdf/c6e26a1be55e4d5c952814b857600bbc.png',
+  tumbler: 'https://public.youware.com/users-website-assets/prod/9807b15c-f88c-4ee9-a2d5-04d7d8001cdf/feab4a8fff8f4609a821947ab3855445.jpg',
+  bottle: 'https://public.youware.com/users-website-assets/prod/9807b15c-f88c-4ee9-a2d5-04d7d8001cdf/5ff42faa56fe49b9a49970530fed65df.jpg',
+  toteBag: 'https://public.youware.com/users-website-assets/prod/9807b15c-f88c-4ee9-a2d5-04d7d8001cdf/a701343e528b4529980f35bd59f1c312.jpg',
+  handbag: 'https://public.youware.com/users-website-assets/prod/9807b15c-f88c-4ee9-a2d5-04d7d8001cdf/56e85c2160ed48dc9fa13fbed675f676.png',
+};
 
-const Home = () => {
-  const [products, setProducts] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
+const popularProducts = [
+  { image: IMAGES.printing, title: 'GoPrint - Cetak Online via Aplikasi', price: 'Mulai Rp. 5.000,-', views: 198007 },
+  { image: IMAGES.idCard, title: 'Cetak Foto Berkualitas', price: 'Mulai Rp. 8.000,-', views: 196517 },
+  { image: IMAGES.banner, title: 'Digital Printing Premium', price: 'Mulai Rp. 5.000,-' },
+  { image: IMAGES.photocopy, title: 'Stempel Custom', price: 'Tersedia di HS Copy', views: 222338 },
+  { image: IMAGES.largeFormat, title: 'X Banner', price: 'Mulai Rp. 160.000,-', views: 176402 },
+  { image: IMAGES.toteBag, title: 'Cetak Stiker', price: 'Mulai Rp. 10.000', views: 134833 },
+];
 
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const res = await client.api.fetch('/api/products');
-        const data = await res.json();
-        setProducts(data.data || []);
-      } catch (error) {
-        console.error('Failed to fetch products', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchProducts();
-  }, []);
+const newProducts = [
+  { image: IMAGES.tumbler, title: 'Frame Neon Box LED Custom', price: 'Mulai Rp. 499.999,-', views: 5457 },
+  { image: IMAGES.bottle, title: 'Tumbler Lucu', price: 'Mulai Rp. 59.999,-', views: 5568 },
+  { image: IMAGES.banner, title: 'Print DTF UV Decal A3', price: 'Mulai Rp. 29.999,-', views: 18727 },
+  { image: IMAGES.idCard, title: 'Cetak 3D Print', price: 'Mulai Rp. 1.199,-', views: 63214 },
+  { image: IMAGES.toteBag, title: 'Karangan Bunga Mini', price: 'Mulai Rp. 49.999,-', views: 5893 },
+  { image: IMAGES.printing, title: 'Botol Termos Led Prank Template', price: 'Mulai Rp. 59.999,-', views: 3524 },
+  { image: IMAGES.largeFormat, title: 'Botol Dundee 1 Liter', price: 'Mulai Rp. 54.999,-', views: 6294 },
+  { image: IMAGES.handbag, title: 'QR Stand | Standing Custom QR Code Meja', price: 'Mulai Rp. 59.999,-', views: 5262 },
+];
 
-  const popularProducts = products.slice(0, 6);
-  const newProducts = products.slice(6, 14);
+const articles = [
+  {
+    image: IMAGES.printing,
+    title: 'Plakat Sebagai Simbol Penghargaan dan Prestasi',
+    excerpt: 'Memberikan penghargaan bukan hanya tentang memberi...',
+  },
+  {
+    image: IMAGES.banner,
+    title: 'Foto Copy Terdekat yang Cepat dan Terpercaya',
+    excerpt: 'Dalam aktivitas sehari-hari, kebutuhan foto copy h...',
+  },
+  {
+    image: IMAGES.toteBag,
+    title: 'Pilihan Mug Estetik untuk Hadiah Istimewa',
+    excerpt: 'Mug bukan hanya sekadar wadah untuk minum...',
+  },
+  {
+    image: IMAGES.largeFormat,
+    title: 'Optimasi Desain Neon Box untuk Menarik Pelanggan',
+    excerpt: 'Dalam dunia bisnis yang semakin kompetitif, visibi...',
+  },
+];
 
+export default function Home() {
   return (
-    <div className="min-h-screen bg-white font-sans text-gray-700">
+    <div className="min-h-screen bg-gray-50 font-sans">
       <Navbar />
+      <Hero />
+      <FeatureBar />
 
-      <main>
-        {/* Hero Banner - Full Width */}
-        <Hero />
-
-        {/* Promo Section */}
-        <PromoSection />
-
-        {/* Value Props Bar */}
-        <div className="bg-gray-50 border-b border-gray-100 py-4">
-          <div className="container mx-auto px-4">
-            <div className="flex flex-wrap justify-between items-center text-xs md:text-sm font-bold text-primary uppercase tracking-wide gap-4">
-              <span className="flex items-center gap-2"><Star size={16} className="text-secondary" /> Premium Quality Product</span>
-              <span className="flex items-center gap-2"><Truck size={16} className="text-secondary" /> Express Shipping</span>
-              <span className="flex items-center gap-2"><ThumbsUp size={16} className="text-secondary" /> Excellent Services</span>
-              <span className="flex items-center gap-2"><Clock size={16} className="text-secondary" /> 24/7 Support</span>
+      <main className="max-w-7xl mx-auto px-4 py-8">
+        {/* Popular Products */}
+        <section className="mb-12">
+            <div className="flex items-center justify-between mb-6">
+                <h2 className="text-xl font-bold text-gray-800 flex items-center gap-2">
+                <span className="w-1 h-6 bg-primary-500 rounded"></span>
+                PRODUK POPULER
+                </h2>
+                <div className="h-px flex-1 bg-gray-200 mx-4"></div>
             </div>
-          </div>
-        </div>
 
-        {/* Main Layout: Sidebar + Content */}
-        <div className="container mx-auto px-4 py-8">
-          <div className="flex flex-col md:flex-row gap-8">
-
-            {/* Sidebar - Hidden on mobile, visible on desktop */}
-            <aside className="hidden md:block w-1/4 flex-shrink-0">
-              <Sidebar />
-
-              {/* Additional Sidebar Banners/Info could go here */}
-              <div className="mt-6 bg-gray-100 p-4 rounded text-center">
-                <h4 className="font-bold text-primary mb-2">Butuh Bantuan?</h4>
-                <p className="text-sm text-gray-600">Hubungi 0856-5905-5374</p>
-              </div>
-            </aside>
-
-            {/* Main Content Area */}
-            <div className="w-full md:w-3/4">
-
-              {/* Popular Products */}
-              <section className="mb-12">
-                <div className="flex items-center mb-6">
-                  <h2 className="text-xl font-bold text-primary uppercase tracking-wider border-b-2 border-secondary pb-1 pr-4">
-                    Popular Products
-                  </h2>
-                  <div className="flex-grow border-b border-gray-200 h-full"></div>
+            <div className="flex flex-col md:flex-row gap-6">
+                {/* Categories Sidebar */}
+                <div className="w-full md:w-56 flex-shrink-0">
+                  <Sidebar />
                 </div>
 
-                {loading ? (
-                  <div className="text-center py-8">Loading products...</div>
-                ) : (
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-                    {popularProducts.length > 0 ? popularProducts.map((product, index) => (
-                      <ProductCard
-                        key={index}
-                        id={product.id}
-                        title={product.name}
-                        price={`Rp ${product.price.toLocaleString()}`}
-                        category={product.category}
-                        image={product.imageUrl}
-                      />
-                    )) : (
-                      <div className="col-span-3 text-center py-8 text-gray-500">No products available. Add some in Admin Panel.</div>
-                    )}
-                  </div>
-                )}
-              </section>
-
-              {/* New Products */}
-              <section className="mb-12">
-                <div className="flex items-center mb-6">
-                  <h2 className="text-xl font-bold text-primary uppercase tracking-wider border-b-2 border-secondary pb-1 pr-4">
-                    New Products
-                  </h2>
-                  <div className="flex-grow border-b border-gray-200 h-full"></div>
+                {/* Products Grid */}
+                <div className="flex-1 grid grid-cols-2 md:grid-cols-3 gap-4">
+                  {popularProducts.map((product, idx) => (
+                      <ProductCard key={idx} {...product} />
+                  ))}
                 </div>
-
-                {loading ? (
-                  <div className="text-center py-8">Loading products...</div>
-                ) : (
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                    {newProducts.length > 0 ? newProducts.map((product, index) => (
-                      <ProductCard
-                        key={index}
-                        id={product.id}
-                        title={product.name}
-                        price={`Rp ${product.price.toLocaleString()}`}
-                        category={product.category}
-                        image={product.imageUrl}
-                      />
-                    )) : (
-                      <div className="col-span-4 text-center py-8 text-gray-500">No new products.</div>
-                    )}
-                  </div>
-                )}
-              </section>
-
             </div>
-          </div>
-        </div>
+        </section>
 
-        {/* About Section - Full Width */}
-        <section className="py-16 bg-white border-t border-gray-100">
-          <div className="container mx-auto px-4 text-center max-w-5xl">
-            <h2 className="text-2xl font-bold text-primary mb-2 uppercase">About HS Copy Center</h2>
-            <h3 className="text-xl font-bold text-gray-800 mb-6 uppercase">Solusi Cetak Cepat & Berkualitas</h3>
-            <p className="text-gray-500 leading-relaxed text-sm text-justify md:text-center">
-              HS Copy Center adalah penyedia jasa digital printing dan fotocopy terbaik di Purwokerto.
-              Kami siap melayani kebutuhan cetak dokumen, skripsi, brosur, banner, hingga merchandise dengan kualitas premium.
-              Didukung dengan mesin terbaru dan tenaga profesional, kami menjamin hasil cetak yang tajam dan proses yang cepat.
-              Kami juga menyediakan layanan "Kirim File via WA" untuk kemudahan anda dalam memesan tanpa harus antri lama.
-              Percayakan kebutuhan cetak anda kepada HS Copy Center, Sang Pencetak Sukses Anda.
+        {/* New Products */}
+        <section className="mb-12">
+            <div className="flex items-center justify-between mb-6">
+                <h2 className="text-xl font-bold text-gray-800 flex items-center gap-2">
+                <span className="w-1 h-6 bg-primary-500 rounded"></span>
+                PRODUK TERBARU
+                </h2>
+                <div className="h-px flex-1 bg-gray-200 mx-4"></div>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {newProducts.map((product, idx) => (
+                <ProductCard key={idx} {...product} />
+                ))}
+            </div>
+        </section>
+      </main>
+
+      {/* About Section */}
+      <section className="py-12 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+            <div className="text-center mb-8">
+            <p className="text-gray-500 uppercase tracking-wider mb-2 text-sm font-bold">TENTANG HS COPY CENTER</p>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-800">
+                SOLUSI TERBAIK UNTUK CETAK & PRINT
+            </h2>
+            </div>
+
+            <div className="max-w-4xl mx-auto text-center text-gray-600 leading-relaxed text-sm">
+            <p className="mb-4">
+                HS Copy Center adalah layanan digital printing dan percetakan terpercaya dengan cabang yang tersebar di berbagai lokasi. Berbagai kebutuhan printing, jasa desain grafis, percetakan, fotocopy hingga coworking space bisa dilayani di tempat print kami.
             </p>
+            <p className="mb-4">
+                Mulai dari brosur, poster dengan berbagai jenis dan ukuran, cetak foto, ID Card, stempel, kop surat, nota, spanduk, banner, X banner, roll banner, buku yasin, photobook, buku agenda, kartu nama, kalender meja atau dinding, mug secara custom, berbagai macam botol minum termasuk tumbler starbuck, hingga plakat.
+            </p>
+            </div>
+        </div>
+      </section>
+
+      {/* Latest Articles */}
+      <section className="py-12 bg-gray-100">
+          <div className="max-w-7xl mx-auto px-4">
+            <div className="flex items-center justify-between mb-8">
+              <h2 className="text-xl font-bold text-gray-800 flex items-center gap-2">
+                <span className="w-1 h-6 bg-primary-500 rounded"></span>
+                ARTIKEL TERBARU
+              </h2>
+              <div className="h-px flex-1 bg-gray-300 mx-4"></div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+              {articles.map((article, idx) => (
+                <div key={idx} className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow cursor-pointer group">
+                  <div className="aspect-video bg-gray-200 overflow-hidden">
+                    <img
+                      src={article.image}
+                      alt={article.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                  <div className="p-4">
+                    <h3 className="font-bold text-gray-800 mb-2 line-clamp-2 group-hover:text-primary-500 text-sm">
+                      {article.title}
+                    </h3>
+                    <p className="text-xs text-gray-500 line-clamp-2 mb-3">
+                      {article.excerpt}
+                    </p>
+                    <span className="text-primary-500 text-xs font-bold hover:underline">
+                      Read More
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
-        {/* Member Section */}
-        <MemberSection />
-      </main>
       <Footer />
     </div>
   );
-};
-
-export default Home;
+}
