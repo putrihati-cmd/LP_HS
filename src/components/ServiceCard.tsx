@@ -29,9 +29,11 @@ const ServiceCard = ({ id, title, description, image, slug }: ServiceCardProps) 
         </div>
       </div>
       <div className="p-5 flex-1 flex flex-col">
-        <h3 className="text-lg font-bold text-gray-800 group-hover:text-primary-500 mb-2">
-          {title}
-        </h3>
+        <Link to={slug ? `/layanan/${slug}` : '/contact'}>
+            <h3 className="text-lg font-bold text-gray-800 group-hover:text-primary-500 mb-2 cursor-pointer transition-colors">
+            {title}
+            </h3>
+        </Link>
         <p className="text-gray-500 text-sm line-clamp-3 mb-4 flex-1">
           {description || 'Layanan berkualitas dari HS Copy Center Purwokerto.'}
         </p>
