@@ -53,11 +53,22 @@ export default function ServicesPage() {
 
     // Filter by Search Query
     if (searchQuery) {
-        const query = searchQuery.toLowerCase();
-        result = result.filter(s =>
-            s.title.toLowerCase().includes(query) ||
-            (s.description && s.description.toLowerCase().includes(query))
-        );
+        const rawQuery = searchQuery.toLowerCase();
+        // 1. Try exact slug match first
+        const slugMatch = result.filter(s => s.slug === rawQuery);
+
+        if (slugMatch.length > 0) {
+            result = slugMatch;
+        } else {
+            // 2. Fallback to Keyword Matching (Handling "Print-&-Fotocopy" -> "print", "fotocopy")
+            const terms = rawQuery.split(/[\s-]+/).filter(t => t.length > 1 && t !== '&'); // Split by space or hyphen, ignore single chars and '&'
+
+            result = result.filter(s => {
+                const text = `${s.title} ${s.description || ''} ${s.slug}`.toLowerCase();
+                // Match if ANY of the terms are found in the text
+                return terms.some(term => text.includes(term));
+            });
+        }
     }
 
     setFilteredServices(result);
