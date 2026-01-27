@@ -9,7 +9,7 @@ echo "🚀 Deploying HS Copy Center..."
 # Variables
 APP_DIR="/var/www/hscopycenter"
 REPO_URL="https://github.com/putrihati-cmd/LP_HS.git"
-BRANCH="backup-static-site"
+BRANCH="main"
 
 # Navigate to app directory
 cd $APP_DIR
