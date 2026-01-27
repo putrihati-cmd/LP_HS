@@ -40,6 +40,8 @@ pm2 start "npx serve -s dist -l 3001" --name "hscopycenter-frontend"
 echo "📦 Installing backend dependencies..."
 cd $APP_DIR/backend
 npm install
+echo "🔧 Rebuilding native modules..."
+npm rebuild
 
 # Initialize database if not exists
 echo "🗄️ Initializing database..."
