@@ -72,22 +72,22 @@ export default function Home() {
       <main className="max-w-7xl mx-auto px-4 py-8">
         {/* Popular Products */}
         <section className="mb-12">
-            <div className="flex items-center justify-between mb-6">
-                <h2 className="text-xl font-bold text-gray-800 flex items-center gap-2">
-                <span className="w-1 h-6 bg-primary-500 rounded"></span>
-                PRODUK POPULER
+            <div className="flex items-center justify-center gap-4 mb-8">
+                <div className="h-px w-16 md:w-24 bg-gray-300"></div>
+                <h2 className="text-xl md:text-2xl font-bold text-primary-500 uppercase tracking-wide">
+                  PRODUK POPULER
                 </h2>
-                <div className="h-px flex-1 bg-gray-200 mx-4"></div>
+                <div className="h-px w-16 md:w-24 bg-gray-300"></div>
             </div>
 
-            <div className="flex flex-col md:flex-row gap-6">
+            <div className="flex flex-col md:flex-row gap-8">
                 {/* Categories Sidebar */}
-                <div className="w-full md:w-56 flex-shrink-0">
+                <div className="w-full md:w-64 flex-shrink-0">
                   <Sidebar />
                 </div>
 
                 {/* Products Grid */}
-                <div className="flex-1 grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div className="flex-1 grid grid-cols-2 md:grid-cols-3 gap-6">
                   {popularProducts.map((product, idx) => (
                       <ProductCard key={idx} {...product} />
                   ))}
@@ -97,15 +97,15 @@ export default function Home() {
 
         {/* New Products */}
         <section className="mb-12">
-            <div className="flex items-center justify-between mb-6">
-                <h2 className="text-xl font-bold text-gray-800 flex items-center gap-2">
-                <span className="w-1 h-6 bg-primary-500 rounded"></span>
-                PRODUK TERBARU
+            <div className="flex items-center justify-center gap-4 mb-8">
+                <div className="h-px w-16 md:w-24 bg-gray-300"></div>
+                <h2 className="text-xl md:text-2xl font-bold text-primary-500 uppercase tracking-wide">
+                  PRODUK TERBARU
                 </h2>
-                <div className="h-px flex-1 bg-gray-200 mx-4"></div>
+                <div className="h-px w-16 md:w-24 bg-gray-300"></div>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                 {newProducts.map((product, idx) => (
                 <ProductCard key={idx} {...product} />
                 ))}

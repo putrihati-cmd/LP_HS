@@ -30,10 +30,12 @@ export default function FeatureBar() {
       <div className="max-w-7xl mx-auto px-4 py-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {features.map((feature, idx) => (
-            <div key={idx} className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors">
-              {feature.icon}
+            <div key={idx} className="flex items-center justify-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors">
+              <div className="p-2 bg-primary-50 rounded-full text-primary-600">
+                {feature.icon}
+              </div>
               <div>
-                <h3 className="font-bold text-gray-800 text-sm uppercase">{feature.title}</h3>
+                <h3 className="font-bold text-gray-800 text-sm uppercase tracking-wide">{feature.title}</h3>
                 <p className="text-xs text-gray-500">{feature.desc}</p>
               </div>
             </div>
