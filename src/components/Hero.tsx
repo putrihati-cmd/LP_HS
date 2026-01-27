@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 // Using Hardcoded Image from copas for now (matching the clone request)
-const BANNER_IMG = 'https://public.youware.com/users-website-assets/prod/9807b15c-f88c-4ee9-a2d5-04d7d8001cdf/d2f00ca2278b478f8972ec741afa5327.jpg';
+const BANNER_IMG = 'https://images.unsplash.com/photo-1585800057018-8f85f5415712?w=800&auto=format&fit=crop&q=60';
 
 export default function Hero() {
   return (

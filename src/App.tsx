@@ -51,10 +51,10 @@ function App() {
         <Route path="/skripsi" element={<SkripsiPage />} />
         <Route path="/layanan/:slug" element={<ServiceDetail />} />
 
-        {/* Placeholders for Snapy menu items */}
+        {/* Placeholders for menu items */}
         <Route path="/photobook" element={<PlaceholderPage title="Photobook" />} />
         <Route path="/franchise" element={<PlaceholderPage title="Franchise" />} />
-        <Route path="/snapy-kain" element={<PlaceholderPage title="Snapy Kain" />} />
+        <Route path="/hs-kain" element={<PlaceholderPage title="HS Kain" />} />
         <Route path="/print-shop" element={<PlaceholderPage title="Print Shop" />} />
         <Route path="/contact" element={<PlaceholderPage title="Hubungi Kami" />} />
 

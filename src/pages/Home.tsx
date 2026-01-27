@@ -8,15 +8,15 @@ import ServiceCard from '../components/ServiceCard';
 import { servicesApi } from '../api/services';
 
 const IMAGES = {
-  printing: 'https://public.youware.com/users-website-assets/prod/9807b15c-f88c-4ee9-a2d5-04d7d8001cdf/d2f00ca2278b478f8972ec741afa5327.jpg',
-  banner: 'https://public.youware.com/users-website-assets/prod/9807b15c-f88c-4ee9-a2d5-04d7d8001cdf/1eb92f1117f842e4b115ebd3e3725716.jpg',
-  largeFormat: 'https://public.youware.com/users-website-assets/prod/9807b15c-f88c-4ee9-a2d5-04d7d8001cdf/c9bef1a7ffb548459120a2b52c925ba9.jpg',
-  idCard: 'https://public.youware.com/users-website-assets/prod/9807b15c-f88c-4ee9-a2d5-04d7d8001cdf/9b7b584e72e446d59f722b77996d2fdd.jpg',
-  photocopy: 'https://public.youware.com/users-website-assets/prod/9807b15c-f88c-4ee9-a2d5-04d7d8001cdf/c6e26a1be55e4d5c952814b857600bbc.png',
-  tumbler: 'https://public.youware.com/users-website-assets/prod/9807b15c-f88c-4ee9-a2d5-04d7d8001cdf/feab4a8fff8f4609a821947ab3855445.jpg',
-  bottle: 'https://public.youware.com/users-website-assets/prod/9807b15c-f88c-4ee9-a2d5-04d7d8001cdf/5ff42faa56fe49b9a49970530fed65df.jpg',
-  toteBag: 'https://public.youware.com/users-website-assets/prod/9807b15c-f88c-4ee9-a2d5-04d7d8001cdf/a701343e528b4529980f35bd59f1c312.jpg',
-  handbag: 'https://public.youware.com/users-website-assets/prod/9807b15c-f88c-4ee9-a2d5-04d7d8001cdf/56e85c2160ed48dc9fa13fbed675f676.png',
+  printing: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&auto=format&fit=crop&q=60', // Digital Printing
+  banner: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=800&auto=format&fit=crop&q=60', // Banner hanging
+  largeFormat: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=60', // Large printer
+  idCard: 'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=800&auto=format&fit=crop&q=60', // ID Card
+  photocopy: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&auto=format&fit=crop&q=60', // Papers/Work
+  tumbler: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800&auto=format&fit=crop&q=60', // Tumbler
+  bottle: 'https://images.unsplash.com/photo-1602143407151-0111419500be?w=800&auto=format&fit=crop&q=60', // Bottle
+  toteBag: 'https://images.unsplash.com/photo-1597484662317-9bd7bdda2907?w=800&auto=format&fit=crop&q=60', // Tote Bag
+  handbag: 'https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=800&auto=format&fit=crop&q=60', // Handbag app
 };
 
 const articles = [

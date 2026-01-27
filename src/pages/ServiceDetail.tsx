@@ -13,7 +13,7 @@ const FALLBACK_SERVICES = [
     title: 'Jilid Skripsi Hardcover',
     slug: 'jilid-skripsi-hardcover',
     description: 'Layanan jilid skripsi terbaik dengan hasil rapi, kuat, dan tahan lama. Menggunakan bahan cover berkualitas premium dengan pilihan warna lengkap sesuai fakultas. Pengerjaan cepat bisa ditunggu untuk deadline mendesak. Sudah termasuk pembatas buku pita dan siku pengaman emas/perak.',
-    imageUrl: 'https://public.youware.com/users-website-assets/prod/9807b15c-f88c-4ee9-a2d5-04d7d8001cdf/d2f00ca2278b478f8972ec741afa5327.jpg'
+    imageUrl: 'https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?w=800&auto=format&fit=crop&q=60'
   }
 ];
 

@@ -29,7 +29,7 @@ export default function FloatingActions() {
         <MessageCircle size={24} />
       </a>
 
-       {/* Phone Call (Hidden on mobile usually if WA is main, but Snapy has it) */}
+       {/* Phone Call (Hidden on mobile usually if WA is main) */}
        <a
         href="tel:085659055374"
         className="hidden md:flex bg-blue-500 hover:bg-blue-600 text-white p-3 rounded-full shadow-lg transition-transform hover:scale-105 items-center justify-center w-12 h-12"
