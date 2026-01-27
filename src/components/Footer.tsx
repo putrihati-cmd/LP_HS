@@ -34,14 +34,19 @@ export default function Footer() {
 
           {/* Online Support */}
           <div>
-            <h3 className="text-white font-bold mb-4 uppercase text-sm tracking-wider">Online Support</h3>
+            <h3 className="text-white font-bold mb-4 uppercase text-sm tracking-wider">Kontak & Lokasi</h3>
             <ul className="space-y-2 text-sm">
+              <li className="font-bold text-primary-400">HS Copy Center - Purwokerto</li>
+              <li>Jl. HR. Bunyamin No. P2</li>
+              <li>Purwokerto Utara</li>
+
+              <li className="pt-4 font-bold text-gray-400 text-xs">JAM BUKA:</li>
               <li>Senin-Jumat : 08.00 - 21.00</li>
               <li>Sabtu : 08.00 - 19.00</li>
-              <li>Minggu : 12.00 - 21.00</li>
-              <li className="pt-2 flex items-center gap-2">
+
+              <li className="pt-4 flex items-center gap-2">
                 <Phone size={14} className="text-primary-400" />
-                <a href="tel:08538888123" className="hover:text-primary-400 transition-colors">0856-5905-5374</a>
+                <a href="tel:085659055374" className="hover:text-primary-400 transition-colors">0856-5905-5374 (WA)</a>
               </li>
               <li className="flex items-center gap-2">
                 <Mail size={14} className="text-primary-400" />

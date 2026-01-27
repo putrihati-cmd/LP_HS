@@ -4,18 +4,16 @@ import { Link } from 'react-router-dom';
 
 export default function CategoriesSidebar() {
   const categories = [
-    'Print Dokumen',
-    'Fotocopy',
-    'Print Kain',
-    'Large Format',
-    'Promo & Gift',
-    'Foto',
-    'Marketing Tools',
-    'Printeron',
-    'Coworking Space',
-    'Signage',
-    'Packaging',
-    'UMKM',
+    'Print & Fotocopy',
+    'Jilid Skripsi Hardcover',
+    'Jilid Softcover',
+    'Cetak Dokumen Penting',
+    'Burning CD & Flashdisk',
+    'Print Warna A3+',
+    'ATK & Kuliah',
+    'Cetak Foto',
+    'Stempel & Undangan',
+    'Id Card & Lanyard',
   ];
 
   return (

@@ -95,6 +95,9 @@ export default function Home() {
             </div>
         </section>
 
+        {/* Pricing Packages Section */}
+        <PricingPackages />
+
         {/* New Products */}
         <section className="mb-12">
             <div className="flex items-center justify-center gap-4 mb-8">
@@ -113,22 +116,22 @@ export default function Home() {
         </section>
       </main>
 
-      {/* About Section */}
+      {/* About Section - Updated Content */}
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-8">
-            <p className="text-gray-500 uppercase tracking-wider mb-2 text-sm font-bold">TENTANG HS COPY CENTER</p>
+            <p className="text-gray-500 uppercase tracking-wider mb-2 text-sm font-bold">TENTANG KAMI</p>
             <h2 className="text-2xl md:text-3xl font-bold text-gray-800">
-                SOLUSI TERBAIK UNTUK CETAK & PRINT
+                HS COPY CENTER PURWOKERTO
             </h2>
             </div>
 
             <div className="max-w-4xl mx-auto text-center text-gray-600 leading-relaxed text-sm">
             <p className="mb-4">
-                HS Copy Center adalah layanan digital printing dan percetakan terpercaya dengan cabang yang tersebar di berbagai lokasi. Berbagai kebutuhan printing, jasa desain grafis, percetakan, fotocopy hingga coworking space bisa dilayani di tempat print kami.
+                HS Copy Center hadir untuk membantu mahasiswa dan masyarakat Purwokerto dalam urusan cetak dan jilid dokumen. Kami mengutamakan kerapian, ketepatan, dan pelayanan yang jelas agar setiap dokumen selesai sesuai kebutuhan.
             </p>
             <p className="mb-4">
-                Mulai dari brosur, poster dengan berbagai jenis dan ukuran, cetak foto, ID Card, stempel, kop surat, nota, spanduk, banner, X banner, roll banner, buku yasin, photobook, buku agenda, kartu nama, kalender meja atau dinding, mug secara custom, berbagai macam botol minum termasuk tumbler starbuck, hingga plakat.
+                Sebagai spesialis Skripsi & Tesis, kami memahami pentingnya deadline dan kualitas. Dengan tim yang berpengalaman, kami siap menjadi partner cetak terpercaya Anda, mulai dari print dokumen harian hingga penjilidan skripsi hard cover eksklusif.
             </p>
             </div>
         </div>

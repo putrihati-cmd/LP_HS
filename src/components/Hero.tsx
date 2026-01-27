@@ -10,17 +10,17 @@ export default function Hero() {
         <div className="flex flex-col md:flex-row items-center gap-8">
           <div className="flex-1 text-center md:text-left">
             <span className="inline-block px-3 py-1 bg-secondary-500 text-white text-sm font-medium rounded-full mb-4 shadow-sm">
-              HOT PRODUCT
+              HS COPY CENTER PURWOKERTO
             </span>
             <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
-              CETAK CUSTOM<br />
-              <span className="text-secondary-300">BERKUALITAS</span>
+              SOLUSI CETAK &<br />
+              <span className="text-secondary-300">JILID SKRIPSI</span>
             </h1>
             <p className="text-white/90 mb-6 max-w-md mx-auto md:mx-0 text-lg">
-              Solusi cetak terbaik untuk kebutuhan bisnis Anda. Dari dokumen hingga merchandise custom dengan hasil tajam.
+              Cepat, Rapi, dan Bisa Ditunggu. Melayani kebutuhan mahasiswa dan umum dengan hasil terbaik.
             </p>
             <button className="px-8 py-3 bg-secondary-500 hover:bg-secondary-600 text-white font-bold rounded-lg transition-colors shadow-lg transform hover:-translate-y-1">
-              PESAN SEKARANG
+              KONSULTASI SEKARANG
             </button>
           </div>
           <div className="flex-1 relative">

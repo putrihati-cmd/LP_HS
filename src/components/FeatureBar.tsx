@@ -1,27 +1,27 @@
 import React from 'react';
-import { Star, Truck, ThumbsUp, Headset } from 'lucide-react';
+import { Award, Clock, Coins, MapPin } from 'lucide-react';
 
 export default function FeatureBar() {
   const features = [
     {
-      icon: <Star className="w-8 h-8 text-primary-500" />,
-      title: 'Kualitas Premium',
-      desc: 'Hasil cetak terbaik'
+      icon: <Award className="w-8 h-8 text-white" />,
+      title: 'Berpengalaman',
+      desc: 'Spesialis Skripsi & Dokumen'
     },
     {
-      icon: <Truck className="w-8 h-8 text-primary-500" />,
-      title: 'Pengiriman Cepat',
-      desc: 'Same day delivery'
+      icon: <Clock className="w-8 h-8 text-white" />,
+      title: 'Proses Cepat',
+      desc: 'Bisa Ditunggu'
     },
     {
-      icon: <ThumbsUp className="w-8 h-8 text-primary-500" />,
-      title: 'Layanan Terbaik',
-      desc: 'Kepuasan pelanggan'
+      icon: <Coins className="w-8 h-8 text-white" />,
+      title: 'Harga Mahasiswa',
+      desc: 'Terjangkau & Berkualitas'
     },
     {
-      icon: <Headset className="w-8 h-8 text-primary-500" />,
-      title: 'Support 24/7',
-      desc: 'Siap membantu'
+      icon: <MapPin className="w-8 h-8 text-white" />,
+      title: 'Lokasi Strategis',
+      desc: 'Mudah Dijangkau'
     },
   ];
 
@@ -31,7 +31,7 @@ export default function FeatureBar() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {features.map((feature, idx) => (
             <div key={idx} className="flex items-center justify-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors">
-              <div className="p-2 bg-primary-50 rounded-full text-primary-600">
+              <div className="p-2 bg-primary-500 rounded-full text-white shadow-md">
                 {feature.icon}
               </div>
               <div>
