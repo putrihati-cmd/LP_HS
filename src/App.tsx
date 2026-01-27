@@ -14,6 +14,7 @@ import GoPrint from './pages/GoPrint';
 import SkripsiPage from './pages/SkripsiPage';
 import ServiceDetail from './pages/ServiceDetail';
 import PlaceholderPage from './pages/PlaceholderPage';
+import BottomNav from './components/BottomNav';
 
 // Admin Imports
 import AdminLayout from './layouts/AdminLayout';
@@ -68,6 +69,7 @@ function App() {
         {/* Fallback */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
+      <BottomNav />
     </Router>
   );
 }
