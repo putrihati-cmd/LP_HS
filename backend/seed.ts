@@ -48,12 +48,31 @@ const products = [
   { name: "Kaos Sablon DTF", category: "Print Kain", price: 75000, stock: 30, description: "Kaos dengan sablon DTF full color" }
 ];
 
+// Seed sample promos
+const promos = [
+  {
+    title: "Diskon Akhir Tahun 50%",
+    description: "Dapatkan diskon 50% untuk cetak kalender 2026. Berlaku untuk pemesanan minimal 50 pcs.",
+    badge: "HOT SALE",
+    validUntil: new Date("2026-12-31").getTime(),
+    active: 1
+  },
+  {
+    title: "Gratis Ongkir",
+    description: "Gratis ongkir untuk setiap pemesanan di atas Rp 100.000 khusus area Purwokerto.",
+    badge: "FREE SHIPPING",
+    validUntil: new Date("2026-06-30").getTime(),
+    active: 1
+  }
+];
+
 console.log("Seeding database...");
 
 // Clear existing data (optional - comment out if you want to keep existing data)
 db.exec("DELETE FROM categories");
 db.exec("DELETE FROM banners");
 db.exec("DELETE FROM products");
+db.exec("DELETE FROM promos");
 
 // Insert categories
 const insertCategory = db.prepare(
@@ -81,5 +100,14 @@ for (const product of products) {
   insertProduct.run(product.name, product.category, product.price, product.stock, product.description);
 }
 console.log(`Inserted ${products.length} products`);
+
+// Insert promos
+const insertPromo = db.prepare(
+  "INSERT INTO promos (title, description, badge, valid_until, active) VALUES (?, ?, ?, ?, ?)"
+);
+for (const promo of promos) {
+  insertPromo.run(promo.title, promo.description, promo.badge, promo.validUntil, promo.active);
+}
+console.log(`Inserted ${promos.length} promos`);
 
 console.log("Database seeding complete!");

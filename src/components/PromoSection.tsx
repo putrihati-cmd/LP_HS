@@ -1,36 +1,47 @@
-'use client';
-
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
 import { Sparkles, Clock, ArrowRight } from 'lucide-react';
-import { Button } from '@/components/ui';
-import { getWhatsAppLink } from '@/lib/utils';
+import { client } from '../api/client';
 
 interface Promo {
-  id: string;
+  id: number;
   title: string;
   description: string;
   badge: string;
-  validUntil: string;
-  active: boolean;
+  validUntil: number;
+  active: number;
 }
 
 export function PromoSection() {
   const [promos, setPromos] = useState<Promo[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/data/promo.json')
-      .then(res => res.json())
-      .then(data => {
-        const now = new Date();
-        const activePromos = data.promos.filter(
-          (p: Promo) => p.active && new Date(p.validUntil) >= now
-        );
-        setPromos(activePromos);
-      })
-      .catch(() => setPromos([]));
+    fetchPromos();
   }, []);
 
+  const fetchPromos = async () => {
+    try {
+      const res = await client.api.fetch('/api/promos');
+      const data = await res.json();
+      if (data.data && data.data.length > 0) {
+        const now = Date.now();
+        const activePromos = data.data.filter(
+          (p: Promo) => p.active === 1 && p.validUntil >= now
+        );
+        setPromos(activePromos);
+      }
+    } catch (error) {
+      console.error('Failed to fetch promos', error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const getWhatsAppLink = (message: string) => {
+    return `https://wa.me/6285659055374?text=${encodeURIComponent(message)}`;
+  };
+
+  if (loading) return null;
   if (promos.length === 0) return null;
 
   return (
@@ -76,21 +87,21 @@ export function PromoSection() {
               <p className="mb-4 flex-grow text-sm text-gray-600">
                 {promo.description}
               </p>
-              <Link
+              <a
                 href={getWhatsAppLink(
                   `Halo, saya mau tanya promo: ${promo.title}`
                 )}
                 target="_blank"
+                rel="noreferrer"
                 className="mt-auto"
               >
-                <Button
-                  size="sm"
-                  className="w-full rounded-lg bg-blue-600 text-white hover:bg-blue-700"
+                <button
+                  className="w-full flex items-center justify-center rounded-lg bg-blue-600 px-4 py-2 text-white hover:bg-blue-700 transition-colors text-sm font-medium"
                 >
                   Klaim Promo
                   <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
+                </button>
+              </a>
             </div>
           ))}
         </div>

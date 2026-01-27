@@ -43,12 +43,20 @@ npm install
 
 # Initialize database if not exists
 echo "🗄️ Initializing database..."
-if [ ! -f "local.db" ]; then
-    node --import tsx/esm init-db.ts
+# Initialize database
+echo "🗄️ Initializing database schema..."
+# Always run init-db to ensure new tables (like promos) are created
+node --import tsx/esm init-db.ts
+
+# Optional: Run seed if you want to reset/update data
+# node --import tsx/esm seed.ts
+# For now, we will run seed to ensure Promos are added (WARNING: Clears existing data)
+if [ ! -f "seeded.lock" ]; then
+    echo "🌱 Seeding initial data..."
     node --import tsx/esm seed.ts
-    echo "Database initialized and seeded!"
+    touch seeded.lock
 else
-    echo "Database already exists, skipping init."
+    echo "🌱 Seed already run. Skipping to preserve data. Run manually if needed."
 fi
 
 # Restart backend with PM2

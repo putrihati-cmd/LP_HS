@@ -179,5 +179,43 @@ export async function createApp(
     return c.json({ success: true });
   });
 
+  // --- Promos ---
+
+  app.get('/api/promos', async (c) => {
+    const promos = await edgespark.db.select().from(tables.promos);
+    return c.json({ data: promos });
+  });
+
+  app.post('/api/promos', async (c) => {
+    const body = await c.req.json();
+    const result = await edgespark.db.insert(tables.promos).values({
+      title: body.title,
+      description: body.description,
+      badge: body.badge,
+      validUntil: body.validUntil,
+      active: body.active ?? 1
+    }).returning();
+    return c.json({ data: result[0] });
+  });
+
+  app.put('/api/promos/:id', async (c) => {
+    const id = Number(c.req.param('id'));
+    const body = await c.req.json();
+    const result = await edgespark.db.update(tables.promos).set({
+      title: body.title,
+      description: body.description,
+      badge: body.badge,
+      validUntil: body.validUntil,
+      active: body.active
+    }).where(eq(tables.promos.id, id)).returning();
+    return c.json({ data: result[0] });
+  });
+
+  app.delete('/api/promos/:id', async (c) => {
+    const id = Number(c.req.param('id'));
+    await edgespark.db.delete(tables.promos).where(eq(tables.promos.id, id));
+    return c.json({ success: true });
+  });
+
   return app;
 }

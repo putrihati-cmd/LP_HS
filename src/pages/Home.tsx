@@ -7,6 +7,9 @@ import Footer from '../components/Footer';
 import { Star, Truck, ThumbsUp, Clock } from 'lucide-react';
 import { client } from '../api/client';
 
+import { PromoSection } from '../components/PromoSection';
+import { MemberSection } from '../components/MemberSection';
+
 const Home = () => {
   const [products, setProducts] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
@@ -36,6 +39,9 @@ const Home = () => {
       <main>
         {/* Hero Banner - Full Width */}
         <Hero />
+
+        {/* Promo Section */}
+        <PromoSection />
 
         {/* Value Props Bar */}
         <div className="bg-gray-50 border-b border-gray-100 py-4">
@@ -143,6 +149,9 @@ const Home = () => {
             </p>
           </div>
         </section>
+
+        {/* Member Section */}
+        <MemberSection />
       </main>
       <Footer />
     </div>

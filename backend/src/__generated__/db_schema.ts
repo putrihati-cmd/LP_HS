@@ -92,3 +92,13 @@ export const categories = sqliteTable("categories", {
 }, (table) => [
   uniqueIndex("idx_categories_slug").on(table.slug)
 ]);
+
+export const promos = sqliteTable("promos", {
+	id: integer().primaryKey({ autoIncrement: true }),
+	title: text().notNull(),
+	description: text(),
+  badge: text(),
+  validUntil: integer("valid_until"),
+  active: integer().default(1),
+	createdAt: integer("created_at").default(sql`(unixepoch())`),
+});

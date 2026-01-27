@@ -20,6 +20,7 @@ import AddProduct from './pages/admin/AddProduct';
 import Orders from './pages/admin/Orders';
 import Categories from './pages/admin/Categories';
 import Banners from './pages/admin/Banners';
+import Promos from './pages/admin/Promos';
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
           <Route path="orders" element={<Orders />} />
           <Route path="categories" element={<Categories />} />
           <Route path="banners" element={<Banners />} />
+          <Route path="promos" element={<Promos />} />
           <Route path="settings" element={<PlaceholderPage title="Admin Settings" description="Konfigurasi sistem admin." />} />
         </Route>
 

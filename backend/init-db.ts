@@ -69,6 +69,19 @@ async function init() {
     );
   `);
 
+  // Promos
+  db.exec(`
+    CREATE TABLE IF NOT EXISTS promos (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      title TEXT NOT NULL,
+      description TEXT,
+      badge TEXT,
+      valid_until INTEGER,
+      active INTEGER DEFAULT 1,
+      created_at INTEGER DEFAULT (unixepoch())
+    );
+  `);
+
   console.log('Database initialized!');
 
   // Seed

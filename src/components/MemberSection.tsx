@@ -1,6 +1,3 @@
-'use client';
-
-import Link from 'next/link';
 import {
   Crown,
   Gift,
@@ -10,8 +7,6 @@ import {
   Sparkles,
   ArrowRight,
 } from 'lucide-react';
-import { Button } from '@/components/ui';
-import { getWhatsAppLink } from '@/lib/utils';
 
 const levels = [
   { name: 'Bronze', emoji: '🥉', spend: 'Rp 0', discount: '-', bonus: '1x' },
@@ -65,6 +60,10 @@ const benefits = [
 ];
 
 export function MemberSection() {
+  const getWhatsAppLink = (message: string) => {
+    return `https://wa.me/6285659055374?text=${encodeURIComponent(message)}`;
+  };
+
   return (
     <section
       id="member"
@@ -161,21 +160,22 @@ export function MemberSection() {
 
         {/* CTA */}
         <div className="text-center">
-          <Link
+          <a
             href={getWhatsAppLink(
               'Halo, saya mau daftar member HS Copy Center'
             )}
             target="_blank"
+            rel="noreferrer"
+            className="inline-block"
           >
-            <Button
-              size="lg"
-              className="h-14 rounded-full bg-yellow-500 px-8 text-lg font-bold text-gray-900 shadow-lg shadow-yellow-500/30 transition-all hover:scale-105 hover:bg-yellow-400"
+            <button
+              className="flex items-center h-14 rounded-full bg-yellow-500 px-8 text-lg font-bold text-gray-900 shadow-lg shadow-yellow-500/30 transition-all hover:scale-105 hover:bg-yellow-400"
             >
               <Crown className="mr-2 h-5 w-5" />
               Daftar Member Sekarang - GRATIS!
               <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-          </Link>
+            </button>
+          </a>
           <p className="mt-4 text-sm text-gray-500">
             Cukup isi nama & nomor HP via WhatsApp
           </p>
