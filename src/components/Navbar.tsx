@@ -59,13 +59,20 @@ export default function Navbar() {
                 <ChevronDown size={14} />
               </Link>
             </li>
-            <li><Link to="/promo" className="block px-3 py-2 text-gray-600 hover:text-primary-500 hover:bg-primary-50 rounded">Promo</Link></li>
-
-            <li><Link to="/member" className="block px-3 py-2 text-gray-600 hover:text-primary-500 hover:bg-primary-50 rounded">Member Info</Link></li>
             <li><Link to="/artikel" className="block px-3 py-2 text-gray-600 hover:text-primary-500 hover:bg-primary-50 rounded">Artikel</Link></li>
-             <li><Link to="/contact" className="block px-3 py-2 text-gray-600 hover:text-primary-500 hover:bg-primary-50 rounded">Tentang Kami</Link></li>
-             <li><Link to="/snapy-kain" className="block px-3 py-2 text-gray-600 hover:text-primary-500 hover:bg-primary-50 rounded">HS Kain</Link></li>
-             <li><Link to="/skripsi" className="block px-3 py-2 bg-secondary-500 text-white font-bold hover:bg-secondary-600 rounded shadow-sm">Paket Skripsi</Link></li>
+            <li>
+                <a href="https://cetakfoto.hscopycenter.site" target="_blank" rel="noopener noreferrer" className="block px-3 py-2 text-gray-600 hover:text-primary-500 hover:bg-primary-50 rounded">
+                    Cetak Foto
+                </a>
+            </li>
+            <li>
+                <a href="https://dokumen.hscopycenter.site" target="_blank" rel="noopener noreferrer" className="block px-3 py-2 text-gray-600 hover:text-primary-500 hover:bg-primary-50 rounded">
+                    Cetak Dokumen
+                </a>
+            </li>
+            <li><Link to="/member" className="block px-3 py-2 text-gray-600 hover:text-primary-500 hover:bg-primary-50 rounded">Member</Link></li>
+            <li><Link to="/promo" className="block px-3 py-2 text-gray-600 hover:text-primary-500 hover:bg-primary-50 rounded">Promo</Link></li>
+            <li><Link to="/contact" className="block px-3 py-2 text-gray-600 hover:text-primary-500 hover:bg-primary-50 rounded">Tentang Kami</Link></li>
           </ul>
         </nav>
       </div>
