@@ -15,6 +15,7 @@ import SkripsiPage from './pages/SkripsiPage';
 import ServiceDetail from './pages/ServiceDetail';
 import PlaceholderPage from './pages/PlaceholderPage';
 import BottomNav from './components/BottomNav';
+import FloatingActions from './components/FloatingActions';
 
 // Admin Imports
 import AdminLayout from './layouts/AdminLayout';
@@ -70,6 +71,7 @@ function App() {
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
       <BottomNav />
+      <FloatingActions />
     </Router>
   );
 }

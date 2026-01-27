@@ -80,7 +80,7 @@ export default function Home() {
 
             <div className="flex flex-col md:flex-row gap-8">
                 {/* Categories Sidebar */}
-                <div className="w-full md:w-64 flex-shrink-0">
+                <div className="w-full md:w-64 flex-shrink-0 hidden md:block">
                   <Sidebar />
                 </div>
 
@@ -96,7 +96,7 @@ export default function Home() {
                         <p className="text-sm text-gray-400">Silakan tambahkan layanan di Admin Panel.</p>
                      </div>
                    ) : (
-                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                     <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {services.map((service, idx) => (
                           <ServiceCard
                             key={idx}
