@@ -248,6 +248,57 @@ app.delete('/api/promos/:id', async (c) => {
   return c.json({ success: true });
 });
 
+
+// --- Services ---
+
+app.get('/api/services', async (c) => {
+  const db = getDb(c);
+  // @ts-ignore
+  const services = await db.select().from(schema.services).orderBy(schema.services.order);
+  return c.json({ data: services });
+});
+
+app.post('/api/services', async (c) => {
+  const body = await c.req.json();
+  const db = getDb(c);
+  // @ts-ignore
+  const result = await db.insert(schema.services).values({
+    title: body.title,
+    slug: body.slug,
+    description: body.description,
+    icon: body.icon,
+    imageUrl: body.imageUrl,
+    active: body.active ?? 1,
+    order: body.order ?? 0
+  }).returning();
+  return c.json({ data: result[0] });
+});
+
+app.put('/api/services/:id', async (c) => {
+  const id = Number(c.req.param('id'));
+  const body = await c.req.json();
+  const db = getDb(c);
+  // @ts-ignore
+  const result = await db.update(schema.services).set({
+    title: body.title,
+    slug: body.slug,
+    description: body.description,
+    icon: body.icon,
+    imageUrl: body.imageUrl,
+    active: body.active,
+    order: body.order
+  }).where(eq(schema.services.id, id)).returning();
+  return c.json({ data: result[0] });
+});
+
+app.delete('/api/services/:id', async (c) => {
+  const id = Number(c.req.param('id'));
+  const db = getDb(c);
+  // @ts-ignore
+  await db.delete(schema.services).where(eq(schema.services.id, id));
+  return c.json({ success: true });
+});
+
 // Health check
 app.get('/api/health', (c) => c.json({ status: 'ok', environment: c.env.ENVIRONMENT }));
 
