@@ -67,7 +67,8 @@ export default function Navbar() {
               </Link>
             </li>
             <li><Link to="/promo" className="block px-3 py-2 text-gray-600 hover:text-primary-500 hover:bg-primary-50 rounded">Promo</Link></li>
-            <li><Link to="/login" className="block px-3 py-2 text-gray-600 hover:text-primary-500 hover:bg-primary-50 rounded">Member</Link></li>
+            <li><Link to="/login" className="block px-3 py-2 text-gray-600 hover:text-primary-500 hover:bg-primary-50 rounded">Akun</Link></li>
+            <li><Link to="/member" className="block px-3 py-2 text-gray-600 hover:text-primary-500 hover:bg-primary-50 rounded">Member Info</Link></li>
             <li><Link to="/artikel" className="block px-3 py-2 text-gray-600 hover:text-primary-500 hover:bg-primary-50 rounded">Artikel</Link></li>
              <li><Link to="/contact" className="block px-3 py-2 text-gray-600 hover:text-primary-500 hover:bg-primary-50 rounded">Tentang Kami</Link></li>
              <li><Link to="/snapy-kain" className="block px-3 py-2 text-gray-600 hover:text-primary-500 hover:bg-primary-50 rounded">HS Kain</Link></li>

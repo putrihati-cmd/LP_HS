@@ -11,6 +11,7 @@ import Branch from './pages/Branch';
 import Article from './pages/Article';
 import Promo from './pages/Promo';
 import GoPrint from './pages/GoPrint';
+import Member from './pages/Member';
 import SkripsiPage from './pages/SkripsiPage';
 import ServiceDetail from './pages/ServiceDetail';
 import PlaceholderPage from './pages/PlaceholderPage';
@@ -45,6 +46,7 @@ function App() {
         <Route path="/branch" element={<Branch />} />
         <Route path="/artikel" element={<Article />} />
         <Route path="/promo" element={<Promo />} />
+        <Route path="/member" element={<Member />} />
         <Route path="/goprint" element={<GoPrint />} />
         <Route path="/skripsi" element={<SkripsiPage />} />
         <Route path="/layanan/:slug" element={<ServiceDetail />} />

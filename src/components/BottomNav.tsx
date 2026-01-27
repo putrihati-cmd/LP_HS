@@ -26,7 +26,7 @@ export default function BottomNav() {
           <Tag size={20} />
           <span className="text-[10px] font-medium">Promo</span>
         </Link>
-        <Link to="/login" className={`flex flex-1 flex-col items-center gap-1 p-1 ${isActive('/login') ? 'text-primary-500' : 'text-gray-400'}`}>
+        <Link to="/member" className={`flex flex-1 flex-col items-center gap-1 p-1 ${isActive('/member') ? 'text-primary-500' : 'text-gray-400'}`}>
           <User size={20} />
           <span className="text-[10px] font-medium">Member</span>
         </Link>
