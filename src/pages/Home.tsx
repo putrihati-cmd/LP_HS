@@ -1,12 +1,12 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import FeatureBar from '../components/FeatureBar';
 import Sidebar from '../components/Sidebar';
 import Footer from '../components/Footer';
-import ProductCard from '../components/ProductCard';
+import ServiceCard from '../components/ServiceCard';
+import { servicesApi } from '../api/services';
 
-// Using the same hardcoded images for now as per copas source
 const IMAGES = {
   printing: 'https://public.youware.com/users-website-assets/prod/9807b15c-f88c-4ee9-a2d5-04d7d8001cdf/d2f00ca2278b478f8972ec741afa5327.jpg',
   banner: 'https://public.youware.com/users-website-assets/prod/9807b15c-f88c-4ee9-a2d5-04d7d8001cdf/1eb92f1117f842e4b115ebd3e3725716.jpg',
@@ -18,26 +18,6 @@ const IMAGES = {
   toteBag: 'https://public.youware.com/users-website-assets/prod/9807b15c-f88c-4ee9-a2d5-04d7d8001cdf/a701343e528b4529980f35bd59f1c312.jpg',
   handbag: 'https://public.youware.com/users-website-assets/prod/9807b15c-f88c-4ee9-a2d5-04d7d8001cdf/56e85c2160ed48dc9fa13fbed675f676.png',
 };
-
-const popularProducts = [
-  { image: IMAGES.printing, title: 'GoPrint - Cetak Online via Aplikasi', price: 'Mulai Rp. 5.000,-', views: 198007 },
-  { image: IMAGES.idCard, title: 'Cetak Foto Berkualitas', price: 'Mulai Rp. 8.000,-', views: 196517 },
-  { image: IMAGES.banner, title: 'Digital Printing Premium', price: 'Mulai Rp. 5.000,-' },
-  { image: IMAGES.photocopy, title: 'Stempel Custom', price: 'Tersedia di HS Copy', views: 222338 },
-  { image: IMAGES.largeFormat, title: 'X Banner', price: 'Mulai Rp. 160.000,-', views: 176402 },
-  { image: IMAGES.toteBag, title: 'Cetak Stiker', price: 'Mulai Rp. 10.000', views: 134833 },
-];
-
-const newProducts = [
-  { image: IMAGES.tumbler, title: 'Frame Neon Box LED Custom', price: 'Mulai Rp. 499.999,-', views: 5457 },
-  { image: IMAGES.bottle, title: 'Tumbler Lucu', price: 'Mulai Rp. 59.999,-', views: 5568 },
-  { image: IMAGES.banner, title: 'Print DTF UV Decal A3', price: 'Mulai Rp. 29.999,-', views: 18727 },
-  { image: IMAGES.idCard, title: 'Cetak 3D Print', price: 'Mulai Rp. 1.199,-', views: 63214 },
-  { image: IMAGES.toteBag, title: 'Karangan Bunga Mini', price: 'Mulai Rp. 49.999,-', views: 5893 },
-  { image: IMAGES.printing, title: 'Botol Termos Led Prank Template', price: 'Mulai Rp. 59.999,-', views: 3524 },
-  { image: IMAGES.largeFormat, title: 'Botol Dundee 1 Liter', price: 'Mulai Rp. 54.999,-', views: 6294 },
-  { image: IMAGES.handbag, title: 'QR Stand | Standing Custom QR Code Meja', price: 'Mulai Rp. 59.999,-', views: 5262 },
-];
 
 const articles = [
   {
@@ -63,6 +43,23 @@ const articles = [
 ];
 
 export default function Home() {
+  const [services, setServices] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchServices = async () => {
+      try {
+        const res = await servicesApi.getAll();
+        setServices(res.data || []);
+      } catch (error) {
+        console.error("Failed to fetch services", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchServices();
+  }, []);
+
   return (
     <div className="min-h-screen bg-gray-50 font-sans">
       <Navbar />
@@ -70,12 +67,13 @@ export default function Home() {
       <FeatureBar />
 
       <main className="max-w-7xl mx-auto px-4 py-8">
-        {/* Popular Products */}
+
+        {/* Services Section */}
         <section className="mb-12">
             <div className="flex items-center justify-center gap-4 mb-8">
                 <div className="h-px w-16 md:w-24 bg-gray-300"></div>
                 <h2 className="text-xl md:text-2xl font-bold text-primary-500 uppercase tracking-wide">
-                  PRODUK POPULER
+                  LAYANAN KAMI
                 </h2>
                 <div className="h-px w-16 md:w-24 bg-gray-300"></div>
             </div>
@@ -86,33 +84,35 @@ export default function Home() {
                   <Sidebar />
                 </div>
 
-                {/* Products Grid */}
-                <div className="flex-1 grid grid-cols-2 md:grid-cols-3 gap-6">
-                  {popularProducts.map((product, idx) => (
-                      <ProductCard key={idx} {...product} />
-                  ))}
+                {/* Services Grid */}
+                <div className="flex-1">
+                   {loading ? (
+                     <div className="flex justify-center py-12">
+                       <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary-500"></div>
+                     </div>
+                   ) : services.length === 0 ? (
+                     <div className="text-center py-12 bg-white rounded-lg border border-gray-100 p-8">
+                        <p className="text-gray-500 mb-4">Belum ada layanan yang ditampilkan.</p>
+                        <p className="text-sm text-gray-400">Silakan tambahkan layanan di Admin Panel.</p>
+                     </div>
+                   ) : (
+                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {services.map((service, idx) => (
+                          <ServiceCard
+                            key={idx}
+                            id={service.id}
+                            title={service.title}
+                            description={service.description}
+                            image={service.imageUrl}
+                            slug={service.slug}
+                          />
+                        ))}
+                     </div>
+                   )}
                 </div>
             </div>
         </section>
 
-        {/* Pricing Packages Moved to /skripsi */}
-
-        {/* New Products */}
-        <section className="mb-12">
-            <div className="flex items-center justify-center gap-4 mb-8">
-                <div className="h-px w-16 md:w-24 bg-gray-300"></div>
-                <h2 className="text-xl md:text-2xl font-bold text-primary-500 uppercase tracking-wide">
-                  PRODUK TERBARU
-                </h2>
-                <div className="h-px w-16 md:w-24 bg-gray-300"></div>
-            </div>
-
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                {newProducts.map((product, idx) => (
-                <ProductCard key={idx} {...product} />
-                ))}
-            </div>
-        </section>
       </main>
 
       {/* About Section - Updated Content */}

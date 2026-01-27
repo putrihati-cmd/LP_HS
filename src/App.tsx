@@ -17,8 +17,8 @@ import PlaceholderPage from './pages/PlaceholderPage';
 // Admin Imports
 import AdminLayout from './layouts/AdminLayout';
 import Dashboard from './pages/admin/Dashboard';
-import Products from './pages/admin/Products';
-import AddProduct from './pages/admin/AddProduct';
+import Services from './pages/admin/Services';
+import AddService from './pages/admin/AddService';
 import Categories from './pages/admin/Categories';
 import Banners from './pages/admin/Banners';
 import Promos from './pages/admin/Promos';
@@ -54,8 +54,8 @@ function App() {
         {/* Admin Routes */}
         <Route path="/admin" element={<AdminLayout />}>
           <Route index element={<Dashboard />} />
-          <Route path="products" element={<Products />} />
-          <Route path="products/add" element={<AddProduct />} />
+          <Route path="services" element={<Services />} />
+          <Route path="services/new" element={<AddService />} />
           <Route path="categories" element={<Categories />} />
           <Route path="banners" element={<Banners />} />
           <Route path="promos" element={<Promos />} />

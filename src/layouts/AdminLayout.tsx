@@ -68,11 +68,11 @@ const AdminLayout = () => {
             <span>Dashboard</span>
           </Link>
           <Link
-            to="/admin/products"
-            className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${isActive('/admin/products') ? 'bg-primary text-white' : 'text-gray-400 hover:bg-gray-800 hover:text-white'}`}
+            to="/admin/services"
+            className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${isActive('/admin/services') ? 'bg-primary text-white' : 'text-gray-400 hover:bg-gray-800 hover:text-white'}`}
           >
             <Package size={20} />
-            <span>Products</span>
+            <span>Layanan</span>
           </Link>
           <Link
             to="/admin/orders"
