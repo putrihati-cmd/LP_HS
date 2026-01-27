@@ -66,8 +66,8 @@ export default function Navbar() {
                 <ChevronDown size={14} />
               </Link>
             </li>
-            <li><Link to="/branch" className="block px-3 py-2 text-gray-600 hover:text-primary-500 hover:bg-primary-50 rounded">Cabang</Link></li>
-            <li><Link to="/photobook" className="block px-3 py-2 text-gray-600 hover:text-primary-500 hover:bg-primary-50 rounded">Photobook</Link></li>
+            <li><Link to="/promo" className="block px-3 py-2 text-gray-600 hover:text-primary-500 hover:bg-primary-50 rounded">Promo</Link></li>
+            <li><Link to="/login" className="block px-3 py-2 text-gray-600 hover:text-primary-500 hover:bg-primary-50 rounded">Member</Link></li>
             <li><Link to="/artikel" className="block px-3 py-2 text-gray-600 hover:text-primary-500 hover:bg-primary-50 rounded">Artikel</Link></li>
              <li><Link to="/contact" className="block px-3 py-2 text-gray-600 hover:text-primary-500 hover:bg-primary-50 rounded">Tentang Kami</Link></li>
              <li><Link to="/snapy-kain" className="block px-3 py-2 text-gray-600 hover:text-primary-500 hover:bg-primary-50 rounded">HS Kain</Link></li>

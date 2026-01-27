@@ -21,17 +21,14 @@ export default function BottomNav() {
           <Grid size={20} />
           <span className="text-[10px] font-medium">Layanan</span>
         </Link>
-         <Link to="/branch" className={`flex flex-1 flex-col items-center gap-1 p-1 ${isActive('/branch') ? 'text-primary-500' : 'text-gray-400'}`}>
-          <MapPin size={20} />
-          <span className="text-[10px] font-medium">Cabang</span>
-        </Link>
+
         <Link to="/promo" className={`flex flex-1 flex-col items-center gap-1 p-1 ${isActive('/promo') ? 'text-primary-500' : 'text-gray-400'}`}>
           <Tag size={20} />
           <span className="text-[10px] font-medium">Promo</span>
         </Link>
         <Link to="/login" className={`flex flex-1 flex-col items-center gap-1 p-1 ${isActive('/login') ? 'text-primary-500' : 'text-gray-400'}`}>
           <User size={20} />
-          <span className="text-[10px] font-medium">Akun</span>
+          <span className="text-[10px] font-medium">Member</span>
         </Link>
       </div>
     </div>
