@@ -7,6 +7,8 @@ import Breadcrumbs from '../components/Breadcrumbs';
 import ServiceCard from '../components/ServiceCard';
 import { servicesApi } from '../api/services';
 
+import { FALLBACK_SERVICES } from '../data/fallbackServices';
+
 export default function ServicesPage() {
   const { slug } = useParams<{ slug: string }>();
   const [searchParams] = useSearchParams();
@@ -21,10 +23,11 @@ export default function ServicesPage() {
       try {
         setLoading(true);
         const res = await servicesApi.getAll();
-        const allServices = res.data || [];
+        const allServices = (res.data && res.data.length > 0) ? res.data : FALLBACK_SERVICES;
         setServices(allServices);
       } catch (error) {
-        console.error("Failed to fetch services", error);
+        console.error("Failed to fetch services, using fallback", error);
+        setServices(FALLBACK_SERVICES);
       } finally {
         setLoading(false);
       }

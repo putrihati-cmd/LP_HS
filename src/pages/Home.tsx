@@ -42,6 +42,10 @@ const articles = [
   },
 ];
 
+import { FALLBACK_SERVICES } from '../data/fallbackServices';
+
+// ... (IMAGES object remains same)
+
 export default function Home() {
   const [services, setServices] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
@@ -50,9 +54,12 @@ export default function Home() {
     const fetchServices = async () => {
       try {
         const res = await servicesApi.getAll();
-        setServices(res.data || []);
+        // Use fallback if API returns empty array or fails
+        const allServices = (res.data && res.data.length > 0) ? res.data : FALLBACK_SERVICES;
+        setServices(allServices);
       } catch (error) {
-        console.error("Failed to fetch services", error);
+        console.error("Failed to fetch services, using fallback", error);
+        setServices(FALLBACK_SERVICES);
       } finally {
         setLoading(false);
       }
