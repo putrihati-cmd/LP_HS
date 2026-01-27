@@ -20,9 +20,14 @@ export default function Hero() {
             <p className="text-white/90 mb-6 max-w-md mx-auto md:mx-0 text-lg">
               Cepat, Rapi, dan Bisa Ditunggu. Melayani kebutuhan mahasiswa dan umum dengan hasil terbaik.
             </p>
-            <Link to="/skripsi" className="inline-block px-8 py-3 bg-secondary-500 hover:bg-secondary-600 text-white font-bold rounded-lg transition-colors shadow-lg transform hover:-translate-y-1">
+            <a
+              href="https://wa.me/6285659055374?text=Halo%20HS%20Copy%20Center,%20saya%20mau%20konsultasi%20cetak/jilid%20skripsi"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-8 py-3 bg-secondary-500 hover:bg-secondary-600 text-white font-bold rounded-lg transition-colors shadow-lg transform hover:-translate-y-1"
+            >
               KONSULTASI SEKARANG
-            </Link>
+            </a>
           </div>
           <div className="flex-1 relative">
             <div className="relative z-10">
