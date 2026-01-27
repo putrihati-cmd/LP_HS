@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
-import Category from './pages/Category';
+import ServicesPage from './pages/ServicesPage';
 import ProductDetail from './pages/ProductDetail';
 import Cart from './pages/Cart';
 import Branch from './pages/Branch';
@@ -34,8 +34,9 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
 
-        <Route path="/category" element={<Category />} />
-        <Route path="/category/:slug" element={<Category />} />
+        <Route path="/layanan" element={<ServicesPage />} />
+        <Route path="/category/:slug" element={<ServicesPage />} />
+        <Route path="/category" element={<ServicesPage />} />
         <Route path="/product/:id" element={<ProductDetail />} />
         <Route path="/cart" element={<Cart />} />
 

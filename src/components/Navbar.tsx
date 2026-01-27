@@ -26,7 +26,7 @@ export default function Navbar() {
             <div className="relative w-full">
               <input
                 type="text"
-                placeholder="Cari produk..."
+                placeholder="Cari layanan..."
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 bg-gray-50"
               />
               <button className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-primary-500">
@@ -61,8 +61,8 @@ export default function Navbar() {
           <ul className="flex flex-col md:flex-row md:items-center gap-1 md:gap-8 py-3 text-sm font-medium">
             <li><Link to="/" className="block px-3 py-2 text-primary-500 font-bold hover:bg-primary-50 rounded">Beranda</Link></li>
             <li className="relative group">
-              <Link to="/category" className="flex items-center gap-1 px-3 py-2 text-gray-600 hover:text-primary-500 hover:bg-primary-50 rounded">
-                Kategori
+              <Link to="/layanan" className="flex items-center gap-1 px-3 py-2 text-gray-600 hover:text-primary-500 hover:bg-primary-50 rounded">
+                Layanan
                 <ChevronDown size={14} />
               </Link>
             </li>
