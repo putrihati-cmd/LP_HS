@@ -25,7 +25,7 @@ export default function CategoriesSidebar() {
         {categories.map((cat, idx) => (
           <li key={idx}>
             <Link
-              to={`/category/${cat.toLowerCase().replace(/\s+/g, '-')}`}
+              to={`/layanan?search=${cat.replace(/\s+/g, '-').toLowerCase()}`}
               className="flex items-center justify-between px-4 py-3 text-gray-600 hover:bg-primary-50 hover:text-primary-500 transition-colors text-sm font-medium group"
             >
               {cat}
