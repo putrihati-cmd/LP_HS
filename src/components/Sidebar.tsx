@@ -19,7 +19,7 @@ export default function CategoriesSidebar() {
   return (
     <div className="bg-white rounded-lg shadow-sm overflow-hidden border border-gray-100">
       <div className="bg-primary-500 text-white px-4 py-3 font-bold text-sm tracking-wide uppercase">
-        Kategori
+        Daftar Layanan
       </div>
       <ul className="divide-y divide-gray-100">
         {categories.map((cat, idx) => (

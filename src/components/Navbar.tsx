@@ -56,7 +56,6 @@ export default function Navbar() {
             <li className="relative group">
               <Link to="/layanan" className="flex items-center gap-1 px-3 py-2 text-gray-600 hover:text-primary-500 hover:bg-primary-50 rounded">
                 Layanan
-                <ChevronDown size={14} />
               </Link>
             </li>
             <li><Link to="/artikel" className="block px-3 py-2 text-gray-600 hover:text-primary-500 hover:bg-primary-50 rounded">Artikel</Link></li>
