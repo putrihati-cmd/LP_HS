@@ -3,24 +3,27 @@ credentials-file: C:/Users/HSPC1/.cloudflared/0fdc3a49-28d9-43cf-ad19-7348c6f860
 
 ingress:
   - hostname: hscopycenter.site
-    service: http://localhost:8081
+    service: http://127.0.0.1:8081
 
   - hostname: www.hscopycenter.site
-    service: http://localhost:8081
+    service: http://127.0.0.1:8081
+
+  - hostname: cetakfoto.hscopycenter.site
+    service: http://127.0.0.1:8081
+
+  - hostname: dokumen.hscopycenter.site
+    service: http://127.0.0.1:8081
+
+  - hostname: pos.hscopycenter.site
+    service: http://127.0.0.1:8080
 
   - hostname: kasir.hscopycenter.site
-    service: http://localhost:8080
-
-  - hostname: n8n.hscopycenter.site
-    service: http://localhost:5678
+    service: http://127.0.0.1:8080
 
   - hostname: waha.hscopycenter.site
-    service: http://localhost:3000
-
-  - hostname: docker.hscopycenter.site
-    service: http://localhost:9000
+    service: http://127.0.0.1:3000
 
   - hostname: produk.hscopycenter.site
-    service: http://localhost:80
+    service: http://127.0.0.1:80
 
   - service: http_status:404

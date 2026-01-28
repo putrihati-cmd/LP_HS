@@ -32,7 +32,7 @@ npm run build
 # Restart frontend with PM2 (Serve static files)
 echo "🔄 Restarting frontend..."
 pm2 delete hscopycenter-frontend || true
-pm2 start "npx serve -s dist -l 3001" --name "hscopycenter-frontend"
+pm2 start "npx serve -s dist -l 8081" --name "hscopycenter-frontend"
 
 # ==========================================
 # BACKEND DEPLOYMENT
@@ -78,4 +78,4 @@ sudo nginx -t && sudo systemctl reload nginx
 
 echo "✅ Deployment complete!"
 echo "🌐 Frontend: https://hscopycenter.site"
-echo "🔧 Backend API: http://localhost:3000"
+echo "🔧 Backend API: http://localhost:3001"

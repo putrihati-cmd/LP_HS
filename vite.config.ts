@@ -10,10 +10,18 @@ export default defineConfig({
     port: 8081,
     proxy: {
       "/api": {
-        target: "http://localhost:3000",
+        target: "http://localhost:3001",
         changeOrigin: true,
       },
     },
+    allowedHosts: [
+      "hscopycenter.site",
+      "www.hscopycenter.site",
+      "cetakfoto.hscopycenter.site",
+      "dokumen.hscopycenter.site",
+      "pos.hscopycenter.site",
+      "kasir.hscopycenter.site"
+    ],
   },
   build: {
     sourcemap: true,
