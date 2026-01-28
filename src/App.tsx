@@ -12,6 +12,7 @@ import Promo from './pages/Promo';
 import Member from './pages/Member';
 import SkripsiPage from './pages/SkripsiPage';
 import ServiceDetail from './pages/ServiceDetail';
+import ContactPage from './pages/ContactPage';
 import PlaceholderPage from './pages/PlaceholderPage';
 import BottomNav from './components/BottomNav';
 import FloatingActions from './components/FloatingActions';
@@ -25,6 +26,7 @@ import Categories from './pages/admin/Categories';
 import Banners from './pages/admin/Banners';
 import Promos from './pages/admin/Promos';
 import Orders from './pages/admin/Orders';
+import { AIContentGenerator } from './components/AIContentGenerator';
 
 function App() {
   return (
@@ -48,8 +50,7 @@ function App() {
         <Route path="/layanan/:slug" element={<ServiceDetail />} />
 
         {/* Placeholders for menu items */}
-        <Route path="/hs-kain" element={<PlaceholderPage title="HS Kain" />} />
-        <Route path="/contact" element={<PlaceholderPage title="Hubungi Kami" />} />
+        <Route path="/contact" element={<ContactPage />} />
 
         {/* Admin Routes */}
         <Route path="/admin" element={<AdminLayout />}>
@@ -60,6 +61,7 @@ function App() {
           <Route path="banners" element={<Banners />} />
           <Route path="promos" element={<Promos />} />
           <Route path="orders" element={<Orders />} />
+          <Route path="ai-generator" element={<AIContentGenerator />} />
         </Route>
 
         {/* Fallback */}

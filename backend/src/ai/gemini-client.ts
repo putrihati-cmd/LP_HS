@@ -16,7 +16,7 @@ interface GeminiResponse {
 
 export class GeminiAIClient {
   private apiKey: string;
-  private model = 'gemini-2.0-flash';
+  private model = 'gemini-flash-latest';  // Updated based on available models list
   private baseUrl = 'https://generativelanguage.googleapis.com/v1beta/models';
 
   constructor(apiKey: string) {

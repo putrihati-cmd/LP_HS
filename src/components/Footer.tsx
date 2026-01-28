@@ -34,21 +34,20 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-bold mb-4 uppercase text-sm tracking-wider">Kontak & Lokasi</h3>
             <ul className="space-y-2 text-sm">
-              <li className="font-bold text-primary-400">HS Copy Center - Purwokerto</li>
-              <li>Jl. HR. Bunyamin No. P2</li>
-              <li>Purwokerto Utara</li>
+              <li className="font-bold text-primary-400">HS Copy Center</li>
+              <li>Gg. 2 No. 7, Tegalmulya, Ledug,</li>
+              <li>Kec. Kembaran, Banyumas 53182</li>
 
               <li className="pt-4 font-bold text-gray-400 text-xs">JAM BUKA:</li>
-              <li>Senin-Jumat : 08.00 - 21.00</li>
-              <li>Sabtu : 08.00 - 19.00</li>
+              <li>Setiap Hari : 06.30 - 21.30 WIB</li>
 
               <li className="pt-4 flex items-center gap-2">
                 <Phone size={14} className="text-primary-400" />
-                <a href="tel:085659055374" className="hover:text-primary-400 transition-colors">0856-5905-5374 (WA)</a>
+                <a href="https://wa.me/6285659055374" target="_blank" rel="noopener noreferrer" className="hover:text-primary-400 transition-colors">0856-5905-5374 (WA)</a>
               </li>
               <li className="flex items-center gap-2">
-                <Mail size={14} className="text-primary-400" />
-                <a href="mailto:hscopyorder@gmail.com" className="hover:text-primary-400 transition-colors">hscopyorder@gmail.com</a>
+                <Instagram size={14} className="text-primary-400" />
+                <a href="https://instagram.com/hscopycenter" target="_blank" rel="noopener noreferrer" className="hover:text-primary-400 transition-colors">@hscopycenter</a>
               </li>
             </ul>
           </div>
@@ -58,23 +57,8 @@ export default function Footer() {
             <h3 className="text-white font-bold mb-4 uppercase text-sm tracking-wider">Follow Us</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#" className="hover:text-primary-400 transition-colors flex items-center gap-2">
-                  <Instagram size={16} /> @hscopyofficial
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-primary-400 transition-colors flex items-center gap-2">
-                  <Twitter size={16} /> @hscopyofficial
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-primary-400 transition-colors flex items-center gap-2">
-                  <Facebook size={16} /> @HSCopyOfficial
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-primary-400 transition-colors flex items-center gap-2">
-                  <Youtube size={16} /> HS Copy Print & Design
+                <a href="https://instagram.com/hscopycenter" target="_blank" rel="noopener noreferrer" className="hover:text-primary-400 transition-colors flex items-center gap-2">
+                  <Instagram size={16} /> @hscopycenter
                 </a>
               </li>
             </ul>

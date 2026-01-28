@@ -1,5 +1,5 @@
-tunnel: 54ccd966-5b4c-4c0c-85ae-805e1fb20cfb
-credentials-file: /etc/cloudflared/54ccd966-5b4c-4c0c-85ae-805e1fb20cfb.json
+tunnel: 0fdc3a49-28d9-43cf-ad19-7348c6f860cc
+credentials-file: C:/Users/HSPC1/.cloudflared/0fdc3a49-28d9-43cf-ad19-7348c6f860cc.json
 
 ingress:
   - hostname: hscopycenter.site

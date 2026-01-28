@@ -102,3 +102,38 @@ export const promos = sqliteTable("promos", {
   active: integer().default(1),
 	createdAt: integer("created_at").default(sql`(unixepoch())`),
 });
+
+export const services = sqliteTable("services", {
+	id: integer().primaryKey({ autoIncrement: true }),
+	title: text().notNull(),
+	slug: text().notNull(),
+	description: text().notNull(),
+    icon: text(),
+	price: real().notNull(), // Starts from
+	category: text().notNull(),
+	imageUrl: text("image_url"),
+	order: integer().default(0),
+	active: integer().default(1),
+	createdAt: integer("created_at").default(sql`(unixepoch())`),
+}, (table) => [
+	uniqueIndex("idx_services_slug").on(table.slug),
+	index("idx_services_category").on(table.category),
+]);
+
+
+export const articles = sqliteTable("articles", {
+	id: integer().primaryKey({ autoIncrement: true }),
+	title: text().notNull(),
+	slug: text().notNull(),
+	content: text().notNull(),
+	excerpt: text(),
+	imageUrl: text("image_url"),
+  author: text().default("Admin").notNull(),
+  category: text().default("General").notNull(),
+  tags: text(), // JSON string
+  status: text().default("draft"),
+	createdAt: integer("created_at").default(sql`(unixepoch())`),
+}, (table) => [
+  uniqueIndex("idx_articles_slug").on(table.slug)
+]);
+

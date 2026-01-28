@@ -4,7 +4,8 @@
   "description": "EdgeSpark user code template for AI coding agents",
   "type": "module",
   "scripts": {
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "deploy": "npx wrangler deploy"
   },
   "dependencies": {
     "@hono/node-server": "^1.8.0",

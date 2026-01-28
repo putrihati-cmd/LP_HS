@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
-import { LayoutDashboard, Package, ShoppingCart, Settings, LogOut, User, Folder, Image, Tag } from 'lucide-react';
+import { LayoutDashboard, Package, ShoppingCart, Settings, LogOut, User, Folder, Image, Tag, Sparkles } from 'lucide-react';
 import { client } from '../api/client';
 
 const AdminLayout = () => {
@@ -101,6 +101,13 @@ const AdminLayout = () => {
           >
             <Tag size={20} />
             <span>Promos</span>
+          </Link>
+          <Link
+            to="/admin/ai-generator"
+            className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${isActive('/admin/ai-generator') ? 'bg-primary text-white' : 'text-gray-400 hover:bg-gray-800 hover:text-white'}`}
+          >
+            <Sparkles size={20} />
+            <span>AI Content</span>
           </Link>
           <Link
             to="/admin/settings"

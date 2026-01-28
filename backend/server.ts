@@ -9,7 +9,7 @@ const sqlite = new Database('local.db');
 
 const db = drizzle(sqlite, { schema: tables });
 
-const app = await createApp({ db } as any);
+const app = createApp({ db } as any);
 
 app.use('*', async (c, next) => {
   await next();

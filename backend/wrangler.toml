@@ -13,5 +13,5 @@ bucket_name = "hscopycenter-uploads"
 
 [vars]
 ENVIRONMENT = "production"
-CORS_ORIGIN = "https://hscopycenter.site"
+CORS_ORIGIN = "*"
 # GOOGLE_AI_API_KEY is set via: wrangler secret put GOOGLE_AI_API_KEY
