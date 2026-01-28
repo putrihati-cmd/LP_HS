@@ -1,0 +1,31 @@
+# HS Copy Center Backend - Wrangler Configuration
+# Tambahkan konfigurasi ini ke wrangler.toml yang sudah ada
+
+# Environment Variables
+[vars]
+ENVIRONMENT = "production"
+CORS_ORIGIN = "https://hscopycenter.site"
+
+# Secrets (jangan masukkan nilai di sini!)
+# Set dengan command: wrangler secret put ANTHROPIC_API_KEY
+# Secrets yang diperlukan:
+# - ANTHROPIC_API_KEY: API key dari Anthropic Console
+
+# D1 Database (jika belum ada)
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "hscopycenter-db"
+# database_id = "your-database-id"
+
+# KV Namespace (jika diperlukan untuk caching)
+# [[kv_namespaces]]
+# binding = "CACHE"
+# id = "your-kv-id"
+
+# Routes untuk AI Content Generator
+# Pastikan sudah ada di src/index.ts:
+# - POST /api/ai/service-description
+# - POST /api/ai/blog-article
+# - POST /api/ai/social-post
+# - POST /api/ai/improve-content
+# - POST /api/ai/variations

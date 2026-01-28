@@ -4,12 +4,14 @@ import { cors } from "hono/cors";
 import { drizzle } from "drizzle-orm/d1";
 import { eq, desc } from "drizzle-orm";
 import * as schema from "./__generated__/db_schema";
+import { GeminiAIClient } from "./ai/gemini-client";
 
 type Bindings = {
   DB: D1Database;
   STORAGE: R2Bucket;
   ENVIRONMENT: string;
   CORS_ORIGIN: string;
+  GOOGLE_AI_API_KEY: string;
 };
 
 const app = new Hono<{ Bindings: Bindings }>();
@@ -297,6 +299,86 @@ app.delete('/api/services/:id', async (c) => {
   // @ts-ignore
   await db.delete(schema.services).where(eq(schema.services.id, id));
   return c.json({ success: true });
+});
+
+// ========== AI CONTENT GENERATION ROUTES ==========
+
+app.post('/api/ai/service-description', async (c) => {
+  try {
+    const aiClient = new GeminiAIClient(c.env.GOOGLE_AI_API_KEY);
+    const body = await c.req.json();
+    const result = await aiClient.generateServiceDescription({
+      serviceName: body.serviceName,
+      category: body.category,
+      features: body.features || [],
+      tone: body.tone || 'professional',
+      targetAudience: body.targetAudience || 'mahasiswa dan pelajar',
+    });
+    return c.json(result);
+  } catch (error: any) {
+    return c.json({ error: error.message }, 500);
+  }
+});
+
+app.post('/api/ai/blog-article', async (c) => {
+  try {
+    const aiClient = new GeminiAIClient(c.env.GOOGLE_AI_API_KEY);
+    const body = await c.req.json();
+    const result = await aiClient.generateBlogArticle({
+      topic: body.topic,
+      keywords: body.keywords || [],
+      tone: body.tone || 'informative',
+      length: body.length || 'medium',
+    });
+    return c.json(result);
+  } catch (error: any) {
+    return c.json({ error: error.message }, 500);
+  }
+});
+
+app.post('/api/ai/social-post', async (c) => {
+  try {
+    const aiClient = new GeminiAIClient(c.env.GOOGLE_AI_API_KEY);
+    const body = await c.req.json();
+    const result = await aiClient.generateSocialMediaPost({
+      platform: body.platform || 'whatsapp',
+      topic: body.topic,
+      callToAction: body.callToAction || 'Hubungi kami sekarang!',
+      includeEmojis: body.includeEmojis !== false,
+    });
+    return c.json(result);
+  } catch (error: any) {
+    return c.json({ error: error.message }, 500);
+  }
+});
+
+app.post('/api/ai/improve-content', async (c) => {
+  try {
+    const aiClient = new GeminiAIClient(c.env.GOOGLE_AI_API_KEY);
+    const body = await c.req.json();
+    const result = await aiClient.improveExistingContent({
+      content: body.content,
+      improvements: body.improvements || ['Perbaiki grammar', 'Tingkatkan SEO'],
+    });
+    return c.json(result);
+  } catch (error: any) {
+    return c.json({ error: error.message }, 500);
+  }
+});
+
+app.post('/api/ai/variations', async (c) => {
+  try {
+    const aiClient = new GeminiAIClient(c.env.GOOGLE_AI_API_KEY);
+    const body = await c.req.json();
+    const result = await aiClient.generateVariations({
+      content: body.content,
+      count: body.count || 3,
+      type: body.type || 'description',
+    });
+    return c.json({ variations: result });
+  } catch (error: any) {
+    return c.json({ error: error.message }, 500);
+  }
 });
 
 // Health check
