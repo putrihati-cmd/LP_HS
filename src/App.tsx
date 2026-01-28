@@ -7,10 +7,8 @@ import Register from './pages/Register';
 import ServicesPage from './pages/ServicesPage';
 import ProductDetail from './pages/ProductDetail';
 import Cart from './pages/Cart';
-import Branch from './pages/Branch';
 import Article from './pages/Article';
 import Promo from './pages/Promo';
-import GoPrint from './pages/GoPrint';
 import Member from './pages/Member';
 import SkripsiPage from './pages/SkripsiPage';
 import ServiceDetail from './pages/ServiceDetail';
@@ -43,19 +41,14 @@ function App() {
         <Route path="/product/:id" element={<ProductDetail />} />
         <Route path="/cart" element={<Cart />} />
 
-        <Route path="/branch" element={<Branch />} />
         <Route path="/artikel" element={<Article />} />
         <Route path="/promo" element={<Promo />} />
         <Route path="/member" element={<Member />} />
-        <Route path="/goprint" element={<GoPrint />} />
         <Route path="/skripsi" element={<SkripsiPage />} />
         <Route path="/layanan/:slug" element={<ServiceDetail />} />
 
         {/* Placeholders for menu items */}
-        <Route path="/photobook" element={<PlaceholderPage title="Photobook" />} />
-        <Route path="/franchise" element={<PlaceholderPage title="Franchise" />} />
         <Route path="/hs-kain" element={<PlaceholderPage title="HS Kain" />} />
-        <Route path="/print-shop" element={<PlaceholderPage title="Print Shop" />} />
         <Route path="/contact" element={<PlaceholderPage title="Hubungi Kami" />} />
 
         {/* Admin Routes */}

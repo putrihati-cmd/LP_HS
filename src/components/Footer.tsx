@@ -12,23 +12,21 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li><a href="#" className="hover:text-primary-400 transition-colors">Hubungi Kami</a></li>
               <li><a href="#" className="hover:text-primary-400 transition-colors">Tentang Kami</a></li>
-              <li><a href="#" className="hover:text-primary-400 transition-colors">GoPrint</a></li>
               <li><a href="#" className="hover:text-primary-400 transition-colors">Cara Pemesanan</a></li>
               <li><a href="#" className="hover:text-primary-400 transition-colors">Cara Pembayaran</a></li>
               <li><a href="#" className="hover:text-primary-400 transition-colors">Syarat & Ketentuan</a></li>
             </ul>
           </div>
 
-          {/* Outlet */}
+          {/* Layanan Unggulan */}
           <div>
-            <h3 className="text-white font-bold mb-4 uppercase text-sm tracking-wider">Outlet HS Copy</h3>
+            <h3 className="text-white font-bold mb-4 uppercase text-sm tracking-wider">Layanan Unggulan</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="#" className="hover:text-primary-400 transition-colors">HS Copy Bintaro 9</a></li>
-              <li><a href="#" className="hover:text-primary-400 transition-colors">HS Copy Tanjung Duren</a></li>
-              <li><a href="#" className="hover:text-primary-400 transition-colors">HS Copy Margasatwa</a></li>
-              <li><a href="#" className="hover:text-primary-400 transition-colors">HS Copy Ciracas</a></li>
-              <li><a href="#" className="hover:text-primary-400 transition-colors">HS Copy Bintaro 5</a></li>
-              <li><a href="#" className="text-primary-400 hover:underline transition-colors">More...</a></li>
+              <li><a href="/skripsi" className="hover:text-primary-400 transition-colors">Cetak Skripsi</a></li>
+              <li><a href="/layanan" className="hover:text-primary-400 transition-colors">Print Dokumen</a></li>
+              <li><a href="/layanan" className="hover:text-primary-400 transition-colors">Cetak Foto</a></li>
+              <li><a href="/layanan" className="hover:text-primary-400 transition-colors">Jilid Hardcover</a></li>
+              <li><a href="/layanan" className="hover:text-primary-400 transition-colors">Print A3+</a></li>
             </ul>
           </div>
 
